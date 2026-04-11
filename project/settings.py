@@ -36,9 +36,12 @@ INSTALLED_APPS = [
     "ginasio",
     "receita",
     "loja",
-    "festivais"
+    "festivais",
+    "portfolio"
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
