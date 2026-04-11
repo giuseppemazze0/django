@@ -1,3 +1,8 @@
+Essa é a segunda versão do models.py. Pensada de forma melhor.
+
+IA utilizada para verificar possíveis correções e melhoria no código, nomeadamente, ChatGPT.
+
+
 from django.db import models
 
 

@@ -275,3 +275,12 @@ class MakingOf(models.Model):
     descricao = models.TextField()
     imagem = models.ImageField(upload_to='makingof/', blank=True, null=True)
     data = models.DateField(auto_now_add=True)
+
+
+🧠 💡 FEEDBACK GERAL (importante)
+
+👉 O teu modelo tinha boas ideias, mas:
+
+❗ Estavas a usar relações erradas
+❗ Misturaste responsabilidades (ex: Licenciatura gigante)
+❗ Alguns erros iam impedir o projeto de correr
