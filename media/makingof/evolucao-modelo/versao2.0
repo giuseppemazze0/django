@@ -147,3 +147,17 @@ class MakingOf(models.Model):
     descricao = models.TextField()
     imagem = models.ImageField(upload_to='makingof/', blank=True, null=True)
     data = models.DateField(auto_now_add=True)
+
+
+
+Alterações realizadas ao modelo:
+
+Correção de erros de nomenclatura (ex: objetivo_curso)
+Substituição de relações inadequadas (ex: OneToOneField para ForeignKey no TFC)
+Adição de relações fundamentais entre entidades:
+Ligação entre Unidade Curricular e Licenciatura
+Ligação entre Competências, Projetos e Tecnologias
+Melhoria da estrutura relacional com uso de related_name
+Enriquecimento da entidade MakingOf, permitindo associação com outras entidades para documentar o processo de desenvolvimento
+Introdução de choices em campos como nível de interesse, melhorando a organização dos dados
+Ajuste do modelo para refletir melhor cenários reais (ex: múltiplos TFCs por licenciatura)
