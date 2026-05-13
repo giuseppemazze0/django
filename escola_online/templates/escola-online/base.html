@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link flaticons -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <!-- Link CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'escola_online/style.css' %}">
+    <title>Escola Online</title>
+</head>
+<body>
+    <header class="headerPagina">
+        <div>
+            <i class="fi fi-rr-apple-books"></i>
+            <h1>Escola</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'cursos' %}">Cursos</a></li>
+                <li><a href="{% url 'cursos' %}">Professores</a></li>
+                <li><a href="{% url 'cursos' %}">Alunos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026</p>
+        <p>Programação Web</p>
+        <p>By Giuseppe</p>
+    </footer>
+</body>
+</html>

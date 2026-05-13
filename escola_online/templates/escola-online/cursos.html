@@ -1,0 +1,38 @@
+{% extends 'escola-online/base.html' %}
+
+
+
+{% block content %}
+
+<h2>Cursos</h2>
+
+<section class="cardsCurso">
+
+    {% for curso in cursos %}
+    <article class="card">
+        <header class="cabecario">
+            <span>Vagas Abertas</span>
+            <img src="{{ curso.imagem.url }}" alt="Imagem do logotipo {{ curso.imagem.name }}">
+            <h3>{{ curso.nome }}</h3>
+            <div class="professor">
+                <i class="fi fi-sr-user"></i>
+                <p>{{ curso.professor_responsavel.nome }}</p>
+            </div>
+        </header>
+
+        <section class="conteudo">
+            <h4>Alunos <span>{{ curso.alunos.lenght }}</span></h4>
+            <ul class="alunos">
+                {% for aluno in curso.alunos.all %}
+                    <li>{{ aluno.nome }}</li>
+                {% empty %}
+                    <li class="semAlunos">Sem alunos inscritos</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </article>
+    {% endfor %}
+
+</section>
+
+{% endblock %}

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "receita",
     "loja",
     "festivais",
-    "portfolio"
+    "portfolio",
+    "escola_online"
 ]
 
 MEDIA_URL = '/media/'
