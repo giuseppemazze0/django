@@ -1,5 +1,5 @@
-from .models import *
-import json
+from portfolio.models import *
+import json, uuid
 
 TFC.objects.all().delete()
 Projeto.objects.all().delete()
@@ -13,7 +13,7 @@ Licenciatura.objects.all().delete()
 Faculdade.objects.all().delete()
 
 
-with open('data/tfcs.json') as f:
+with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
     tfcs = json.load(f)
 
     faculdade = Faculdade.objects.create(
@@ -96,9 +96,11 @@ with open('data/tfcs.json') as f:
             if nome:
                 aluno, _ = Aluno.objects.get_or_create(
                     nome=nome,
-                    numero_aluno=f"temp_{nome[:5]}"
+                    defaults={
+                        "numero_aluno": str(uuid.uuid4())[:8],
+                        "licenciatura": licenciatura
+                    }
                 )
-                tfc.autores.add(aluno)
 
 
         orientadores = info.get('orientadores', '').split(';')
@@ -108,9 +110,13 @@ with open('data/tfcs.json') as f:
             if nome:
                 prof, _ = Professor.objects.get_or_create(
                     nome=nome,
-                    numero_professor=f"temp_{nome[:5]}"
+                    defaults={
+                        "numero_professor": str(uuid.uuid4())[:8]
+                    }
                 )
-                tfc.orientadores.add(prof)
+
+                prof.licenciaturas.add(licenciatura)
+
 
         
         tecnologias = info.get('tecnologias_usadas', '').split(';')
