@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "loja",
     "festivais",
     "portfolio",
-    "escola_online"
+    "escola_online",
+    "pessoasAPI",
+    "pokemonAPI"
 ]
 
 MEDIA_URL = '/media/'

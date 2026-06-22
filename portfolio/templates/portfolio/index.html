@@ -1,11 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    oioi
-</body>
-</html>
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<h2>TFCs</h2>
+
+{% for tfc in tfcs %}
+
+<h3>{{ tfc.titulo }}</h3>
+
+{% for autor in tfc.autores.all %}
+    <p>{{ autor.nome }}</p>
+{% empty %}
+    <p>Sem autores</p>
+{% endfor %}
+
+{% for orientador in tfc.orientadores.all %}
+    <p>{{ orientador.nome }}</p>
+{% empty %}
+    <p>Sem orientador</p>
+{% endfor %}
+
+<p>{{ tfc.licenciatura }}</p>
+<p>{{ tfc.sumario }}</p>
+<p>{{ tfc.link_pdf }}</p>
+<p>{{ tfc.imagem }}</p>
+<p>{{ tfc.palavras_chave }}</p>
+<p>{{ tfc.areas }}</p>
+<p>{{ tfc.tecnologias }}</p>
+<p>{{ tfc.rating }}</p>
+
+{% endfor %}
+
+{% endblock %}

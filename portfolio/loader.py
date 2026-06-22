@@ -88,9 +88,7 @@ with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
             rating=info.get('rating', 1)
         )
 
-
         autores = info.get('autores', '').split(';')
-
         for nome in autores:
             nome = nome.strip()
             if nome:
@@ -101,10 +99,9 @@ with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
                         "licenciatura": licenciatura
                     }
                 )
-
+                tfc.autores.add(aluno)
 
         orientadores = info.get('orientadores', '').split(';')
-
         for nome in orientadores:
             nome = nome.strip()
             if nome:
@@ -114,13 +111,9 @@ with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
                         "numero_professor": str(uuid.uuid4())[:8]
                     }
                 )
-
                 prof.licenciaturas.add(licenciatura)
 
-
-        
         tecnologias = info.get('tecnologias_usadas', '').split(';')
-
         for nome in tecnologias:
             nome = nome.strip()
             if nome:

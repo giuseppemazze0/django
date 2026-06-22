@@ -20,6 +20,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import HttpResponse
+from pessoasAPI.api import api as pessoasAPI
+from pokemonAPI.api import api as pokemonAPI
 
 
 urlpatterns = [
@@ -27,4 +29,6 @@ urlpatterns = [
     path("", include("portfolio.urls")),
     path("escola-online/", include("escola_online.urls")),
     path("admin/", admin.site.urls),
+    #path("pessoas-api/", pessoasAPI.urls),
+    path("pokemon-api/", pokemonAPI.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
