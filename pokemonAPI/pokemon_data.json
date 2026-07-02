@@ -1,0 +1,1603 @@
+{
+  "tipagens": [
+    {"nome": "Normal"},
+    {"nome": "Fogo"},
+    {"nome": "Água"},
+    {"nome": "Planta"},
+    {"nome": "Elétrico"},
+    {"nome": "Gelo"},
+    {"nome": "Lutador"},
+    {"nome": "Veneno"},
+    {"nome": "Terra"},
+    {"nome": "Voador"},
+    {"nome": "Psíquico"},
+    {"nome": "Inseto"},
+    {"nome": "Pedra"},
+    {"nome": "Fantasma"},
+    {"nome": "Dragão"}
+  ],
+  "habitats": [
+    {
+      "nome": "Floresta",
+      "descricao": "Áreas densamente arborizadas com muita vegetação, sombra e umidade. Lar de Pokémons do tipo Planta, Inseto e alguns do tipo Normal."
+    },
+    {
+      "nome": "Planície",
+      "descricao": "Campos abertos com grama baixa e pouca cobertura. Habitat comum para Pokémons do tipo Normal e Elétrico."
+    },
+    {
+      "nome": "Caverna",
+      "descricao": "Grutas e cavernas subterrâneas escuras e úmidas. Frequentadas por Pokémons do tipo Pedra, Terra e Fantasma."
+    },
+    {
+      "nome": "Montanha",
+      "descricao": "Regiões elevadas com rochas e ventos fortes. Habitat de Pokémons do tipo Pedra, Voador e Dragão."
+    },
+    {
+      "nome": "Mar",
+      "descricao": "Oceanos e mares profundos com vastas extensões de água salgada. Lar de Pokémons do tipo Água."
+    },
+    {
+      "nome": "Lago",
+      "descricao": "Corpos d'água doce como lagos e rios. Habitat de Pokémons do tipo Água e alguns do tipo Planta."
+    },
+    {
+      "nome": "Urbano",
+      "descricao": "Cidades e vilas construídas por humanos. Pokémons adaptados à convivência com pessoas habitam este local."
+    },
+    {
+      "nome": "Pântano",
+      "descricao": "Áreas alagadas com lama e vegetação densa. Habitat de Pokémons do tipo Veneno e Água."
+    },
+    {
+      "nome": "Vulcão",
+      "descricao": "Regiões vulcânicas com lava e altas temperaturas. Exclusivo para Pokémons do tipo Fogo resistentes ao calor extremo."
+    },
+    {
+      "nome": "Céu",
+      "descricao": "As camadas superiores da atmosfera onde apenas Pokémons do tipo Voador e alguns Psíquicos conseguem habitar."
+    },
+    {
+      "nome": "Tundra",
+      "descricao": "Regiões geladas com neve e temperaturas extremamente baixas. Habitat natural de Pokémons do tipo Gelo."
+    },
+    {
+      "nome": "Ruínas",
+      "descricao": "Antigas estruturas abandonadas e templos em ruínas. Local misterioso frequentado por Pokémons do tipo Psíquico e Fantasma."
+    }
+  ],
+  "treinadores": [
+    {"nome": "Ash", "cidade": "Pallet Town", "idade": 10},
+    {"nome": "Misty", "cidade": "Cerulean City", "idade": 10},
+    {"nome": "Brock", "cidade": "Pewter City", "idade": 15},
+    {"nome": "Gary", "cidade": "Pallet Town", "idade": 10},
+    {"nome": "Giovanni", "cidade": "Viridian City", "idade": 42},
+    {"nome": "Erika", "cidade": "Celadon City", "idade": 18},
+    {"nome": "Sabrina", "cidade": "Saffron City", "idade": 20},
+    {"nome": "Blaine", "cidade": "Cinnabar Island", "idade": 58},
+    {"nome": "Lt. Surge", "cidade": "Vermilion City", "idade": 35},
+    {"nome": "Koga", "cidade": "Fuchsia City", "idade": 40},
+    {"nome": "Lorelei", "cidade": "One Island", "idade": 30},
+    {"nome": "Bruno", "cidade": "Two Island", "idade": 28},
+    {"nome": "Agatha", "cidade": "Viridian City", "idade": 70},
+    {"nome": "Lance", "cidade": "Blackthorn City", "idade": 25},
+    {"nome": "Blue", "cidade": "Pallet Town", "idade": 11},
+    {"nome": "Red", "cidade": "Pallet Town", "idade": 11},
+    {"nome": "Clemont", "cidade": "Lumiose City", "idade": 14},
+    {"nome": "Tracey", "cidade": "Orange Islands", "idade": 13},
+    {"nome": "Cynthia", "cidade": "Celestic Town", "idade": 26},
+    {"nome": "Bill", "cidade": "Cerulean City", "idade": 22}
+  ],
+  "pokemons": [
+    {
+      "nome": "Bulbasaur",
+      "numero_pokedex": 1,
+      "altura": 0.70,
+      "peso": 6.90,
+      "descricao": "Um estranho semente foi plantada em suas costas ao nascer. A semente cresce junto com este Pokémon.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Ivysaur",
+      "numero_pokedex": 2,
+      "altura": 1.00,
+      "peso": 13.00,
+      "descricao": "Quando o bulbo nas suas costas cresce, parece perder a capacidade de ficar de pé nas patas traseiras.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Venusaur",
+      "numero_pokedex": 3,
+      "altura": 2.00,
+      "peso": 100.00,
+      "descricao": "A planta floresce quando está absorvendo energia solar. Ela fica em movimento para buscar a luz do sol.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Charmander",
+      "numero_pokedex": 4,
+      "altura": 0.60,
+      "peso": 8.50,
+      "descricao": "Obviamente prefere lugares quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Montanha", "Vulcão"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Charmeleon",
+      "numero_pokedex": 5,
+      "altura": 1.10,
+      "peso": 19.00,
+      "descricao": "Quando balança sua cauda ardente, eleva a temperatura ambiente a níveis desconfortáveis.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Montanha", "Vulcão"],
+      "treinador": null
+    },
+    {
+      "nome": "Charizard",
+      "numero_pokedex": 6,
+      "altura": 1.70,
+      "peso": 90.50,
+      "descricao": "Cospe fogo tão quente que derrete pedras. Causa incêndios florestais sem querer.",
+      "tipagens": ["Fogo", "Voador"],
+      "habitats": ["Montanha", "Vulcão", "Céu"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Squirtle",
+      "numero_pokedex": 7,
+      "altura": 0.50,
+      "peso": 9.00,
+      "descricao": "Após o nascimento, sua carapaça fica mole e vai endurecendo gradualmente. Borrifa espuma poderosa.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Wartortle",
+      "numero_pokedex": 8,
+      "altura": 1.00,
+      "peso": 22.50,
+      "descricao": "Considerado um símbolo de longevidade. Se a cauda estiver manchada, esse Pokémon é muito velho.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Blastoise",
+      "numero_pokedex": 9,
+      "altura": 1.60,
+      "peso": 85.50,
+      "descricao": "Um brutal Pokémon com canhões de água que emergem de sua carapaça. Dispara jatos d'água com precisão.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": "Blue"
+    },
+    {
+      "nome": "Caterpie",
+      "numero_pokedex": 10,
+      "altura": 0.30,
+      "peso": 2.90,
+      "descricao": "Sua antena libera um cheiro terrível para repelir inimigos. Devora folhas maiores que seu corpo.",
+      "tipagens": ["Inseto"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Metapod",
+      "numero_pokedex": 11,
+      "altura": 0.70,
+      "peso": 9.90,
+      "descricao": "Aguarda pacientemente dentro de sua casca dura a hora de evoluir. Sua casca é tão dura quanto aço.",
+      "tipagens": ["Inseto"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Butterfree",
+      "numero_pokedex": 12,
+      "altura": 1.10,
+      "peso": 32.00,
+      "descricao": "Em comparação com sua fase de lagarta, suas asas são mais desenvolvidas. Pode voar mesmo na chuva.",
+      "tipagens": ["Inseto", "Voador"],
+      "habitats": ["Floresta", "Planície", "Céu"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Weedle",
+      "numero_pokedex": 13,
+      "altura": 0.30,
+      "peso": 3.20,
+      "descricao": "Frequentemente encontrado em florestas, comendo folhas. Pica com o ferrão venenoso na cabeça.",
+      "tipagens": ["Inseto", "Veneno"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Kakuna",
+      "numero_pokedex": 14,
+      "altura": 0.60,
+      "peso": 10.00,
+      "descricao": "Quase incapaz de se mover, este Pokémon fica parado esperando evoluir. Às vezes aquece sua casca.",
+      "tipagens": ["Inseto", "Veneno"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Beedrill",
+      "numero_pokedex": 15,
+      "altura": 1.00,
+      "peso": 29.50,
+      "descricao": "Extremamente territorial. Ninguém deve se aproximar de seu ninho ou será atacado por um enxame.",
+      "tipagens": ["Inseto", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Pidgey",
+      "numero_pokedex": 16,
+      "altura": 0.30,
+      "peso": 1.80,
+      "descricao": "Um Pokémon muito dócil. Se atacado, prefere fugir a lutar. Bate as asas para levantar areia.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Floresta", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Pidgeotto",
+      "numero_pokedex": 17,
+      "altura": 1.10,
+      "peso": 30.00,
+      "descricao": "Muito territorial. Patrulha uma área de 100km². Captura presas com suas garras afiadas.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Floresta", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Pidgeot",
+      "numero_pokedex": 18,
+      "altura": 1.50,
+      "peso": 39.50,
+      "descricao": "Suas asas são capazes de criar furacões. Voa tão rápido que é invisível a olho nu.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Floresta", "Céu"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Rattata",
+      "numero_pokedex": 19,
+      "altura": 0.30,
+      "peso": 3.50,
+      "descricao": "Morde tudo com seus dentes afiados. Pode ser encontrado em qualquer lugar, inclusive em cidades.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Raticate",
+      "numero_pokedex": 20,
+      "altura": 0.70,
+      "peso": 18.50,
+      "descricao": "Usa seus bigodes para manter o equilíbrio. Pode roer qualquer coisa com seus dentes superafiados.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Spearow",
+      "numero_pokedex": 21,
+      "altura": 0.30,
+      "peso": 2.00,
+      "descricao": "Come insetos nos campos e pastagens. Grita alto para comunicar perigo ao bando.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Fearow",
+      "numero_pokedex": 22,
+      "altura": 1.20,
+      "peso": 38.00,
+      "descricao": "Reconhecido por seu bico longo e pescoço comprido. Pode voar por um dia inteiro sem pousar.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Ekans",
+      "numero_pokedex": 23,
+      "altura": 2.00,
+      "peso": 6.90,
+      "descricao": "Enrola-se ao descansar para economizar calor. Engole presas inteiras, incluindo ovos de Pokémon.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Arbok",
+      "numero_pokedex": 24,
+      "altura": 3.50,
+      "peso": 65.00,
+      "descricao": "O padrão em sua barriga varia por região. Diz-se que existem seis variações diferentes.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Pikachu",
+      "numero_pokedex": 25,
+      "altura": 0.40,
+      "peso": 6.00,
+      "descricao": "Quando vários desses Pokémons se reúnem, sua eletricidade pode causar tempestades de raios.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Raichu",
+      "numero_pokedex": 26,
+      "altura": 0.80,
+      "peso": 30.00,
+      "descricao": "Sua cauda funciona como aterramento para evitar que se choque com sua própria eletricidade.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Sandshrew",
+      "numero_pokedex": 27,
+      "altura": 0.60,
+      "peso": 12.00,
+      "descricao": "Vive em buracos em regiões áridas. Enrola-se em uma bola quando ameaçado para se proteger.",
+      "tipagens": ["Terra"],
+      "habitats": ["Planície", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Sandslash",
+      "numero_pokedex": 28,
+      "altura": 1.00,
+      "peso": 29.50,
+      "descricao": "Enrola-se em uma bola espinhosa quando atacado. Pode escalar árvores usando suas garras afiadas.",
+      "tipagens": ["Terra"],
+      "habitats": ["Planície", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidoran♀",
+      "numero_pokedex": 29,
+      "altura": 0.40,
+      "peso": 7.00,
+      "descricao": "Embora pequeno, não deve ser subestimado. O chifre em sua testa contém veneno poderoso.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidorina",
+      "numero_pokedex": 30,
+      "altura": 0.80,
+      "peso": 20.00,
+      "descricao": "Quando em grupo, emite ultrassons para se comunicar. Torna-se mais agressiva ao proteger filhotes.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidoqueen",
+      "numero_pokedex": 31,
+      "altura": 1.30,
+      "peso": 60.00,
+      "descricao": "Sua pele espessa e escamosa é como uma armadura. Usa seu corpo robusto para proteger seus filhotes.",
+      "tipagens": ["Veneno", "Terra"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidoran♂",
+      "numero_pokedex": 32,
+      "altura": 0.50,
+      "peso": 9.00,
+      "descricao": "Tem orelhas grandes para detectar sons. O chifre maior que o da fêmea contém veneno mais potente.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidorino",
+      "numero_pokedex": 33,
+      "altura": 0.90,
+      "peso": 19.50,
+      "descricao": "Um Pokémon agressivo que perfura qualquer coisa com seu chifre venenoso. Fica agitado facilmente.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Nidoking",
+      "numero_pokedex": 34,
+      "altura": 1.40,
+      "peso": 62.00,
+      "descricao": "Usa sua cauda poderosa para derrubar inimigos. Seu chifre é forte o suficiente para perfurar diamantes.",
+      "tipagens": ["Veneno", "Terra"],
+      "habitats": ["Planície", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Clefairy",
+      "numero_pokedex": 35,
+      "altura": 0.60,
+      "peso": 7.50,
+      "descricao": "Diz-se que quem vê um Clefairy dançando sob a lua cheia terá boa sorte.",
+      "tipagens": ["Normal"],
+      "habitats": ["Montanha", "Ruínas"],
+      "treinador": null
+    },
+    {
+      "nome": "Clefable",
+      "numero_pokedex": 36,
+      "altura": 1.30,
+      "peso": 40.00,
+      "descricao": "Um Pokémon raro que raramente é visto. Diz-se que corre a 100 km/h quando perseguido.",
+      "tipagens": ["Normal"],
+      "habitats": ["Montanha", "Ruínas"],
+      "treinador": null
+    },
+    {
+      "nome": "Vulpix",
+      "numero_pokedex": 37,
+      "altura": 0.60,
+      "peso": 9.90,
+      "descricao": "Ao nascer, tem uma única cauda branca que se divide em seis conforme cresce.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": null
+    },
+    {
+      "nome": "Ninetales",
+      "numero_pokedex": 38,
+      "altura": 1.10,
+      "peso": 19.90,
+      "descricao": "Diz-se que vive 1000 anos. Cada uma de suas caudas contém um poder místico diferente.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": null
+    },
+    {
+      "nome": "Jigglypuff",
+      "numero_pokedex": 39,
+      "altura": 0.50,
+      "peso": 5.50,
+      "descricao": "Quando começa a cantar, não para até que o inimigo adormeça. Ajusta o ritmo da música conforme necessário.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Wigglytuff",
+      "numero_pokedex": 40,
+      "altura": 1.00,
+      "peso": 12.00,
+      "descricao": "O corpo extremamente elástico pode inflar imensamente. Seus olhos grandes hipnotizam os inimigos.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Zubat",
+      "numero_pokedex": 41,
+      "altura": 0.80,
+      "peso": 7.50,
+      "descricao": "Não possui olhos. Navega e caça usando ultrassons emitidos pela boca.",
+      "tipagens": ["Veneno", "Voador"],
+      "habitats": ["Caverna", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Golbat",
+      "numero_pokedex": 42,
+      "altura": 1.60,
+      "peso": 55.00,
+      "descricao": "Morde com sua boca enorme e suga o sangue da vítima. Pode sugar até 300ml de uma só vez.",
+      "tipagens": ["Veneno", "Voador"],
+      "habitats": ["Caverna", "Céu"],
+      "treinador": "Koga"
+    },
+    {
+      "nome": "Oddish",
+      "numero_pokedex": 43,
+      "altura": 0.50,
+      "peso": 5.40,
+      "descricao": "Durante o dia, enterra-se no solo para absorver nutrientes. À noite, caminha espalhando sementes.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Gloom",
+      "numero_pokedex": 44,
+      "altura": 0.80,
+      "peso": 8.60,
+      "descricao": "O néctar que goteja de sua boca tem um cheiro horrível. Porém, algumas pessoas acham o cheiro agradável.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Vileplume",
+      "numero_pokedex": 45,
+      "altura": 1.20,
+      "peso": 18.60,
+      "descricao": "Tem as maiores pétalas do mundo Pokémon. Libera pólen tóxico que causa espirros e paralisia.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Pântano"],
+      "treinador": "Erika"
+    },
+    {
+      "nome": "Paras",
+      "numero_pokedex": 46,
+      "altura": 0.30,
+      "peso": 5.40,
+      "descricao": "Cogumelos parasitas chamados tochukaso crescem em suas costas. Os cogumelos controlam o Pokémon.",
+      "tipagens": ["Inseto", "Planta"],
+      "habitats": ["Floresta", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Parasect",
+      "numero_pokedex": 47,
+      "altura": 1.00,
+      "peso": 29.50,
+      "descricao": "O cogumelo parasita tomou completamente o controle do hospedeiro. Os olhos ficam brancos e vazios.",
+      "tipagens": ["Inseto", "Planta"],
+      "habitats": ["Floresta", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Venonat",
+      "numero_pokedex": 48,
+      "altura": 1.00,
+      "peso": 30.00,
+      "descricao": "Vive nas sombras de árvores densas. Seus grandes olhos funcionam como radar para caçar insetos à noite.",
+      "tipagens": ["Inseto", "Veneno"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Venomoth",
+      "numero_pokedex": 49,
+      "altura": 1.50,
+      "peso": 12.50,
+      "descricao": "O pó de suas asas é venenoso. Quanto mais escuro o pó, mais forte o veneno.",
+      "tipagens": ["Inseto", "Veneno"],
+      "habitats": ["Floresta", "Céu"],
+      "treinador": "Koga"
+    },
+    {
+      "nome": "Diglett",
+      "numero_pokedex": 50,
+      "altura": 0.20,
+      "peso": 0.80,
+      "descricao": "Vive 1 metro abaixo do solo. Aparece brevemente para comer. Nunca foi visto em sua totalidade.",
+      "tipagens": ["Terra"],
+      "habitats": ["Caverna", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Dugtrio",
+      "numero_pokedex": 51,
+      "altura": 0.70,
+      "peso": 33.30,
+      "descricao": "Três Digletts que evoluíram juntos. Escavam a 100km/h causando terremotos.",
+      "tipagens": ["Terra"],
+      "habitats": ["Caverna", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Meowth",
+      "numero_pokedex": 52,
+      "altura": 0.40,
+      "peso": 4.20,
+      "descricao": "Adora objetos brilhantes. Vagueia à noite para coletar moedas e outros itens reluzentes.",
+      "tipagens": ["Normal"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Persian",
+      "numero_pokedex": 53,
+      "altura": 1.00,
+      "peso": 32.00,
+      "descricao": "Embora elegante, pode atacar sem aviso. A joia em sua testa brilha quando está prestes a atacar.",
+      "tipagens": ["Normal"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": "Giovanni"
+    },
+    {
+      "nome": "Psyduck",
+      "numero_pokedex": 54,
+      "altura": 0.80,
+      "peso": 19.60,
+      "descricao": "Sofre de dores de cabeça constantes. Quando a dor é insuportável, libera poderes psíquicos.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Pântano"],
+      "treinador": "Misty"
+    },
+    {
+      "nome": "Golduck",
+      "numero_pokedex": 55,
+      "altura": 1.70,
+      "peso": 76.60,
+      "descricao": "Nada mais rápido que qualquer nadador humano. A joia em sua testa brilha quando usa poderes psíquicos.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Mankey",
+      "numero_pokedex": 56,
+      "altura": 0.50,
+      "peso": 28.00,
+      "descricao": "Fica furioso por qualquer razão. Quando começa a tremer, é melhor fugir imediatamente.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": null
+    },
+    {
+      "nome": "Primeape",
+      "numero_pokedex": 57,
+      "altura": 1.00,
+      "peso": 32.00,
+      "descricao": "Nunca para de perseguir seu alvo. Diz-se que morre de raiva se não conseguir capturar a presa.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": "Bruno"
+    },
+    {
+      "nome": "Growlithe",
+      "numero_pokedex": 58,
+      "altura": 0.70,
+      "peso": 19.00,
+      "descricao": "Muito leal ao seu treinador. Ladra para afastar intrusos e não abandona seu posto.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Arcanine",
+      "numero_pokedex": 59,
+      "altura": 1.90,
+      "peso": 15.50,
+      "descricao": "Conhecido por sua velocidade lendária. Corre 10.000km em apenas 24 horas.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Poliwag",
+      "numero_pokedex": 60,
+      "altura": 0.60,
+      "peso": 12.40,
+      "descricao": "A espiral em sua barriga são seus órgãos internos visíveis através da pele fina.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Poliwhirl",
+      "numero_pokedex": 61,
+      "altura": 1.00,
+      "peso": 20.00,
+      "descricao": "A espiral em sua barriga hipnotiza os inimigos. Pode viver tanto na água quanto em terra.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Poliwrath",
+      "numero_pokedex": 62,
+      "altura": 1.30,
+      "peso": 54.00,
+      "descricao": "Seus músculos poderosos permitem nadar contra correntes fortes. Usa socos poderosos na batalha.",
+      "tipagens": ["Água", "Lutador"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Abra",
+      "numero_pokedex": 63,
+      "altura": 0.90,
+      "peso": 19.50,
+      "descricao": "Dorme 18 horas por dia. Usa telepatia mesmo dormindo para escapar de perigos.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Ruínas"],
+      "treinador": null
+    },
+    {
+      "nome": "Kadabra",
+      "numero_pokedex": 64,
+      "altura": 1.30,
+      "peso": 56.50,
+      "descricao": "Emite ondas alfa que causam dores de cabeça. Carrega uma colher que dobrou com seus poderes.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Ruínas"],
+      "treinador": null
+    },
+    {
+      "nome": "Alakazam",
+      "numero_pokedex": 65,
+      "altura": 1.50,
+      "peso": 48.00,
+      "descricao": "Possui um QI de 5000. Pode memorizar tudo o que aconteceu desde seu nascimento.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Ruínas"],
+      "treinador": "Sabrina"
+    },
+    {
+      "nome": "Machop",
+      "numero_pokedex": 66,
+      "altura": 0.80,
+      "peso": 19.50,
+      "descricao": "Treina levantando Gravelers. Nunca se cansa por ter músculos especiais que não acumulam ácido lático.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Machoke",
+      "numero_pokedex": 67,
+      "altura": 1.50,
+      "peso": 70.50,
+      "descricao": "Usa seu cinto de poder para controlar sua força. Ajuda humanos com trabalhos pesados.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Machamp",
+      "numero_pokedex": 68,
+      "altura": 1.60,
+      "peso": 13.00,
+      "descricao": "Pode desferir 1000 socos em 2 segundos. Seus quatro braços permitem atacar de todos os ângulos.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": "Bruno"
+    },
+    {
+      "nome": "Bellsprout",
+      "numero_pokedex": 69,
+      "altura": 0.70,
+      "peso": 4.00,
+      "descricao": "Prefere solos quentes e úmidos. Sua boca pode cuspir ácido que dissolve ferro.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Weepinbell",
+      "numero_pokedex": 70,
+      "altura": 1.00,
+      "peso": 6.40,
+      "descricao": "Quando está com fome, balança o gancho em sua cabeça para capturar presas e dissolve com ácido.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Victreebel",
+      "numero_pokedex": 71,
+      "altura": 1.70,
+      "peso": 15.50,
+      "descricao": "Usa um aroma doce para atrair presas para dentro de sua boca e as dissolve com ácido.",
+      "tipagens": ["Planta", "Veneno"],
+      "habitats": ["Floresta", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Tentacool",
+      "numero_pokedex": 72,
+      "altura": 0.90,
+      "peso": 45.50,
+      "descricao": "Seu corpo é 99% água. Reflete a luz solar com os cristais em seu corpo para se comunicar.",
+      "tipagens": ["Água", "Veneno"],
+      "habitats": ["Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Tentacruel",
+      "numero_pokedex": 73,
+      "altura": 1.60,
+      "peso": 55.00,
+      "descricao": "Possui até 80 tentáculos que podem se estender para capturar presas. Injeta veneno paralisante.",
+      "tipagens": ["Água", "Veneno"],
+      "habitats": ["Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Geodude",
+      "numero_pokedex": 74,
+      "altura": 0.40,
+      "peso": 20.00,
+      "descricao": "Encontrado em campos de montanha. Fica tão imóvel que é frequentemente confundido com uma pedra.",
+      "tipagens": ["Pedra", "Terra"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Graveler",
+      "numero_pokedex": 75,
+      "altura": 1.00,
+      "peso": 10.50,
+      "descricao": "Rola por montanhas destruindo tudo no caminho. Come pedras para se alimentar.",
+      "tipagens": ["Pedra", "Terra"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Golem",
+      "numero_pokedex": 76,
+      "altura": 1.40,
+      "peso": 30.00,
+      "descricao": "Troca sua casca uma vez por ano. A casca velha se desfaz em pó inofensivo.",
+      "tipagens": ["Pedra", "Terra"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": "Brock"
+    },
+    {
+      "nome": "Ponyta",
+      "numero_pokedex": 77,
+      "altura": 1.00,
+      "peso": 30.00,
+      "descricao": "Sua juba é feita de fogo. Nasce fraco mas fica mais forte a cada vez que cai e se levanta.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Vulcão"],
+      "treinador": null
+    },
+    {
+      "nome": "Rapidash",
+      "numero_pokedex": 78,
+      "altura": 1.70,
+      "peso": 95.00,
+      "descricao": "Corre a 240km/h. Quanto mais rápido corre, mais suas chamas se intensificam.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Vulcão"],
+      "treinador": null
+    },
+    {
+      "nome": "Slowpoke",
+      "numero_pokedex": 79,
+      "altura": 1.20,
+      "peso": 36.00,
+      "descricao": "Extremamente lento e distraído. Demora 5 segundos para sentir dor quando é mordido.",
+      "tipagens": ["Água", "Psíquico"],
+      "habitats": ["Lago", "Pântano"],
+      "treinador": null
+    },
+    {
+      "nome": "Slowbro",
+      "numero_pokedex": 80,
+      "altura": 1.60,
+      "peso": 78.50,
+      "descricao": "O Shellder em sua cauda injeta toxinas que estimulam seu cérebro, tornando-o mais inteligente.",
+      "tipagens": ["Água", "Psíquico"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Magnemite",
+      "numero_pokedex": 81,
+      "altura": 0.30,
+      "peso": 6.00,
+      "descricao": "Flutua no ar usando eletromagnetismo. Alimenta-se de eletricidade de postes de luz.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Magneton",
+      "numero_pokedex": 82,
+      "altura": 1.00,
+      "peso": 60.00,
+      "descricao": "Três Magnemites unidos por forças magnéticas. Emite campos eletromagnéticos que interferem em eletrônicos.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Farfetch'd",
+      "numero_pokedex": 83,
+      "altura": 0.80,
+      "peso": 15.00,
+      "descricao": "Nunca se separa do talo de cebolinha que carrega. Usa-o como arma e também como alimento.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície", "Floresta", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Doduo",
+      "numero_pokedex": 84,
+      "altura": 1.40,
+      "peso": 39.20,
+      "descricao": "Um Pokémon de duas cabeças que corre a 90km/h. As duas cabeças raramente pensam a mesma coisa.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Dodrio",
+      "numero_pokedex": 85,
+      "altura": 1.80,
+      "peso": 85.20,
+      "descricao": "Três cabeças que representam tristeza, alegria e raiva. Nunca dorme, pois uma cabeça sempre vigia.",
+      "tipagens": ["Normal", "Voador"],
+      "habitats": ["Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Seel",
+      "numero_pokedex": 86,
+      "altura": 1.10,
+      "peso": 90.00,
+      "descricao": "Adora ambientes frios. Nada sob o gelo usando o chifre na cabeça para abrir buracos.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar", "Tundra"],
+      "treinador": null
+    },
+    {
+      "nome": "Dewgong",
+      "numero_pokedex": 87,
+      "altura": 1.70,
+      "peso": 12.00,
+      "descricao": "Nada graciosamente em águas geladas. Quanto mais fria a temperatura, mais ativo fica.",
+      "tipagens": ["Água", "Gelo"],
+      "habitats": ["Mar", "Tundra"],
+      "treinador": "Lorelei"
+    },
+    {
+      "nome": "Grimer",
+      "numero_pokedex": 88,
+      "altura": 0.90,
+      "peso": 30.00,
+      "descricao": "Formado por lama tóxica. Onde passa, não cresce mais nenhuma planta por anos.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Pântano", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Muk",
+      "numero_pokedex": 89,
+      "altura": 1.20,
+      "peso": 30.00,
+      "descricao": "Seu corpo é uma massa de venenos concentrados. Apenas tocar nele causa doenças graves.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Pântano", "Urbano"],
+      "treinador": "Koga"
+    },
+    {
+      "nome": "Shellder",
+      "numero_pokedex": 90,
+      "altura": 0.30,
+      "peso": 4.00,
+      "descricao": "Fecha sua concha quando dorme para se proteger. A língua é o único ponto fraco.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Cloyster",
+      "numero_pokedex": 91,
+      "altura": 1.50,
+      "peso": 13.25,
+      "descricao": "Uma vez fechada, sua concha não pode ser aberta nem com explosivos. Dispara espinhos como projéteis.",
+      "tipagens": ["Água", "Gelo"],
+      "habitats": ["Mar"],
+      "treinador": "Lorelei"
+    },
+    {
+      "nome": "Gastly",
+      "numero_pokedex": 92,
+      "altura": 1.30,
+      "peso": 0.10,
+      "descricao": "Composto por gases tóxicos. Pode envolver e sufocar um Pokémon grande em dois segundos.",
+      "tipagens": ["Fantasma", "Veneno"],
+      "habitats": ["Ruínas", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Haunter",
+      "numero_pokedex": 93,
+      "altura": 1.60,
+      "peso": 0.10,
+      "descricao": "Esconde-se nas sombras e espera por presas. Tocar nele causa tremores incontroláveis.",
+      "tipagens": ["Fantasma", "Veneno"],
+      "habitats": ["Ruínas", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Gengar",
+      "numero_pokedex": 94,
+      "altura": 1.50,
+      "peso": 40.50,
+      "descricao": "Esconde-se nas sombras de quartos e rouba o calor corporal das vítimas. Adora assustar pessoas.",
+      "tipagens": ["Fantasma", "Veneno"],
+      "habitats": ["Ruínas", "Caverna"],
+      "treinador": "Agatha"
+    },
+    {
+      "nome": "Onix",
+      "numero_pokedex": 95,
+      "altura": 8.80,
+      "peso": 99.99,
+      "descricao": "Escava a 80km/h criando túneis. Seu corpo é feito de pedras que ficam mais duras com a idade.",
+      "tipagens": ["Pedra", "Terra"],
+      "habitats": ["Montanha", "Caverna"],
+      "treinador": "Brock"
+    },
+    {
+      "nome": "Drowzee",
+      "numero_pokedex": 96,
+      "altura": 1.00,
+      "peso": 32.40,
+      "descricao": "Adormece as vítimas e come seus sonhos. Prefere sonhos de crianças por serem mais saborosos.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Ruínas"],
+      "treinador": null
+    },
+    {
+      "nome": "Hypno",
+      "numero_pokedex": 97,
+      "altura": 1.60,
+      "peso": 75.60,
+      "descricao": "Balança seu pêndulo para hipnotizar qualquer ser. Carrega o pêndulo sempre consigo.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Ruínas"],
+      "treinador": "Sabrina"
+    },
+    {
+      "nome": "Krabby",
+      "numero_pokedex": 98,
+      "altura": 0.40,
+      "peso": 6.50,
+      "descricao": "Vive nas praias. Usa suas pinças para escavar buracos na areia onde se esconde.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar", "Lago"],
+      "treinador": null
+    },
+    {
+      "nome": "Kingler",
+      "numero_pokedex": 99,
+      "altura": 1.30,
+      "peso": 60.00,
+      "descricao": "Sua pinça enorme tem força de 10.000 cavalos. Porém, é tão pesada que dificulta o movimento.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Voltorb",
+      "numero_pokedex": 100,
+      "altura": 0.50,
+      "peso": 10.40,
+      "descricao": "Parece uma Pokébola. Explode ao menor toque. Ninguém sabe como surgiu.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Electrode",
+      "numero_pokedex": 101,
+      "altura": 1.20,
+      "peso": 66.60,
+      "descricao": "Explode por qualquer razão. Quanto mais energia absorve, mais instável e explosivo fica.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Urbano", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Exeggcute",
+      "numero_pokedex": 102,
+      "altura": 0.40,
+      "peso": 2.50,
+      "descricao": "Embora pareçam ovos, são sementes de Pokémon. Comunicam-se telepaticamente entre si.",
+      "tipagens": ["Planta", "Psíquico"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Exeggutor",
+      "numero_pokedex": 103,
+      "altura": 2.00,
+      "peso": 12.00,
+      "descricao": "Cada cabeça tem sua própria vontade. Quando discordam, uma cai e se torna um Exeggcute.",
+      "tipagens": ["Planta", "Psíquico"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Cubone",
+      "numero_pokedex": 104,
+      "altura": 0.40,
+      "peso": 6.50,
+      "descricao": "Usa o crânio de sua mãe morta como capacete. Chora à noite olhando para a lua.",
+      "tipagens": ["Terra"],
+      "habitats": ["Planície", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Marowak",
+      "numero_pokedex": 105,
+      "altura": 1.00,
+      "peso": 45.00,
+      "descricao": "Superou o luto pela mãe e tornou-se feroz. Usa o osso como bumerangue com precisão letal.",
+      "tipagens": ["Terra"],
+      "habitats": ["Planície", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Hitmonlee",
+      "numero_pokedex": 106,
+      "altura": 1.50,
+      "peso": 49.80,
+      "descricao": "Suas pernas se estendem ao dobro do tamanho para chutar. Após a batalha, as massageia cuidadosamente.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": "Bruno"
+    },
+    {
+      "nome": "Hitmonchan",
+      "numero_pokedex": 107,
+      "altura": 1.40,
+      "peso": 50.20,
+      "descricao": "Seus socos são tão rápidos que são invisíveis. Usa socos elementais de fogo, gelo e raio.",
+      "tipagens": ["Lutador"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": "Bruno"
+    },
+    {
+      "nome": "Lickitung",
+      "numero_pokedex": 108,
+      "altura": 1.20,
+      "peso": 65.50,
+      "descricao": "Sua língua tem o dobro de seu tamanho corporal. Usa a língua para explorar o ambiente.",
+      "tipagens": ["Normal"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Koffing",
+      "numero_pokedex": 109,
+      "altura": 0.60,
+      "peso": 1.00,
+      "descricao": "Seu corpo é cheio de gases tóxicos. Flutua levemente e vaza gases continuamente.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Pântano", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Weezing",
+      "numero_pokedex": 110,
+      "altura": 1.20,
+      "peso": 9.50,
+      "descricao": "Dois Koffings fundidos. Alterna entre inflar e murchar para se mover. Adora gases fedorentos.",
+      "tipagens": ["Veneno"],
+      "habitats": ["Pântano", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Rhyhorn",
+      "numero_pokedex": 111,
+      "altura": 1.00,
+      "peso": 11.50,
+      "descricao": "Corre em linha reta destruindo tudo. Tem memória tão curta que esquece o que estava fazendo.",
+      "tipagens": ["Terra", "Pedra"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": null
+    },
+    {
+      "nome": "Rhydon",
+      "numero_pokedex": 112,
+      "altura": 1.90,
+      "peso": 12.00,
+      "descricao": "Pode destruir prédios com um golpe de cauda. Seu chifre perfura diamantes com facilidade.",
+      "tipagens": ["Terra", "Pedra"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": null
+    },
+    {
+      "nome": "Chansey",
+      "numero_pokedex": 113,
+      "altura": 1.10,
+      "peso": 34.60,
+      "descricao": "Um Pokémon gentil e raro. Compartilha seus ovos nutritivos com pessoas feridas.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Tangela",
+      "numero_pokedex": 114,
+      "altura": 1.00,
+      "peso": 35.00,
+      "descricao": "Seu corpo é completamente coberto por vinhas azuis. Ninguém sabe como é seu rosto.",
+      "tipagens": ["Planta"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Kangaskhan",
+      "numero_pokedex": 115,
+      "altura": 2.20,
+      "peso": 80.00,
+      "descricao": "Sempre carrega seu filhote na bolsa. Nunca abandona o filhote mesmo em batalha.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Horsea",
+      "numero_pokedex": 116,
+      "altura": 0.40,
+      "peso": 8.00,
+      "descricao": "Usa sua cauda enrolada para se ancorar em corais. Cospe tinta para confundir inimigos.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Seadra",
+      "numero_pokedex": 117,
+      "altura": 1.20,
+      "peso": 25.00,
+      "descricao": "Pode nadar de ré com a mesma velocidade que para frente. Seus espinhos são venenosos.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar"],
+      "treinador": "Misty"
+    },
+    {
+      "nome": "Goldeen",
+      "numero_pokedex": 118,
+      "altura": 0.60,
+      "peso": 15.00,
+      "descricao": "Nada graciosamente como uma bailarina. Seu chifre é poderoso o suficiente para perfurar barcos.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Seaking",
+      "numero_pokedex": 119,
+      "altura": 1.30,
+      "peso": 39.00,
+      "descricao": "No outono, nada contra correntezas fortes para desovar. O macho protege os ovos por mais de um mês.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Staryu",
+      "numero_pokedex": 120,
+      "altura": 0.80,
+      "peso": 34.50,
+      "descricao": "O núcleo vermelho no centro brilha à noite. Pode regenerar qualquer parte do corpo.",
+      "tipagens": ["Água"],
+      "habitats": ["Mar"],
+      "treinador": "Misty"
+    },
+    {
+      "nome": "Starmie",
+      "numero_pokedex": 121,
+      "altura": 1.10,
+      "peso": 80.00,
+      "descricao": "O núcleo misterioso emite luz de sete cores. Diz-se que se comunica com seres do espaço.",
+      "tipagens": ["Água", "Psíquico"],
+      "habitats": ["Mar"],
+      "treinador": "Misty"
+    },
+    {
+      "nome": "Mr. Mime",
+      "numero_pokedex": 122,
+      "altura": 1.30,
+      "peso": 54.50,
+      "descricao": "Mestre da mímica. Pode criar paredes invisíveis sólidas com seus gestos.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": null
+    },
+    {
+      "nome": "Scyther",
+      "numero_pokedex": 123,
+      "altura": 1.50,
+      "peso": 56.00,
+      "descricao": "Move-se tão rápido que parece invisível. Suas lâminas cortam qualquer coisa com facilidade.",
+      "tipagens": ["Inseto", "Voador"],
+      "habitats": ["Floresta", "Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Jynx",
+      "numero_pokedex": 124,
+      "altura": 1.40,
+      "peso": 40.60,
+      "descricao": "Dança ritmicamente e faz quem a vê dançar junto involuntariamente. Fala em linguagem humana.",
+      "tipagens": ["Gelo", "Psíquico"],
+      "habitats": ["Tundra", "Urbano"],
+      "treinador": "Lorelei"
+    },
+    {
+      "nome": "Electabuzz",
+      "numero_pokedex": 125,
+      "altura": 1.10,
+      "peso": 30.00,
+      "descricao": "Aparece durante tempestades elétricas. Absorve raios e os usa em batalha.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Planície", "Montanha"],
+      "treinador": "Lt. Surge"
+    },
+    {
+      "nome": "Magmar",
+      "numero_pokedex": 126,
+      "altura": 1.30,
+      "peso": 44.50,
+      "descricao": "Nasceu em um vulcão ativo. Seu corpo irradia calor intenso que distorce o ar ao redor.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Vulcão", "Montanha"],
+      "treinador": "Blaine"
+    },
+    {
+      "nome": "Pinsir",
+      "numero_pokedex": 127,
+      "altura": 1.50,
+      "peso": 55.00,
+      "descricao": "Usa seus chifres para agarrar e esmagar inimigos. Pode levantar pesos 10 vezes maiores que o seu.",
+      "tipagens": ["Inseto"],
+      "habitats": ["Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Tauros",
+      "numero_pokedex": 128,
+      "altura": 1.40,
+      "peso": 88.40,
+      "descricao": "Um Pokémon selvagem e agressivo. Corre em alta velocidade e ataca com seus três rabos.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Magikarp",
+      "numero_pokedex": 129,
+      "altura": 0.90,
+      "peso": 10.00,
+      "descricao": "Considerado o Pokémon mais inútil. Só consegue pular. Mas sua evolução é devastadora.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Gyarados",
+      "numero_pokedex": 130,
+      "altura": 6.50,
+      "peso": 23.50,
+      "descricao": "Após evoluir, torna-se extremamente violento. Pode destruir cidades inteiras em fúria.",
+      "tipagens": ["Água", "Voador"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": "Misty"
+    },
+    {
+      "nome": "Lapras",
+      "numero_pokedex": 131,
+      "altura": 2.50,
+      "peso": 22.00,
+      "descricao": "Transporta pessoas pelo mar. Inteligente e gentil, comunica-se cantando melodias.",
+      "tipagens": ["Água", "Gelo"],
+      "habitats": ["Mar", "Tundra"],
+      "treinador": "Ash"
+    },
+    {
+      "nome": "Ditto",
+      "numero_pokedex": 132,
+      "altura": 0.30,
+      "peso": 4.00,
+      "descricao": "Pode transformar-se em qualquer coisa. Quando dorme, assume sua forma original.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Eevee",
+      "numero_pokedex": 133,
+      "altura": 0.30,
+      "peso": 6.50,
+      "descricao": "Possui um código genético instável que permite evoluir de várias formas dependendo do ambiente.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Urbano"],
+      "treinador": "Gary"
+    },
+    {
+      "nome": "Vaporeon",
+      "numero_pokedex": 134,
+      "altura": 1.00,
+      "peso": 29.00,
+      "descricao": "Evoluiu para se adaptar à vida aquática. Pode se dissolver na água e tornar-se invisível.",
+      "tipagens": ["Água"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Jolteon",
+      "numero_pokedex": 135,
+      "altura": 0.80,
+      "peso": 24.50,
+      "descricao": "Acumula eletricidade estática em seu pelo. Pode disparar agulhas elétricas de seu corpo.",
+      "tipagens": ["Elétrico"],
+      "habitats": ["Planície"],
+      "treinador": null
+    },
+    {
+      "nome": "Flareon",
+      "numero_pokedex": 136,
+      "altura": 0.90,
+      "peso": 25.00,
+      "descricao": "Armazena calor em sua bolsa de fogo interna. Pode expelir chamas a 1700°C.",
+      "tipagens": ["Fogo"],
+      "habitats": ["Planície", "Vulcão"],
+      "treinador": null
+    },
+    {
+      "nome": "Porygon",
+      "numero_pokedex": 137,
+      "altura": 0.80,
+      "peso": 36.50,
+      "descricao": "O primeiro Pokémon criado artificialmente por computador. Pode entrar no ciberespaço.",
+      "tipagens": ["Normal"],
+      "habitats": ["Urbano"],
+      "treinador": "Bill"
+    },
+    {
+      "nome": "Omanyte",
+      "numero_pokedex": 138,
+      "altura": 0.40,
+      "peso": 7.50,
+      "descricao": "Um Pokémon fóssil ressuscitado. Usava seus tentáculos para se mover pelo fundo do mar antigo.",
+      "tipagens": ["Pedra", "Água"],
+      "habitats": ["Mar", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Omastar",
+      "numero_pokedex": 139,
+      "altura": 1.00,
+      "peso": 35.00,
+      "descricao": "Extinto por ter sua concha pesada demais para se mover. Ressuscitado de fósseis.",
+      "tipagens": ["Pedra", "Água"],
+      "habitats": ["Mar", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Kabuto",
+      "numero_pokedex": 140,
+      "altura": 0.50,
+      "peso": 11.50,
+      "descricao": "Um fóssil ressuscitado que sobreviveu por 300 milhões de anos sem evoluir.",
+      "tipagens": ["Pedra", "Água"],
+      "habitats": ["Mar", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Kabutops",
+      "numero_pokedex": 141,
+      "altura": 1.30,
+      "peso": 40.50,
+      "descricao": "Usava suas foices para cortar presas e absorver seus fluidos. Era um predador temível.",
+      "tipagens": ["Pedra", "Água"],
+      "habitats": ["Mar", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Aerodactyl",
+      "numero_pokedex": 142,
+      "altura": 1.80,
+      "peso": 59.00,
+      "descricao": "Um Pokémon pré-histórico ressuscitado de âmbar. Voava pelos céus da era dos dinossauros.",
+      "tipagens": ["Pedra", "Voador"],
+      "habitats": ["Montanha", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Snorlax",
+      "numero_pokedex": 143,
+      "altura": 2.10,
+      "peso": 46.00,
+      "descricao": "Come 400kg de comida por dia e dorme o resto do tempo. Nada o acorda exceto a Flauta Pokémon.",
+      "tipagens": ["Normal"],
+      "habitats": ["Planície", "Floresta"],
+      "treinador": null
+    },
+    {
+      "nome": "Articuno",
+      "numero_pokedex": 144,
+      "altura": 1.70,
+      "peso": 55.40,
+      "descricao": "Um Pokémon lendário que congela a água ao redor. Aparece para ajudar viajantes perdidos no frio.",
+      "tipagens": ["Gelo", "Voador"],
+      "habitats": ["Tundra", "Montanha", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Zapdos",
+      "numero_pokedex": 145,
+      "altura": 1.60,
+      "peso": 52.60,
+      "descricao": "Um Pokémon lendário que vive em nuvens de tempestade. Ganha poder ao ser atingido por raios.",
+      "tipagens": ["Elétrico", "Voador"],
+      "habitats": ["Montanha", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Moltres",
+      "numero_pokedex": 146,
+      "altura": 2.00,
+      "peso": 60.00,
+      "descricao": "Um Pokémon lendário de fogo. Diz-se que seu aparecimento marca a chegada do verão.",
+      "tipagens": ["Fogo", "Voador"],
+      "habitats": ["Vulcão", "Montanha", "Céu"],
+      "treinador": null
+    },
+    {
+      "nome": "Dratini",
+      "numero_pokedex": 147,
+      "altura": 1.80,
+      "peso": 3.30,
+      "descricao": "Considerado uma lenda por muito tempo. Vive no fundo de lagos e rios, trocando de pele ao crescer.",
+      "tipagens": ["Dragão"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": null
+    },
+    {
+      "nome": "Dragonair",
+      "numero_pokedex": 148,
+      "altura": 4.00,
+      "peso": 16.50,
+      "descricao": "Diz-se que pode mudar o clima à vontade. Os cristais em seu corpo emitem uma aura misteriosa.",
+      "tipagens": ["Dragão"],
+      "habitats": ["Lago", "Mar"],
+      "treinador": "Lance"
+    },
+    {
+      "nome": "Dragonite",
+      "numero_pokedex": 149,
+      "altura": 2.20,
+      "peso": 21.00,
+      "descricao": "Pode voar ao redor do globo em 16 horas. Inteligente como um humano, guia navios perdidos.",
+      "tipagens": ["Dragão", "Voador"],
+      "habitats": ["Mar", "Céu"],
+      "treinador": "Lance"
+    },
+    {
+      "nome": "Mewtwo",
+      "numero_pokedex": 150,
+      "altura": 2.00,
+      "peso": 12.20,
+      "descricao": "Criado geneticamente a partir do DNA de Mew. O Pokémon mais poderoso já criado. Não possui sentimentos.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Ruínas", "Caverna"],
+      "treinador": null
+    },
+    {
+      "nome": "Mew",
+      "numero_pokedex": 151,
+      "altura": 0.40,
+      "peso": 4.00,
+      "descricao": "Diz-se que contém o DNA de todos os Pokémons. Extremamente raro, poucos o viram.",
+      "tipagens": ["Psíquico"],
+      "habitats": ["Ruínas", "Floresta"],
+      "treinador": null
+    }
+  ]
+}
