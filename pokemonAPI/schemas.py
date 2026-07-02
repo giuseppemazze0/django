@@ -1,5 +1,5 @@
 from ninja import Schema
-from typing import List
+from typing import List, Optional
 
 class TipagemIn(Schema):
     nome: str
@@ -36,20 +36,35 @@ class PokemonIn(Schema):
     descricao: str
     tipagens: List[TipagemIn]
     habitats: List[HabitatIn]
-    treinador: TreinadorIn
+    treinador: Optional[TreinadorIn] = None
 
 class PokemonOut(PokemonIn):
     id: int
     tipagens: List[TipagemOut]
     habitats: List[HabitatOut]
-    treinador: TreinadorOut
+    treinador: Optional[TreinadorOut] = None
 
-class PokemonCreate(Schema):
+# Nao tem o campo numero_pokedex
+class PokemonUpdate(Schema):
     nome: str
-    numero_pokedex: int
     altura: float
     peso: float
     descricao: str
-    tipagens_ids: List[int]
-    habitats_ids: List[int]
-    treinador_id: int
+    tipagens: List[TipagemIn]
+    habitats: List[HabitatIn]
+    treinador: Optional[TreinadorIn] = None
+
+#class PokemonCreate(Schema):
+#    nome: str
+#    numero_pokedex: int
+#    altura: float
+#    peso: float
+#    descricao: str
+#    tipagens_ids: List[int]
+#    habitats_ids: List[int]
+#    treinador_id: int
+
+
+
+class ErrorSchema(Schema):
+    detail: str
