@@ -26,7 +26,13 @@
 <p>{{ tfc.imagem }}</p>
 <p>{{ tfc.palavras_chave }}</p>
 <p>{{ tfc.areas }}</p>
-<p>{{ tfc.tecnologias }}</p>
+
+{% for tecnologia in tfc.tecnologias.all %}
+    <p>{{ tecnologia.nome }}</p>
+{% empty %}
+    <p>Sem tecnologias</p>
+{% endfor %}
+
 <p>{{ tfc.rating }}</p>
 
 {% endfor %}

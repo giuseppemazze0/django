@@ -1,5 +1,19 @@
-from portfolio.models import *
+# python portfolio/loader.py
+
+import os
 import json, uuid
+import sys
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+import django
+django.setup()
+
+
+from portfolio.models import *
 
 TFC.objects.all().delete()
 Projeto.objects.all().delete()
@@ -112,6 +126,7 @@ with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
                     }
                 )
                 prof.licenciaturas.add(licenciatura)
+                tfc.orientadores.add(prof)
 
         tecnologias = info.get('tecnologias_usadas', '').split(';')
         for nome in tecnologias:
@@ -119,6 +134,8 @@ with open('portfolio/data/tfcs.json', encoding='utf-8') as f:
             if nome:
                 tech, _ = Tecnologia.objects.get_or_create(
                     nome=nome,
-                    link_website_oficial="https://example.com"
+                    defaults={
+                        "link_website_oficial": "https://example.com"
+                    }
                 )
                 tfc.tecnologias.add(tech)
