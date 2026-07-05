@@ -3,9 +3,9 @@
 {% block content %}
 <main class="main-projeto">
 
-    <h1>Editar Projeto</h1>
+    <h1>Editar Tecnologia</h1>
 
-    <form action="{% url 'editar_projeto' projeto.id %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'editar_tecnologia' tecnologia.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         <table>
@@ -14,7 +14,7 @@
         
         <button type="submit">Gravar</button>
 
-        <a href="{% url 'apagar_projeto' projeto.id %}">Apagar</a>
+        <a href="{% url 'editar_tecnologia' tecnologia.id %}">Apagar</a>
     </form>
 
 </main>

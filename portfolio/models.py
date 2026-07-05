@@ -134,11 +134,17 @@ class TFC(models.Model):
         return self.titulo
 
 
-
-# Transformei strings do JSON em relações ManyToMany
-# Evitei redundância entre entidades
-# Normalizei os dados
 class MakingOf(models.Model):
     descricao = models.TextField()
+    data = models.DateField()
     imagem = models.ImageField(upload_to='makingof/', blank=True, null=True)
-    data = models.DateField(auto_now_add=True)
+    decisao = models.TextField(blank=True, null=True)
+    erro = models.TextField(blank=True, null=True)
+    correcao = models.TextField(blank=True, null=True)
+
+    projeto = models.ForeignKey("Projeto", on_delete=models.CASCADE, null=True, blank=True)
+    tecnologia = models.ForeignKey("Tecnologia", on_delete=models.CASCADE, null=True, blank=True)
+    unidade_curricular = models.ForeignKey("UnidadeCurricular", on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.descricao[:50]

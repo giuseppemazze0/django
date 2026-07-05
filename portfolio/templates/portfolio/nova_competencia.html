@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Nova Competência</h1>
+
+    <form action="{% url 'nova_competencia' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <table>
+            {{ form }}
+        </table>
+        
+        <button type="submit">Criar</button>
+    </form>
+
+</main>
+{% endblock %}

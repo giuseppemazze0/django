@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Competências <a class="botao" href="{% url 'nova_competencia' %}">Criar uma Competência</a></h1>
+
+    {% for competencia in competencias %}
+
+    <section class="projeto">
+        <h3>
+            {{ competencia.nome }}
+            <span>{{ competencia.nivel }}</span>
+            <a class="botao" href="{% url 'editar_competencia' competencia.id %}">Editar</a>
+            <a class="botao" href="{% url 'apagar_competencia' competencia.id %}">Apagar</a>
+        </h3>
+
+        <div class="conteudo">
+            <p>{{ competencia.descricao }}</p>
+        </div>
+
+    </section>
+
+    {% empty %}
+        <p>Sem competências.</p>
+    {% endfor %}
+
+</main>
+{% endblock %}

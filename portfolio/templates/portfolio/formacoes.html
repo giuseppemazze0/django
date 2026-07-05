@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Formações <a class="botao" href="{% url 'nova_formacao' %}">Criar uma Formação</a></h1>
+
+    {% for formacao in formacoes %}
+
+    <section class="projeto">
+        <h3>
+            {{ formacao.nome }}
+            <span>{{ formacao.instituicao }}</span>
+            <a class="botao" href="{% url 'editar_formacao' formacao.id %}">Editar</a>
+            <a class="botao" href="{% url 'apagar_formacao' formacao.id %}">Apagar</a>
+        </h3>
+
+        <div class="conteudo">
+            <p>{{ formacao.descricao }}</p>
+
+            <p>Período: {{ formacao.data_inicio }} - {{ formacao.data_fim }}</p>
+
+            <p>Competências:
+                {% for competencia in formacao.competencias.all %}
+                    <span>{{ competencia.nome }}</span>
+                {% empty %}
+                    <span>Sem competências.</span>
+                {% endfor %}
+            </p>
+        </div>
+
+    </section>
+
+    {% empty %}
+        <p>Sem formações.</p>
+    {% endfor %}
+
+</main>
+{% endblock %}

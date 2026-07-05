@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'portfolio/faculdade.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/desenvolvedor.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/projeto.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/sobre_aplicacao.css' %}">
     <title>Portfolio</title>
 </head>
 <body>
@@ -22,7 +23,10 @@
                 <li><a href="{% url 'faculdade' %}">Faculdade</a></li>
                 <li><a href="{% url 'tfcs' %}">TFCs</a></li>
                 <li><a href="{% url 'projetos' %}">Projetos</a></li>
-                <li><a href="">Sobre Esta Aplicação</a></li>
+                <li><a href="{% url 'tecnologias' %}">Tecnologias</a></li>
+                <li><a href="{% url 'competencias' %}">Competências</a></li>
+                <li><a href="{% url 'formacoes' %}">Formações</a></li>
+                <li><a href="{% url 'sobre_aplicacao' %}">Sobre Esta Aplicação</a></li>
             </ul>
         </nav>
 

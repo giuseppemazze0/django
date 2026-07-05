@@ -1,0 +1,41 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Tecnologias <a class="botao" href="{% url 'nova_tecnologia' %}">Criar uma Tecnologia</a></h1>
+
+    {% for tecnologia in tecnologias %}
+
+    <section class="projeto">
+        <h3>
+            {{ tecnologia.nome }}
+            <a class="botao" href="{% url 'editar_tecnologia' tecnologia.id %}">Editar</a>
+            <a class="botao" href="{% url 'apagar_tecnologia' tecnologia.id %}">Apagar</a>
+        </h3>
+
+        <div class="conteudo">
+            <p>
+                Website Oficial:
+                <a href="{{ tecnologia.link_website_oficial }}" target="_blank">
+                    {{ tecnologia.link_website_oficial }}
+                </a>
+            </p>
+        </div>
+
+        {% if tecnologia.logo %}
+            <a class="botao" href="{{ tecnologia.logo.url }}" target="_blank">
+                Ver Logo
+            </a>
+        {% else %}
+            <p>Sem logo.</p>
+        {% endif %}
+
+    </section>
+
+    {% empty %}
+        <p>Sem tecnologias.</p>
+    {% endfor %}
+
+</main>
+{% endblock %}

@@ -19,6 +19,11 @@ def tfcs_view(request):
 
 
 
+def sobre_aplicacao_view(request):
+    return render(request, 'portfolio/sobre_aplicacao.html')
+
+
+
 def projetos_view(request):
     context = { 'projetos': Projeto.objects.all() }
     return render(request, 'portfolio/projetos.html', context)
@@ -55,7 +60,7 @@ def tecnologias_view(request):
     return render(request, 'portfolio/tecnologias.html', context)
 
 def nova_tecnologia_view(request):
-    form = TecnologiaForm(request.POST or None)
+    form = TecnologiaForm(request.POST or None, request.FILES)
     if form.is_valid():
         form.save()
         return redirect('tecnologias')
@@ -66,7 +71,7 @@ def editar_tecnologia_view(request, tecnologia_id):
     tecnologia = Tecnologia.objects.get(id=tecnologia_id)
 
     if request.POST:
-        form = TecnologiaForm(request.POST or None, instance=tecnologia)
+        form = TecnologiaForm(request.POST or None, request.FILES, instance=tecnologia)
         if form.is_valid():
             form.save()
             return redirect('tecnologias')
@@ -90,7 +95,7 @@ def competencias_view(request):
     return render(request, 'portfolio/competencias.html', context)
 
 def nova_competencia_view(request):
-    form = CompetenciaForm(request.POST or None)
+    form = CompetenciaForm(request.POST or None, request.FILES)
     if form.is_valid():
         form.save()
         return redirect('competencias')
@@ -101,7 +106,7 @@ def editar_competencia_view(request, competencia_id):
     competencia = Competencia.objects.get(id=competencia_id)
 
     if request.POST:
-        form = CompetenciaForm(request.POST or None, instance=competencia)
+        form = CompetenciaForm(request.POST or None, request.FILES, instance=competencia)
         if form.is_valid():
             form.save()
             return redirect('competencias')

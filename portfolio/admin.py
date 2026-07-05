@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import (
-    Faculdade, Licenciatura,
-    Aluno, Professor, Tecnologia, Projeto,
-    UnidadeCurricular, TFC, MakingOf
-)
+from .models import *
 
 
 # -------------------------
@@ -86,6 +82,25 @@ class TFCAdmin(admin.ModelAdmin):
 
 
 # -------------------------
+# Competencia
+class CompetenciaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "nivel")
+    search_fields = ("nome", "descricao")
+    list_filter = ("nivel",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Competencia
+class FormacaoAdmin(admin.ModelAdmin):
+    list_display = ("nome", "instituicao", "data_inicio", "data_fim")
+    search_fields = ("nome", "instituicao", "descricao")
+    list_filter = ("instituicao",)
+    filter_horizontal = ("competencias",)
+    ordering = ("data_inicio",)
+
+
+# -------------------------
 # Making Of
 class MakingOfAdmin(admin.ModelAdmin):
     list_display = ("data",)
@@ -104,3 +119,5 @@ admin.site.register(Projeto, ProjetoAdmin)
 admin.site.register(UnidadeCurricular, UnidadeCurricularAdmin)
 admin.site.register(TFC, TFCAdmin)
 admin.site.register(MakingOf, MakingOfAdmin)
+admin.site.register(Competencia, CompetenciaAdmin)
+admin.site.register(Formacao, FormacaoAdmin)

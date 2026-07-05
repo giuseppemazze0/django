@@ -1,0 +1,259 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main-sobre">
+
+    <h1>Sobre esta Aplicação</h1>
+
+    <!-- ======================================================== -->
+
+    <section class="sobre">
+
+        <h3>1. Arquitetura MVT do Django</h3>
+
+        <div class="conteudo">
+
+            <p>
+                Esta aplicação foi desenvolvida recorrendo à arquitetura
+                <strong>Model-View-Template (MVT)</strong>, utilizada pelo Django.
+            </p>
+
+            <h4>Componentes</h4>
+
+            <ul>
+                <li><strong>Model</strong> – representa os dados da aplicação e comunica com a base de dados.</li>
+
+                <li><strong>View</strong> – recebe os pedidos do utilizador, processa a lógica da aplicação e envia informação para o Template.</li>
+
+                <li><strong>Template</strong> – apresenta a informação ao utilizador através de HTML.</li>
+            </ul>
+
+            <h4>Fluxo de Informação</h4>
+
+            <p>
+
+                Utilizador →
+
+                URL →
+
+                View →
+
+                Model →
+
+                Base de Dados →
+
+                View →
+
+                Template →
+
+                Navegador
+
+            </p>
+
+            <h4>Diagrama da Arquitetura</h4>
+
+            <img src="{% static 'portfolio/images/mvt.jpg' %}" alt="Arquitetura MVT">
+
+            <h4>Vídeo Explicativo</h4>
+
+            <iframe
+                width="800"
+                height="450"
+                src="https://www.youtube.com/embed/VIDEO"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+
+    <section class="sobre">
+
+        <h3>2. Modelação</h3>
+
+        <div class="conteudo">
+
+            <p>
+                O desenvolvimento da aplicação começou pela modelação das entidades e respetivos relacionamentos.
+            </p>
+
+            <h4>Diagrama Entidade-Relação</h4>
+
+            <img src="{% static 'portfolio/images/der.png' %}" alt="DER">
+
+            <h4>Models.py</h4>
+
+<pre>
+class Projeto(models.Model):
+    nome = models.CharField(...)
+    descricao = models.TextField()
+    tecnologias = models.ManyToManyField(Tecnologia)
+    uc = models.ForeignKey(UnidadeCurricular, ...)
+</pre>
+
+            <p>
+                O modelo foi evoluindo ao longo do desenvolvimento para acomodar novas funcionalidades,
+                como competências, formações, TFCs e Making Of.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+
+    <section class="sobre">
+
+        <h3>3. Tecnologias Utilizadas</h3>
+
+        <div class="conteudo">
+
+            <h4>Frontend</h4>
+
+            <ul>
+
+                {% for tecnologia in frontend %}
+
+                    <li>
+
+                        <strong>{{ tecnologia.nome }}</strong>
+
+                        <p>{{ tecnologia.descricao }}</p>
+
+                    </li>
+
+                {% empty %}
+
+                    <li>Sem tecnologias.</li>
+
+                {% endfor %}
+
+            </ul>
+
+            <h4>Backend</h4>
+
+            <ul>
+
+                {% for tecnologia in backend %}
+
+                    <li>
+
+                        <strong>{{ tecnologia.nome }}</strong>
+
+                        <p>{{ tecnologia.descricao }}</p>
+
+                    </li>
+
+                {% empty %}
+
+                    <li>Sem tecnologias.</li>
+
+                {% endfor %}
+
+            </ul>
+
+            <h4>Base de Dados</h4>
+
+            <ul>
+
+                {% for tecnologia in database %}
+
+                    <li>
+
+                        <strong>{{ tecnologia.nome }}</strong>
+
+                        <p>{{ tecnologia.descricao }}</p>
+
+                    </li>
+
+                {% empty %}
+
+                    <li>Sem tecnologias.</li>
+
+                {% endfor %}
+
+            </ul>
+
+            <h4>Outras Tecnologias</h4>
+
+            <ul>
+
+                {% for tecnologia in outros %}
+
+                    <li>
+
+                        <strong>{{ tecnologia.nome }}</strong>
+
+                        <p>{{ tecnologia.descricao }}</p>
+
+                    </li>
+
+                {% empty %}
+
+                    <li>Sem tecnologias.</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+
+    <section class="sobre">
+
+        <h3>4. Estrutura das Páginas</h3>
+
+        <div class="conteudo">
+
+            <p>
+                A aplicação está organizada em páginas CRUD para as diversas entidades do sistema.
+            </p>
+
+            <img src="{% static 'portfolio/images/mapa.png' %}" alt="Mapa do Site">
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+
+    <section class="sobre">
+
+        <h3>5. Repositório GitHub</h3>
+
+        <div class="conteudo">
+
+            <p>
+
+                <a href="https://github.com/SEU_REPOSITORIO" target="_blank">
+
+                    Repositório GitHub
+
+                </a>
+
+            </p>
+
+            <p>
+
+                Durante o desenvolvimento da aplicação foi utilizado Git e GitHub para
+                efetuar o controlo de versões do projeto. Estas ferramentas permitiram
+                guardar o histórico das alterações, experimentar novas funcionalidades
+                sem comprometer versões estáveis e facilitar a recuperação de código
+                sempre que necessário.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}
