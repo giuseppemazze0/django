@@ -1,0 +1,55 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-tfc">
+    
+    <h1>TFCs</h1>
+
+    {% for tfc in tfcs %}
+
+    <section class="tfc">
+        <h3>{{ tfc.titulo }} <span>{{ tfc.licenciatura }}</span></h3>
+
+        <div class="conteudo">
+            <p>{{ tfc.sumario }}</p>
+            <p>Tecnologias:
+                {% for tecnologia in tfc.tecnologias.all %}
+                    <span>{{ tecnologia.nome }}</span>
+                {% empty %}
+                    <span>Sem tecnologias</span>
+                {% endfor %}
+            </p>
+            <p>Temas: {{ tfc.palavras_chave }}</p>
+            <p>Áreas: {{ tfc.areas }}</p>
+            <p>Link PDF: {{ tfc.link_pdf }}</p>
+            <p>Nota: {{ tfc.rating }}</p>
+
+            <div class="inferior">
+                <div>
+                    <h4><i class="fi fi-sr-user"></i> Autor(es)</h4>
+                    {% for autor in tfc.autores.all %}
+                        <p>{{ autor.nome }}</p>
+                    {% empty %}
+                        <p>Sem autores</p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <h4><i class="fi fi-sr-chalkboard-user"></i> Orientador</h4>
+                    {% for orientador in tfc.orientadores.all %}
+                        <p>{{ orientador.nome }}</p>
+                    {% empty %}
+                        <p>Sem orientador</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <a class="botao" href="{{ tfc.imagem }}" target="_blank">Ver Imagem</a>
+    </section>
+
+{% endfor %}
+
+</main>
+
+{% endblock %}

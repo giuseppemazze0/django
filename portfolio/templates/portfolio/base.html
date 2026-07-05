@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/style-geral.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/tfc.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/faculdade.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/desenvolvedor.css' %}">
     <title>Portfolio</title>
 </head>
 <body>
     <header>
-        <h1>PW.</h1>
+        <h2>PW.</h2>
 
         <nav>
             <ul>
-                <li>Faculdade</li>
-                <li>Projetos</li>
-                <li>Tecnologias</li>
-                <li>Competências</li>
-                <li>TFCs</li>
-                <li>Alunos</li>
-                <li>Professores</li>
-                <li>Sobre Esta Aplicação</li>
+                <li><a href="{% url 'desenvolvedor' %}">Desenvolvedor</a></li>
+                <li><a href="{% url 'faculdade' %}">Faculdade</a></li>
+                <li><a href="{% url 'tfcs' %}">TFCs</a></li>
+                <li><a href="">Sobre Esta Aplicação</a></li>
             </ul>
         </nav>
+
+        <a href="https://github.com/giuseppemazze0/django" class="botao">Link GitHub</a>
     </header>
 
-    <main>
+    {% block content %}
+    {% endblock %}
 
-        {% block content %}
-        {% endblock %}
-
-    </main>
 </body>
 </html>

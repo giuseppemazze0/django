@@ -81,6 +81,28 @@ class Projeto(models.Model):
         return self.nome
 
 
+class Competencia(models.Model):
+    nome = models.CharField(max_length=100)
+    nivel = models.CharField(max_length=50)
+    descricao = models.TextField()
+
+    def __str__(self):
+        return self.nome
+
+
+class Formacao(models.Model):
+    nome = models.CharField(max_length=100)
+    instituicao = models.CharField(max_length=100)
+    data_inicio = models.DateField()
+    data_fim = models.DateField()
+    descricao = models.TextField()
+
+    competencias = models.ManyToManyField(Competencia)
+
+    def __str__(self):
+        return self.nome
+
+
 
 class UnidadeCurricular(models.Model):
     nome = models.CharField(max_length=100)

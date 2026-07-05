@@ -28,3 +28,5 @@
 <h2>Credenciais de Superuser</h2>
 <p>Username: admin</p>
 <p>Password: admin</p>
+
+<p>pip3 install -r requirements.txt</p>
