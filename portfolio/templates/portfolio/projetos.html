@@ -1,0 +1,54 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Projetos <a class="botao" href="{% url 'novo_projeto' %}">Criar um Projeto</a></h1>
+
+    {% for projeto in projetos %}
+
+    <section class="projeto">
+        <h3>{{ projeto.nome }} <span>{{ projeto.ano_semestre }}</span> <a class="botao" href="{% url 'editar_projeto' projeto.id %}">Editar</a> <a class="botao" href="{% url 'apagar_projeto' projeto.id %}">Apagar</a></h3>
+
+        <div class="conteudo">
+            <p>{{ projeto.descricao }}</p>
+
+            <p>UC: {{ projeto.uc }}</p>
+
+            <p>Tecnologias:
+                {% for tecnologia in projeto.tecnologias.all %}
+                    <span>{{ tecnologia.nome }}</span>
+                {% empty %}
+                    <span>Sem tecnologias</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                GitHub:
+                <a href="{{ projeto.link_github }}" target="_blank">
+                    {{ projeto.link_github }}
+                </a>
+            </p>
+
+            {% if projeto.link_video %}
+            <p>
+                Vídeo:
+                <a href="{{ projeto.link_video }}" target="_blank">
+                    {{ projeto.link_video }}
+                </a>
+            </p>
+            {% endif %}
+        </div>
+
+        <a class="botao" href="{{ projeto.imagem.url }}" target="_blank">
+            Ver Imagem
+        </a>
+
+    </section>
+
+    {% empty %}
+        <p>Sem projeto</p>
+    {% endfor %}
+
+</main>
+{% endblock %}

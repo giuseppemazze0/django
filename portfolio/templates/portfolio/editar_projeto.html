@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<main class="main-projeto">
+
+    <h1>Editar Projeto</h1>
+
+    <form action="{% url 'editar_projeto' projeto.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <table>
+            {{ form }}
+        </table>
+        
+        <button type="submit">Gravar</button>
+
+        <a class="botao" href="{% url 'apagar_projeto' projeto.id %}">Apagar</a>
+    </form>
+
+</main>
+{% endblock %}
