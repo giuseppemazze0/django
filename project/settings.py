@@ -41,13 +41,17 @@ INSTALLED_APPS = [
     "portfolio",
     "escola_online",
     "pessoasAPI",
-    "pokemonAPI"
+    "pokemonAPI",
+    "accounts",
+    "artigos",
 ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://localhost:8000",
+]
 
 
 

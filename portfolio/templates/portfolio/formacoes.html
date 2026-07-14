@@ -3,7 +3,13 @@
 {% block content %}
 <main class="main-projeto">
 
-    <h1>Formações <a class="botao" href="{% url 'nova_formacao' %}">Criar uma Formação</a></h1>
+    <h1>
+        Formações 
+        
+        {% if is_gestor %}
+            <a class="botao" href="{% url 'nova_formacao' %}">Criar uma Formação</a>
+        {% endif %}
+    </h1>
 
     {% for formacao in formacoes %}
 
@@ -11,8 +17,11 @@
         <h3>
             {{ formacao.nome }}
             <span>{{ formacao.instituicao }}</span>
-            <a class="botao" href="{% url 'editar_formacao' formacao.id %}">Editar</a>
-            <a class="botao" href="{% url 'apagar_formacao' formacao.id %}">Apagar</a>
+
+            {% if is_gestor %}
+                <a class="botao" href="{% url 'editar_formacao' formacao.id %}">Editar</a>
+                <a class="botao" href="{% url 'apagar_formacao' formacao.id %}">Apagar</a>
+            {% endif %}
         </h3>
 
         <div class="conteudo">

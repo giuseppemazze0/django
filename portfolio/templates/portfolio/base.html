@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/style-geral.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/tfc.css' %}">
@@ -11,8 +13,10 @@
     <link rel="stylesheet" href="{% static 'portfolio/desenvolvedor.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/projeto.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/sobre_aplicacao.css' %}">
+    <link rel="stylesheet" href="{% static '../accounts/login.css' %}">
     <title>Portfolio</title>
 </head>
+
 <body>
     <header>
         <h2>PW.</h2>
@@ -26,15 +30,27 @@
                 <li><a href="{% url 'tecnologias' %}">Tecnologias</a></li>
                 <li><a href="{% url 'competencias' %}">Competências</a></li>
                 <li><a href="{% url 'formacoes' %}">Formações</a></li>
+                <li><a href="{% url 'formacoes' %}">API Pokemon</a></li>
                 <li><a href="{% url 'sobre_aplicacao' %}">Sobre Esta Aplicação</a></li>
             </ul>
         </nav>
 
-        <a href="https://github.com/giuseppemazze0/django" target="_blank" class="botao">Link GitHub</a>
+        <div>
+            {% if user.is_authenticated %}
+                <span>Bem-vindo, {{ user.username }}!</span>
+                <a class="botao" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="botao" href="{% url 'login' %}">Fazer Login</a>
+                <a class="botao" href="{% url 'registo' %}">Registar</a>
+            {% endif %}
+    
+            <a class="botao" href="https://github.com/giuseppemazze0/django" target="_blank">Link GitHub</a>
+        </div>
     </header>
 
     {% block content %}
     {% endblock %}
 
 </body>
+
 </html>

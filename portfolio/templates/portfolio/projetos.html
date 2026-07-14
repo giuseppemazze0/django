@@ -3,12 +3,26 @@
 {% block content %}
 <main class="main-projeto">
 
-    <h1>Projetos <a class="botao" href="{% url 'novo_projeto' %}">Criar um Projeto</a></h1>
+    <h1>
+        Projetos 
+        
+        {% if is_gestor %}
+            <a class="botao" href="{% url 'novo_projeto' %}">Criar um Projeto</a>
+        {% endif %}
+    </h1>
 
     {% for projeto in projetos %}
 
     <section class="projeto">
-        <h3>{{ projeto.nome }} <span>{{ projeto.ano_semestre }}</span> <a class="botao" href="{% url 'editar_projeto' projeto.id %}">Editar</a> <a class="botao" href="{% url 'apagar_projeto' projeto.id %}">Apagar</a></h3>
+        <h3>
+            {{ projeto.nome }} 
+            <span>{{ projeto.ano_semestre }}</span>
+
+            {% if is_gestor %}
+                <a class="botao" href="{% url 'editar_projeto' projeto.id %}">Editar</a> 
+                <a class="botao" href="{% url 'apagar_projeto' projeto.id %}">Apagar</a>
+            {% endif %}
+        </h3>
 
         <div class="conteudo">
             <p>{{ projeto.descricao }}</p>

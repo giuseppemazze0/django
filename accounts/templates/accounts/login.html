@@ -1,0 +1,30 @@
+{% extends '../portfolio/base.html' %}
+
+{% block content %}
+<main class="login">
+    <h1>Login</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Nome de utilizador" required>
+
+        <input type="password" name="password" placeholder="Palavra-passe" required>
+
+        <button type="submit">
+            Entrar
+        </button>
+    </form>
+
+    {% if erro %}
+    <p class="erro">
+        {{ erro }}
+    </p>
+    {% endif %}
+
+    <div class="links">
+        <a href="{% url 'magic_login' %}">Entrar com Link Mágico</a>
+
+        <a href="{% url 'registo' %}">Criar Conta</a>
+    </div>
+</main>
+{% endblock %}
