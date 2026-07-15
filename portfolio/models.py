@@ -118,14 +118,14 @@ class UnidadeCurricular(models.Model):
 
 
 class TFC(models.Model):
-    titulo = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=200)
     autores = models.ManyToManyField('Aluno', related_name="tfcs")
     orientadores = models.ManyToManyField('Professor', related_name="tfcs")
     licenciatura = models.ForeignKey('Licenciatura', on_delete=models.CASCADE, related_name="tfcs", null=True)
     sumario = models.TextField()
     link_pdf = models.URLField(blank=True, null=True)
     imagem = models.URLField(null=True)
-    palavras_chave = models.CharField(max_length=300, null=True)
+    palavras_chave = models.CharField(max_length=600, null=True)
     areas = models.CharField(max_length=300, null=True)
     tecnologias = models.ManyToManyField('Tecnologia', related_name="tfcs")
     rating = models.PositiveIntegerField(null=True)
