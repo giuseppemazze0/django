@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+.main-sobre {
+    margin: 60px 20px 0 20px;
+
+    h1 {
+        margin-bottom: 40px;
+        font-size: 50px;
+    }
+
+    .sobre {
+        margin-bottom: 80px;
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .conteudo {
+            border: 1px solid black;
+            border-radius: 12px;
+            padding: 20px;
+
+            p {
+                margin-bottom: 14px;
+                line-height: 1.6;
+            }
+
+            h4 {
+                margin-top: 30px;
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+
+            ul {
+                margin-left: 25px;
+                margin-bottom: 20px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                margin: 25px auto;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+
+            iframe {
+                display: block;
+                width: 100%;
+                max-width: 900px;
+                height: 500px;
+                margin: 30px auto;
+                border: none;
+                border-radius: 10px;
+            }
+
+            pre {
+                background-color: rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                padding: 16px;
+                overflow-x: auto;
+                margin: 20px 0;
+                font-family: Consolas, monospace;
+                line-height: 1.5;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}

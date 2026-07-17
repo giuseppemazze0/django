@@ -1,0 +1,246 @@
+:root {
+    --cor-amarela: rgb(209, 209, 0);
+}
+
+.main-faculdade {
+    max-width: 1500px;
+    margin: auto;
+
+
+    .cabecalho {
+        position: relative;
+        display: flex;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+        .imagem-faculdade {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            position: absolute;
+            z-index: 1;
+            left: 5vw;
+            bottom: 4vw;
+            width: 45vw;
+            min-width: 300px;
+            font-size: clamp(20px, 3vw, 3vw);
+            color: rgba(255, 255, 255, 0.9);
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 7vw;
+                left: -2vw;
+                width: 4px;
+                height: clamp(30px, 100%, 100%);
+                background-color: var(--cor-amarela);
+            }
+        }
+    }
+
+    .menu-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        padding: 120px 0;
+
+        .card {
+            max-width: fit-content;
+            width: 100%;
+
+            &:hover {
+                img {
+                    box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+                }
+
+            }
+
+            a {
+                color: rgba(0, 0, 0, 0.8);
+                text-decoration: none;
+
+                img {
+                    width: 300px;
+                    border-bottom: 4px solid var(--cor-amarela);
+                    transition: .4s ease;
+                }
+
+                h4 {
+                    padding-top: 4px;
+
+                    span {
+
+                        padding-left: 4px;
+                        color: rgba(0, 0, 0, 0.4);
+                    }
+                }
+            }
+        }
+    }
+
+    #quem-somos {
+        .conteudo {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+
+            img {
+                width: 50%;
+            }
+
+            .texto {
+                height: fit-content;
+
+                h3 {
+                    margin-bottom: 16px;
+                    font-size: 32px;
+                }
+
+                p {
+                    margin-top: 12px;
+                }
+
+                a {
+                    display: block;
+                    width: fit-content;
+                    padding: 14px 24px;
+                    border: 2px solid var(--cor-amarela);
+                    margin-top: 32px;
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.8);
+                    transition: .4s ease;
+
+                    &:hover {
+                        background-color: var(--cor-amarela);
+                    }
+                }
+            }
+        }
+
+        .destaque {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            margin: 100px auto;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: clamp(160px, 4vw, 200px);
+                left: 50%;
+                width: 3px;
+                height: 70px;
+                background-color: var(--cor-amarela);
+            }
+
+            p {
+                font-style: italic;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    #licenciatura {
+        padding: 0 10px;
+        margin-top: 200px;
+
+        h3 {
+            font-size: 32px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+
+            .card-legal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 160px;
+                height: 140px;
+                border: 2px solid black;
+                border-radius: 20px;
+                background-color: rgba(0, 0, 0, 0.05);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+                transition: .4s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                i {
+                    margin-bottom: 10px;
+                    font-size: 26px;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #mais-info {
+        padding: 0 10px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+
+        h3 {
+            font-size: 32px;
+        }
+
+        .conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1500px) {
+    #quem-somos {
+        .conteudo {
+            flex-direction: column;
+            padding: 0 clamp(0px, 8vw, 20px);
+
+            img {
+                width: 100% !important;
+            }
+
+            .texto {
+                padding: 0 12px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    #mais-info {
+        .conteudo {
+            flex-direction: column;
+            gap: 32px;
+        }
+    }
+}
