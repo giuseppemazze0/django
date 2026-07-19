@@ -6,42 +6,52 @@
     max-width: 1500px;
     margin: auto;
 
-
     .cabecalho {
         position: relative;
         display: flex;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-        }
+        justify-content: center;
+        width: 100%;
+        border-radius: 14px;
+        margin: auto;
+        
+         &::after {
+                overflow: hidden;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                min-width: 1200px;
+                height: 100%;
+                border-radius: 14px;
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+                transform: translateX(-50%);
+            }
 
         .imagem-faculdade {
-            max-width: 100%;
+            max-width: 1200px;
+            min-width: 600px;
             height: auto;
             object-fit: contain;
+            border-radius: 14px;
+            margin: 0 -20px;
         }
 
         h1 {
             position: absolute;
             z-index: 1;
-            left: 5vw;
-            bottom: 4vw;
-            width: 45vw;
-            min-width: 300px;
-            font-size: clamp(20px, 3vw, 3vw);
+            left: 10%;
+            bottom: 10%;
+            max-width: 730px;
+            width: 59vw;
+            padding-left: 32px;
+            font-size: clamp(20px, 4vw, 50px);
             color: rgba(255, 255, 255, 0.9);
 
             &::before {
                 content: "";
                 position: absolute;
-                top: 7vw;
-                left: -2vw;
+                top: 70%;
+                left: 2%;
                 width: 4px;
                 height: clamp(30px, 100%, 100%);
                 background-color: var(--cor-amarela);
@@ -75,6 +85,7 @@
                 img {
                     width: 300px;
                     border-bottom: 4px solid var(--cor-amarela);
+                    border-radius: 4px;
                     transition: .4s ease;
                 }
 
@@ -99,6 +110,7 @@
 
             img {
                 width: 50%;
+                border-radius: 14px;
             }
 
             .texto {

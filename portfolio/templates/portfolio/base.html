@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,51 +8,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'portfolio/style-geral.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/tfc.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/faculdade.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/desenvolvedor.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/projeto.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/sobre_aplicacao.css' %}">
-    <link rel="stylesheet" href="{% static '../accounts/login.css' %}">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+    <link rel="stylesheet" href="{% static 'portfolio/styles/style-geral.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/tfc.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/faculdade.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/desenvolvedor.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/projeto.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/sobre_aplicacao.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/styles/login.css' %}">
     <title>Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <h2>PW.</h2>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <header>
+                <section>
+                    <div class="icones">
+                        <i class="fi fi-rr-site-alt"></i>
+                        <h2>PW.</h2>
+                    </div>
+                    <nav>
+                        <ul class="mostrarMenu">
+                            <li><a href="{% url 'desenvolvedor' %}">Desenvolvedor</a></li>
+                            <li><a href="{% url 'faculdade' %}">Faculdade</a></li>
+                            <li><a href="{% url 'tfcs' %}">TFCs</a></li>
+                            <li><a href="{% url 'projetos' %}">Projetos</a></li>
+                            <li><a href="{% url 'tecnologias' %}">Tecnologias</a></li>
+                            <li><a href="{% url 'competencias' %}">Competências</a></li>
+                            <li><a href="{% url 'formacoes' %}">Formações</a></li>
+                            <li><a href="{% url 'formacoes' %}">API Pokemon</a></li>
+                            <li><a href="{% url 'sobre_aplicacao' %}">Sobre Esta Aplicação</a></li>
+                        </ul>
+                    </nav>
 
-        <nav>
-            <ul>
-                <li><a href="{% url 'desenvolvedor' %}">Desenvolvedor</a></li>
-                <li><a href="{% url 'faculdade' %}">Faculdade</a></li>
-                <li><a href="{% url 'tfcs' %}">TFCs</a></li>
-                <li><a href="{% url 'projetos' %}">Projetos</a></li>
-                <li><a href="{% url 'tecnologias' %}">Tecnologias</a></li>
-                <li><a href="{% url 'competencias' %}">Competências</a></li>
-                <li><a href="{% url 'formacoes' %}">Formações</a></li>
-                <li><a href="{% url 'formacoes' %}">API Pokemon</a></li>
-                <li><a href="{% url 'sobre_aplicacao' %}">Sobre Esta Aplicação</a></li>
-            </ul>
-        </nav>
+                    <button class="hamburguer"><i class="fi fi-rr-menu-burger"></i></button>
 
-        <div>
-            {% if user.is_authenticated %}
-                <span>Bem-vindo, {{ user.username }}!</span>
-                <a class="botao" href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a class="botao" href="{% url 'login' %}">Fazer Login</a>
-                <a class="botao" href="{% url 'registo' %}">Registar</a>
-            {% endif %}
-    
-            <a class="botao" href="https://github.com/giuseppemazze0/django" target="_blank">Link GitHub</a>
+                    <div class="botoes-header">
+                        {% if user.is_authenticated %}
+                            <span>Bem-vindo, {{ user.username }}!</span>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                            <a class="botao-login" href="{% url 'login' %}">Login</a>
+                            <a class="botao-registrar" href="{% url 'registo' %}">Junta-te</a>
+                        {% endif %}
+                        <a class="botao-github" href="https://github.com/giuseppemazze0/django" target="_blank"><i class="fi fi-brands-github"></i></a>
+                    </div>
+                </section>
+            </header>
+
+            {% block content %}
+            {% endblock %}
+
         </div>
-    </header>
+    </div>
 
-    {% block content %}
+    <script type="module" src="{% static 'portfolio/scripts/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+    {% block scripts %}
     {% endblock %}
-
 </body>
 
 </html>

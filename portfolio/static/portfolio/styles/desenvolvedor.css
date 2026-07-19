@@ -8,23 +8,27 @@
 
 /* Alterações Globais */
 
-ul {
-    list-style: none;
-}
+.main-desenvolvedor {
+    margin-top: -80px;
 
-a {
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
-section {
-    max-width: 1600px;
-    margin: 0 80px;
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    
+    section {
+        max-width: 1600px;
+        margin: 0 80px;
+    }
 }
 
 

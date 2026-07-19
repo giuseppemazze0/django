@@ -1,165 +1,155 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
 
 {% block content %}
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-            <section id="home">
-                <div class="loader">
-                    <h1>
-                        <span class="tituloEfeito">Giuseppe</span>
+    <main class="main-desenvolvedor">
+        <section id="home">
+            <div class="loader">
+                <h1>
+                    <span class="tituloEfeito">Giuseppe</span>
 
-                        <span class="tituloEfeito">Mazzeo</span>
-                    </h1>
+                    <span class="tituloEfeito">Mazzeo</span>
+                </h1>
 
-                    {% load static %}
-                    <img data-speed="1.15" class="pessoa" src="{% static 'img/image/Giuseppe.PNG' %}"
-                        alt="Foto do Giuseppe Mazzeo em pé sorrindo.">
+                <img data-speed="1.15" class="pessoa" src="{% static 'img/image/Giuseppe.PNG' %}"
+                    alt="Foto do Giuseppe Mazzeo em pé sorrindo.">
+            </div>
+
+            <div class="hero">
+                <div class="descricao">
+                    <ul>
+                        <li class="li-descricao">> UX/UI Design</li>
+                        <li class="li-descricao">> Desenvolvedor de Software</li>
+                        <li class="li-descricao">> Estudante de Engenharia Informática</li>
+                    </ul>
                 </div>
 
-                <div class="hero">
-                    <div class="descricao">
-                        <ul>
-                            <li class="li-descricao">> UX/UI Design</li>
-                            <li class="li-descricao">> Desenvolvedor de Software</li>
-                            <li class="li-descricao">> Estudante de Engenharia Informática</li>
-                        </ul>
-                    </div>
-
-                    <div class="botoes">
-                        <button>Contactar-me</button>
-                        <button>Ver Projetos</button>
-                    </div>
+                <div class="botoes">
+                    <button>Contactar-me</button>
+                    <button>Ver Projetos</button>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="resumo">
-                <h2 class="tituloResumo">Um pouco sobre mim</h2>
+        <section id="resumo">
+            <h2 class="tituloResumo">Um pouco sobre mim</h2>
 
-                <div class="juncao">
-                    <div class="sec1">
-                        <div class="texto">
-                            <p>
-                                Estudante de Engenharia Informática com foco em desenvolvimento de software e aplicações
-                                web. Possuo conhecimentos em algoritmia, estrutura de dados e desenvolvimento de sites.
-                            </p>
-                            <p>
-                                Tenho como objetivo atuar como desenvolvedor de software, contribuindo para soluções
-                                tecnológicas enquanto aprimoro continuamente minhas competências técnicas e
-                                profissionais.
-                            </p>
-                            <p>
-                                Destaco-me pela capacidade de trabalho em equipe, comunicação e adaptação, desenvolvidas
-                                em
-                                ambiente colaborativo. Fluente em português e com inglês intermediário.
-                            </p>
-                        </div>
-
-                        <div class="int-lin">
-                            <div class="interesses">
-                                <h3>Interesses</h3>
-                                <ul>
-                                    <li>UI/UX Design</li>
-                                    <li>Responsive Design</li>
-                                    <li>Interfaces Interativas</li>
-                                    <li>Front-end Development</li>
-                                    <li>Programação Web</li>
-                                    <li>Programação Back-end</li>
-                                    <li>Programação Orientada a Objetos</li>
-                                    <li>Estruturas de Dados e Algoritmos</li>
-                                </ul>
-                            </div>
-
-                            <div class="linguas">
-                                <h3>Língua</h3>
-                                <div class="cards cardDecorado">
-                                    <div class="card">
-                                        <p><span>Português</span> - Língua Maternar</p>
-                                    </div>
-                                    <div class="card">
-                                        <p><span>Inglês</span> - Nível Intermediário</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="juncao">
+                <div class="sec1">
+                    <div class="texto">
+                        <p>
+                            Estudante de Engenharia Informática com foco em desenvolvimento de software e aplicações
+                            web. Possuo conhecimentos em algoritmia, estrutura de dados e desenvolvimento de sites.
+                        </p>
+                        <p>
+                            Tenho como objetivo atuar como desenvolvedor de software, contribuindo para soluções
+                            tecnológicas enquanto aprimoro continuamente minhas competências técnicas e
+                            profissionais.
+                        </p>
+                        <p>
+                            Destaco-me pela capacidade de trabalho em equipe, comunicação e adaptação, desenvolvidas
+                            em
+                            ambiente colaborativo. Fluente em português e com inglês intermediário.
+                        </p>
                     </div>
 
-                    <div class="sec2">
-                        <div class="educacao divDestacada">
-                            <h3>Educação</h3>
-                            <div class="cards">
-                                <div class="card">
-                                    <p>2025 - agora</p>
-                                    <h4>UX Design</h4>
-                                    <p>Alura</p>
-                                </div>
-                                <div class="card">
-                                    <p>2025 - agora</p>
-                                    <h4>WebHub - Desenvolvimento Web</h4>
-                                    <p>Comunidade WebHub</p>
-                                </div>
-                                <div class="card">
-                                    <p>2022 - agora</p>
-                                    <h4>Licenciatura Engenharia Informática</h4>
-                                    <p>Universidade Lusófona de Lisboa</p>
-                                </div>
-                            </div>
+                    <div class="int-lin">
+                        <div class="interesses">
+                            <h3>Interesses</h3>
+                            <ul>
+                                <li>UI/UX Design</li>
+                                <li>Responsive Design</li>
+                                <li>Interfaces Interativas</li>
+                                <li>Front-end Development</li>
+                                <li>Programação Web</li>
+                                <li>Programação Back-end</li>
+                                <li>Programação Orientada a Objetos</li>
+                                <li>Estruturas de Dados e Algoritmos</li>
+                            </ul>
                         </div>
 
-                        <div class="experienciaProfissional divDestacada">
-                            <h3>Experiência Profissional</h3>
-                            <div class="cards">
+                        <div class="linguas">
+                            <h3>Língua</h3>
+                            <div class="cards cardDecorado">
                                 <div class="card">
-                                    <p>2025 - agora</p>
-                                    <h4>Lojista na Scalpers</h4>
-                                    <p>Varejista</p>
+                                    <p><span>Português</span> - Língua Maternar</p>
+                                </div>
+                                <div class="card">
+                                    <p><span>Inglês</span> - Nível Intermediário</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="ferramentas divDestacada">
-                    <h3>Ferramentas</h3>
-                    {% load static %}
+                <div class="sec2">
+                    <div class="educacao divDestacada">
+                        <h3>Educação</h3>
+                        <div class="cards">
+                            <div class="card">
+                                <p>2025 - agora</p>
+                                <h4>UX Design</h4>
+                                <p>Alura</p>
+                            </div>
+                            <div class="card">
+                                <p>2025 - agora</p>
+                                <h4>WebHub - Desenvolvimento Web</h4>
+                                <p>Comunidade WebHub</p>
+                            </div>
+                            <div class="card">
+                                <p>2022 - agora</p>
+                                <h4>Licenciatura Engenharia Informática</h4>
+                                <p>Universidade Lusófona de Lisboa</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <figure class="cardDecorado">
-                        <img src="{% static 'img/logo-tecnologias/css-3.png' %}" alt="CSS">
-                        <img src="{% static 'img/logo-tecnologias/html-5.png' %}" alt="HTML">
-                        <img src="{% static 'img/logo-tecnologias/java.png' %}" alt="Java">
-                        <img src="{% static 'img/logo-tecnologias/api-restful.webp' %}" alt="API REST">
-                        <img src="{% static 'img/logo-tecnologias/atom.png' %}" alt="React">
-                        <img src="{% static 'img/logo-tecnologias/c.png' %}" alt="C">
-                        <img src="{% static 'img/logo-tecnologias/django.webp' %}" alt="Django">
-                        <img src="{% static 'img/logo-tecnologias/gsap.png' %}" alt="GSAP">
-                        <img src="{% static 'img/logo-tecnologias/js.png' %}" alt="JavaScript">
-                        <img src="{% static 'img/logo-tecnologias/json-file.png' %}" alt="JSON">
-                        <img src="{% static 'img/logo-tecnologias/nextjs.png' %}" alt="Next.js">
-                        <img src="{% static 'img/logo-tecnologias/python.png' %}" alt="Python">
-                        <img src="{% static 'img/logo-tecnologias/sql-server.png' %}" alt="SQL Server">
-                        <img src="{% static 'img/logo-tecnologias/tailwind.webp' %}" alt="Tailwind CSS">
-                        <img src="{% static 'img/logo-tecnologias/typescript.png' %}" alt="TypeScript">
-                        <img src="{% static 'img/logo-tecnologias/kotlin.avif' %}" alt="Kotlin">
-                    </figure>
+                    <div class="experienciaProfissional divDestacada">
+                        <h3>Experiência Profissional</h3>
+                        <div class="cards">
+                            <div class="card">
+                                <p>2025 - agora</p>
+                                <h4>Lojista na Scalpers</h4>
+                                <p>Varejista</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            <footer>
-                <h2>Developer</h2>
+            <div class="ferramentas divDestacada">
+                <h3>Ferramentas</h3>
 
-                <div>
-                    <p>©2026</p>
+                <figure class="cardDecorado">
+                    <img src="{% static 'img/logo-tecnologias/css-3.png' %}" alt="CSS">
+                    <img src="{% static 'img/logo-tecnologias/html-5.png' %}" alt="HTML">
+                    <img src="{% static 'img/logo-tecnologias/java.png' %}" alt="Java">
+                    <img src="{% static 'img/logo-tecnologias/api-restful.webp' %}" alt="API REST">
+                    <img src="{% static 'img/logo-tecnologias/atom.png' %}" alt="React">
+                    <img src="{% static 'img/logo-tecnologias/c.png' %}" alt="C">
+                    <img src="{% static 'img/logo-tecnologias/django.webp' %}" alt="Django">
+                    <img src="{% static 'img/logo-tecnologias/gsap.png' %}" alt="GSAP">
+                    <img src="{% static 'img/logo-tecnologias/js.png' %}" alt="JavaScript">
+                    <img src="{% static 'img/logo-tecnologias/json-file.png' %}" alt="JSON">
+                    <img src="{% static 'img/logo-tecnologias/nextjs.png' %}" alt="Next.js">
+                    <img src="{% static 'img/logo-tecnologias/python.png' %}" alt="Python">
+                    <img src="{% static 'img/logo-tecnologias/sql-server.png' %}" alt="SQL Server">
+                    <img src="{% static 'img/logo-tecnologias/tailwind.webp' %}" alt="Tailwind CSS">
+                    <img src="{% static 'img/logo-tecnologias/typescript.png' %}" alt="TypeScript">
+                    <img src="{% static 'img/logo-tecnologias/kotlin.avif' %}" alt="Kotlin">
+                </figure>
+            </div>
+        </section>
 
-                    <p>By Giuseppe Mazzeo</p>
-                </div>
-            </footer>
-        </div>
-    </div>
+        <footer>
+            <h2>Developer</h2>
 
-    {% load static %}
-    <script type="module" src="{% static 'portfolio/scripts.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+            <div>
+                <p>©2026</p>
+
+                <p>By Giuseppe Mazzeo</p>
+            </div>
+        </footer>
 </main>
 
 {% endblock %}

@@ -31,10 +31,6 @@ section {
 
 /* Home */
 
-#smooth-wrapper {
-    margin-top: 50px !important;
-}
-
 #home {
     position: relative;
     height: 100vh;

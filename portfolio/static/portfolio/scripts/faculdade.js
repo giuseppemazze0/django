@@ -1,31 +1,3 @@
-import './home.js';
-import './resumo.js';
-
-gsap.registerPlugin(ScrollSmoother);
-
-const smoother = ScrollSmoother.create({
-	smooth: 1, 
-    smoothTouch: 0,
-	effects: true	
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-
-        const target = document.querySelector(
-            link.getAttribute('href')
-        );
-
-        smoother.scrollTo(target, true);
-    });
-});
-
-
-
-
-// Faculdade
-
 gsap.from('.menu-cards > .card', {
     opacity: 0,
     y: 40,
@@ -36,9 +8,10 @@ gsap.from('.menu-cards > .card', {
 
 gsap.from('.destaque', {
     opacity: 0,
+    y: -40,
     scrollTrigger: {
         trigger: "#quem-somos",
-        start: "top 20%",
+        start: "bottom 50%"
     }
 });
 
@@ -55,7 +28,6 @@ for (let card of cards) {
         scrollTrigger: {
             trigger: "#licenciatura",
             start: "top 50%",
-            markers: true
         }
     });
     delay += .1;
@@ -68,6 +40,5 @@ gsap.from("#licenciatura h3", {
     scrollTrigger: {
         trigger: "#licenciatura",
         start: "top 50%",
-        markers: true
     }
 });
