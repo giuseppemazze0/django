@@ -64,5 +64,8 @@
         <p>Sem projeto</p>
     {% endfor %}
 
+    <p>User: {{ user.username }}</p>
+    <p>Autenticado: {{ user.is_authenticated }}</p>
+    <p>É gestor: {{ is_gestor }}</p>
 </main>
 {% endblock %}

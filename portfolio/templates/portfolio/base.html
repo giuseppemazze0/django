@@ -6,7 +6,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+        <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -26,6 +39,9 @@
     <link rel="stylesheet" href="{% static 'portfolio/styles/projeto.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/styles/sobre_aplicacao.css' %}">
     <link rel="stylesheet" href="{% static 'accounts/styles/login.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/image/letra-g.png' %}" type="image/x-icon">
+
     <title>Portfolio</title>
 </head>
 
@@ -56,8 +72,7 @@
 
                     <div class="botoes-header">
                         {% if user.is_authenticated %}
-                            <span>Bem-vindo, {{ user.username }}!</span>
-                            <a href="{% url 'logout' %}">Logout</a>
+                            <a class="botao-login" href="{% url 'logout' %}">Logout</a>
                         {% else %}
                             <a class="botao-login" href="{% url 'login' %}">Login</a>
                             <a class="botao-registrar" href="{% url 'registo' %}">Junta-te</a>

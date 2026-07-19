@@ -2,86 +2,213 @@
 
 
 
-.botao {
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid black;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgba(255, 255, 255, 0.9);
-
-    &:hover {
-        border-color: rgba(0, 0, 0, 0.6);
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-}
-
-
-.main-tfc {
-    margin: 60px 20px 0 20px;
+.main-tfcs {
+    margin: 20px;
 
     h1 {
+        font-size: 40px;
+        margin-left: 5vw;
         margin-bottom: 40px;
-       font-size: 50px;
     }
 
-    .tfc {
-        margin-bottom: 80px;
+    .tfcs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
 
-        h3 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 25px;
-
-            span {
-                padding: 2px 6px;
-                border: 1px solid black;
-                border-radius: 4px;
-                font-size: 14px;
-                font-weight: normal;
-                background-color: rgba(0, 0, 0, 0.1);
+        .tfc {
+            overflow: hidden;
+            width: 700px;
+            border-radius: 20px;
+            box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.08);
+            transition: .3s ease;
+    
+            &:hover {
+                box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.2);
             }
-        }
-        
-        .conteudo {
-            border: 1px solid black;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
-
-            p {
-                margin-bottom: 12px;
-
+    
+            .superior {
+                position: relative;
+    
+                img {
+                    width: 100%;
+                    border-bottom-right-radius: 12px;
+                    border-bottom-left-radius: 12px;
+                    object-fit: contain;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+    
+                .licenciatura {
+                    position: absolute;
+                    bottom: -8px;
+                    left: 20px;
+                    padding: 8px 12px;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    border-radius: 8px;
+                    font-size: 14px;
+                    letter-spacing: .5px;
+                    background-color: rgba(255, 255, 253, .95);
+                    color: rgba(0, 0, 0, 0.7);
+                }
+    
+                a {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    padding: 6px 10px;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    background-color: rgba(255, 255, 253, .95);
+                    color: rgba(0, 0, 0, 0.7);
+                    transition: .3s ease;
+    
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+    
                 span {
-                    margin-left: 8px;
+                    position: absolute;
+                    bottom: -8px;
+                    right: 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    width: fit-content;
+                    padding: 6px 10px;
+                    border: 1px solid #face49;
+                    border-radius: 4px;
+                    background-color: #face49;
+    
+                    i {
+                        display: flex;
+                        font-size: 14px;
+                    }
+    
+                    p {
+                        font-size: 14px;
+                    }
                 }
             }
-
+    
             .inferior {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 26px;
-
-                div {
+                padding: 0 32px 40px;
+    
+                h3 {
+                    margin: 32px 0 20px;
+                    font-size: 24px;
+                }
+    
+                .sumario {
+                    .texto {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+    
+                    .texto.expandido {
+                        display: block;
+                    }
+    
+                    .lerMais {
+                        cursor: pointer;
+                        border: none;
+                        margin-top: 4px;
+                        font-size: 14px;
+                        text-decoration: underline;
+                        background-color: transparent;
+    
+                        &:hover {
+                            font-weight: 600;
+                        }
+                    }
+                }
+    
+                .descricoes {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 32px;
+    
+                    .tecnologias,
+                    .areas,
+                    .palavrasChave {
+                        position: relative;
+                        width: 30%;
+    
+                        h4 {
+                            color: rgba(0, 0, 0, 0.75);
+                            margin-bottom: 16px;
+    
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 22px;
+                                left: 0;
+                                width: 50%;
+                                height: 2px;
+                                border-radius: 20px;
+                                background-color: rgba(0, 0, 0, 0.1);
+                            }
+                        }
+                    }
+    
+                    .areas {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 60%;
+                            left: -34px;
+                            width: 2px;
+                            height: 50%;
+                            border-radius: 20px;
+                            background-color: rgba(0, 0, 0, 0.1);
+                            transform: translateY(-50%);
+                        }
+    
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 60%;
+                            right: 0;
+                            width: 2px;
+                            height: 50%;
+                            border-radius: 20px;
+                            background-color: rgba(0, 0, 0, 0.1);
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+    
+                .participantes {
                     position: relative;
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 50%;
-
+                    justify-content: space-between;
+                    margin-top: 32px;
+    
                     &::after {
                         content: "";
                         position: absolute;
-                        top: -12px;
-                        left: 50%;
-                        width: 600px;
-                        height: 2px;
-                        background-color: rgba(0, 0, 0, 0.2);
-                        transform: translateX(-50%);
+                        top: 60%;
+                        right: 50%;
+                        width: 2px;
+                        height: 40px;
+                        border-radius: 20px;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        transform: translateY(-50%);
+                    }
+    
+                    .esquerda,
+                    .direita {
+                        width: 40%;
+                        text-align: center;
+    
+                        p:first-child {
+                            margin-bottom: 12px;
+                            font-weight: bold;
+                            color: rgba(0, 0, 0, 0.75);
+                        }
                     }
                 }
             }

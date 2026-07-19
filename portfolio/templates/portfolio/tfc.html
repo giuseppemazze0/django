@@ -1,55 +1,97 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
 
 {% block content %}
-<main class="main-tfc">
-    
-    <h1>TFCs</h1>
+    <main class="main-tfcs">
+        <h1>TFCs</h1>
 
-    {% for tfc in tfcs %}
+        <section class="tfcs">
+            {% for tfc in tfcs %}
+                <section class="tfc">
+                    <div class="superior">
+                        <img src="{{ tfc.imagem }}" alt="{{ tfc.titulo }}">
 
-    <section class="tfc">
-        <h3>{{ tfc.titulo }} <span>{{ tfc.licenciatura }}</span></h3>
+                        <p class="licenciatura">{{ tfc.licenciatura }}</p>
 
-        <div class="conteudo">
-            <p>{{ tfc.sumario }}</p>
-            <p>Tecnologias:
-                {% for tecnologia in tfc.tecnologias.all %}
-                    <span>{{ tecnologia.nome }}</span>
-                {% empty %}
-                    <span>Sem tecnologias</span>
-                {% endfor %}
-            </p>
-            <p>Temas: {{ tfc.palavras_chave }}</p>
-            <p>Áreas: {{ tfc.areas }}</p>
-            <p>Link PDF: {{ tfc.link_pdf }}</p>
-            <p>Nota: {{ tfc.rating }}</p>
+                        {% if tfc.link_pdf %}
+                            <a href="{{ tfc.link_pdf }}" target="_blank" rel="noopener noreferrer">
+                                PDF <i class="fi fi-rr-arrow-up-right-from-square"></i>
+                            </a>
+                        {% endif %}
 
-            <div class="inferior">
-                <div>
-                    <h4><i class="fi fi-sr-user"></i> Autor(es)</h4>
-                    {% for autor in tfc.autores.all %}
-                        <p>{{ autor.nome }}</p>
-                    {% empty %}
-                        <p>Sem autores</p>
-                    {% endfor %}
-                </div>
+                        <span><i class="fi fi-rr-star"></i><p>{{ tfc.rating }}</p></span>
+                    </div>
 
-                <div>
-                    <h4><i class="fi fi-sr-chalkboard-user"></i> Orientador</h4>
-                    {% for orientador in tfc.orientadores.all %}
-                        <p>{{ orientador.nome }}</p>
-                    {% empty %}
-                        <p>Sem orientador</p>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+                    <div class="inferior">
+                        <h3>{{ tfc.titulo }}</h3>
 
-        <a class="botao" href="{{ tfc.imagem }}" target="_blank">Ver Imagem</a>
-    </section>
+                        <div class="sumario">
+                            <p class="texto">
+                                {{ tfc.sumario }}
+                            </p>
 
-{% endfor %}
+                            <button class="lerMais">Ler mais</button>
+                        </div>
 
-</main>
+                        <div class="descricoes">
+                            <div class="tecnologias">
+                                <h4>Tecnologias</h4>
+                                {% for tecnologia in tfc.tecnologias.all %}
+                                    <p>{{ tecnologia.nome }}</p>
+                                {% empty %}
+                                    <p>Sem tecnologias</p>
+                                {% endfor %}
+                            </div>
 
+                            <div class="areas">
+                                <h4>Áreas</h4>
+                                {{ tfc.areas }}
+                            </div>
+
+                            <div class="palavrasChave">
+                                <h4>Temas</h4>
+                                {% for palavra in tfc.lista_palavras_chave %}
+                                    <p>{{ palavra }}</p>
+                                {% empty %}
+                                    <p>Sem áreas</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="participantes">
+                            <div class="esquerda">
+                                <p>
+                                    <i class="fi fi-sr-user"></i>
+                                    Autor
+                                </p>
+                                {% for autor in tfc.autores.all %}
+                                    <p>{{ autor.nome }}</p>
+                                {% empty %}
+                                    <p>Sem autores</p>
+                                {% endfor %}
+                            </div>
+
+                            <div class="direita">
+                                <p>
+                                    <i class="fi fi-sr-chalkboard-user"></i>
+                                    Orientador
+                                </p>
+                                {% for orientador in tfc.orientadores.all %}
+                                    <p>{{ orientador.nome }}</p>
+                                {% empty %}
+                                    <p>Sem orientador</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+
+    </main>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'portfolio/scripts/tfc.js' %}"></script>
 {% endblock %}

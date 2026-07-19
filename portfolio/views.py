@@ -26,8 +26,18 @@ def faculdade_view(request):
 
 
 def tfcs_view(request):
-    context = { 'tfcs': TFC.objects.all() }
-    return render(request, 'portfolio/tfc.html', context)
+    tfcs = TFC.objects.all()
+
+    for tfc in tfcs:
+        tfc.lista_palavras_chave = [
+            palavra.strip()
+            for palavra in tfc.palavras_chave.split(";")
+            if palavra.strip()
+        ]
+
+    context = {"tfcs": tfcs}
+
+    return render(request, "portfolio/tfc.html", context)
 
 
 
