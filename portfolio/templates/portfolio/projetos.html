@@ -1,71 +1,70 @@
 {% extends 'portfolio/base.html' %}
 
 {% block content %}
-<main class="main-projeto">
+    <main class="main-projetos">
 
-    <h1>
-        Projetos 
-        
-        {% if is_gestor %}
-            <a class="botao" href="{% url 'novo_projeto' %}">Criar um Projeto</a>
-        {% endif %}
-    </h1>
-
-    {% for projeto in projetos %}
-
-    <section class="projeto">
-        <h3>
-            {{ projeto.nome }} 
-            <span>{{ projeto.ano_semestre }}</span>
+        <div class="titulo">
+            <h1>Projetos</h1>
 
             {% if is_gestor %}
-                <a class="botao" href="{% url 'editar_projeto' projeto.id %}">Editar</a> 
-                <a class="botao" href="{% url 'apagar_projeto' projeto.id %}">Apagar</a>
-            {% endif %}
-        </h3>
-
-        <div class="conteudo">
-            <p>{{ projeto.descricao }}</p>
-
-            <p>UC: {{ projeto.uc }}</p>
-
-            <p>Tecnologias:
-                {% for tecnologia in projeto.tecnologias.all %}
-                    <span>{{ tecnologia.nome }}</span>
-                {% empty %}
-                    <span>Sem tecnologias</span>
-                {% endfor %}
-            </p>
-
-            <p>
-                GitHub:
-                <a href="{{ projeto.link_github }}" target="_blank">
-                    {{ projeto.link_github }}
-                </a>
-            </p>
-
-            {% if projeto.link_video %}
-            <p>
-                Vídeo:
-                <a href="{{ projeto.link_video }}" target="_blank">
-                    {{ projeto.link_video }}
-                </a>
-            </p>
+                <a class="criarProjeto botaoProjeto" href="">+</a>
             {% endif %}
         </div>
 
-        <a class="botao" href="{{ projeto.imagem.url }}" target="_blank">
-            Ver Imagem
-        </a>
+        <section class="projetos">
+            {% for projeto in projetos %}
+                <section class="projeto">
+                    {% if is_gestor %}
+                        <div class="user">
+                            <div class="deletar botaoProjeto">-</div>
+                            <div class="editar botaoProjeto"><i class="fi fi-rr-file-edit"></i></div>
+                        </div>
+                    {% endif %}
 
-    </section>
+                    <div class="esquerda">
+                        <div class="superior">
+                            <span>Semestre: {{ projeto.ano_semestre }}</span>
 
-    {% empty %}
-        <p>Sem projeto</p>
-    {% endfor %}
+                            <div class="nome">
+                                <h3>{{ projeto.nome }}</h3>
+                                <p>{{ projeto.uc }}</p>
+                            </div>
 
-    <p>User: {{ user.username }}</p>
-    <p>Autenticado: {{ user.is_authenticated }}</p>
-    <p>É gestor: {{ is_gestor }}</p>
-</main>
+
+                            <div class="icones">
+                                <a href="{{ projeto.link_github }}"><i class="fi fi-brands-github"></i></a>
+                                <a href="{{ projeto.link_video }}"><i class="fi fi-brands-youtube-circle"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="descricao">
+                            <p>
+                                {{ projeto.descricao }}
+                            </p>
+                        </div>
+
+                        <div class="inferior">
+                            <h4>Tecnologias Usadas</h4>
+                            <div class="tec">
+                                {% for tecnologia in projeto.tecnologias.all %}
+                                    <p>{{ tecnologia.nome }}</p>
+                                {% empty %}
+                                    <p>Sem tecnologias</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="direita">
+                        <img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}">
+                    </div>
+                </section>
+            {% empty %}
+                <p>Sem projeto</p>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'portfolio/scripts/projeto.js' %}"></script>
 {% endblock %}
