@@ -1,13 +1,13 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
 
 {% block content %}
     <main class="main-projetos">
-
         <div class="titulo">
             <h1>Projetos</h1>
 
             {% if is_gestor %}
-                <a class="criarProjeto botaoProjeto" href="">+</a>
+                <a class="criarProjeto botaoProjeto" href="{% url 'novo_projeto' %}">+</a>
             {% endif %}
         </div>
 
@@ -16,8 +16,8 @@
                 <section class="projeto">
                     {% if is_gestor %}
                         <div class="user">
-                            <div class="deletar botaoProjeto">-</div>
-                            <div class="editar botaoProjeto"><i class="fi fi-rr-file-edit"></i></div>
+                            <a class="deletar botaoProjeto" href="{% url 'apagar_projeto' projeto.id %}">-</a>
+                            <a class="editar botaoProjeto" href="{% url 'editar_projeto' projeto.id %}"><i class="fi fi-rr-file-edit"></i></a>
                         </div>
                     {% endif %}
 
@@ -59,7 +59,10 @@
                     </div>
                 </section>
             {% empty %}
-                <p>Sem projeto</p>
+                <div class="semProjeto">
+                    <p>Sem projeto</p>
+                    <img src="{% static 'img/image/triste.avif' %}" alt="Boneco Triste">
+                </div>
             {% endfor %}
         </section>
     </main>
