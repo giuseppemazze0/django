@@ -25,8 +25,15 @@
         margin-bottom: 60px;
 
         h1 {
+            display: flex;
+            align-items: self-end;
+            gap: 16px;
             font-size: 40px;
             margin-left: 5vw;
+
+            span {
+                font-size: 24px;
+            }
         }
 
         .criarProjeto {

@@ -9,7 +9,7 @@
 {% block content %}
 <main class="main-projetos">
     <div class="titulo">
-        <h1>Projetos</h1>
+        <h1>Projetos <span>( {{ projetos|length }} )</span></h1>
 
         {% if is_gestor %}
         <a class="criarProjeto botaoProjeto" href="{% url 'novo_projeto' %}">+</a>
