@@ -6,6 +6,35 @@ class ProjetoForm(forms.ModelForm):
         model = Projeto
         fields = '__all__'
 
+        error_messages = {
+            "nome": {
+                "required": "*",
+            },
+            "ano_semestre": {
+                "required": "*",
+            },
+            "descricao": {
+                "required": "*",
+            },
+            "tecnologias": {
+                "required": "*",
+            },
+            "link_github": {
+                "required": "*",
+            },
+            "link_video": {
+                "required": "*",
+            },
+            "uc": {
+                "required": "*",
+            },
+            "imagem": {
+                "required": "*",
+            },
+        }
+
+
+
 class TecnologiaForm(forms.ModelForm):
     class Meta:
         model = Tecnologia

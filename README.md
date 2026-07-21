@@ -32,7 +32,7 @@
 <p>pip3 install -r requirements.txt</p>
 
 <p>python -m venv venv</p>
-<p>source venv/bin/activate</p>
+<p>source venv/bin/activate<p>
 <p>pip install -r requirements.txt</p>
 
 Sempre que alterar algum ficheiro estático deverá executar 

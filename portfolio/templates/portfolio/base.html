@@ -36,13 +36,11 @@
 
     
     <link rel="stylesheet" href="{% static 'portfolio/styles/style-geral.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/styles/tfc.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/styles/faculdade.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/styles/desenvolvedor.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/styles/projeto.css' %}">
+    {% block css %}
+    {% endblock %}
+    
     <link rel="stylesheet" href="{% static 'portfolio/styles/sobre_aplicacao.css' %}">
-    <link rel="stylesheet" href="{% static 'accounts/styles/login.css' %}">
-
+    
     <link rel="shortcut icon" href="{% static 'img/image/letra-g.png' %}" type="image/x-icon">
 
     <title>Portfolio</title>
@@ -66,7 +64,7 @@
                             <li><a href="{% url 'tecnologias' %}">Tecnologias</a></li>
                             <li><a href="{% url 'competencias' %}">Competências</a></li>
                             <li><a href="{% url 'formacoes' %}">Formações</a></li>
-                            <li><a href="{% url 'formacoes' %}">API Pokemon</a></li>
+                            <li><a href="/pokemon-api/docs#/" target="_blank">API Pokemon</a></li>
                             <li><a href="{% url 'sobre_aplicacao' %}">Sobre Esta Aplicação</a></li>
                         </ul>
                     </nav>

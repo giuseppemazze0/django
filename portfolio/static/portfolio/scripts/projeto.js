@@ -16,12 +16,7 @@ for (let i = 1; i < projetos.length; i++) {
     });
 }
 
-gsap.from(projeto[0], {
+gsap.from(projetos[0], {
     opacity: 0,
-    x: -60,
-    scrollTrigger: {
-        trigger: '.main-projetos',
-        start: `top top`,
-        markers: true
-    }
+    x: -60
 });

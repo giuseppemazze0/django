@@ -1,73 +1,82 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/projeto.css' %}">
+{% endblock %}
+
+
 {% block content %}
-    <main class="main-projetos">
-        <div class="titulo">
-            <h1>Projetos</h1>
+<main class="main-projetos">
+    <div class="titulo">
+        <h1>Projetos</h1>
 
+        {% if is_gestor %}
+        <a class="criarProjeto botaoProjeto" href="{% url 'novo_projeto' %}">+</a>
+        {% endif %}
+    </div>
+
+    <section class="projetos">
+        {% for projeto in projetos %}
+        <section class="projeto">
             {% if is_gestor %}
-                <a class="criarProjeto botaoProjeto" href="{% url 'novo_projeto' %}">+</a>
+            <div class="user">
+                <a class="deletar botaoProjeto" href="{% url 'apagar_projeto' projeto.id %}">-</a>
+                <a class="editar botaoProjeto" href="{% url 'editar_projeto' projeto.id %}"><i
+                        class="fi fi-rr-file-edit"></i></a>
+            </div>
             {% endif %}
-        </div>
 
-        <section class="projetos">
-            {% for projeto in projetos %}
-                <section class="projeto">
-                    {% if is_gestor %}
-                        <div class="user">
-                            <a class="deletar botaoProjeto" href="{% url 'apagar_projeto' projeto.id %}">-</a>
-                            <a class="editar botaoProjeto" href="{% url 'editar_projeto' projeto.id %}"><i class="fi fi-rr-file-edit"></i></a>
-                        </div>
-                    {% endif %}
+            <div class="esquerda">
+                <div class="superior">
+                    <span>Semestre: {{ projeto.ano_semestre }}</span>
 
-                    <div class="esquerda">
-                        <div class="superior">
-                            <span>Semestre: {{ projeto.ano_semestre }}</span>
-
-                            <div class="nome">
-                                <h3>{{ projeto.nome }}</h3>
-                                <p>{{ projeto.uc }}</p>
-                            </div>
-
-
-                            <div class="icones">
-                                <a href="{{ projeto.link_github }}"><i class="fi fi-brands-github"></i></a>
-                                <a href="{{ projeto.link_video }}"><i class="fi fi-brands-youtube-circle"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="descricao">
-                            <p>
-                                {{ projeto.descricao }}
-                            </p>
-                        </div>
-
-                        <div class="inferior">
-                            <h4>Tecnologias Usadas</h4>
-                            <div class="tec">
-                                {% for tecnologia in projeto.tecnologias.all %}
-                                    <p>{{ tecnologia.nome }}</p>
-                                {% empty %}
-                                    <p>Sem tecnologias</p>
-                                {% endfor %}
-                            </div>
-                        </div>
+                    <div class="nome">
+                        <h3>{{ projeto.nome }}</h3>
+                        <p>{{ projeto.uc }}</p>
                     </div>
-                    <div class="direita">
-                        <img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}">
+
+
+                    <div class="icones">
+                        <a target="_blank" href="{{ projeto.link_github }}"><i class="fi fi-brands-github"></i></a>
+                        {% if projeto.link_video %}
+                        <a target="_blank" href="{{ projeto.link_video }}"><i
+                                class="fi fi-brands-youtube-circle"></i></a>
+                        {% endif %}
                     </div>
-                </section>
-            {% empty %}
-                <div class="semProjeto">
-                    <p>Sem projeto</p>
-                    <img src="{% static 'img/image/triste.avif' %}" alt="Boneco Triste">
                 </div>
-            {% endfor %}
+
+                <div class="descricao">
+                    <p>
+                        {{ projeto.descricao }}
+                    </p>
+                </div>
+
+                <div class="inferior">
+                    <h4>Tecnologias Usadas</h4>
+                    <div class="tec">
+                        {% for tecnologia in projeto.tecnologias.all %}
+                        <p>{{ tecnologia.nome }}</p>
+                        {% empty %}
+                        <p>Sem tecnologias</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="direita">
+                <img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}">
+            </div>
         </section>
-    </main>
+        {% empty %}
+        <div class="semProjeto">
+            <p>Sem projeto</p>
+            <img src="{% static 'img/image/triste.avif' %}" alt="Boneco Triste">
+        </div>
+        {% endfor %}
+    </section>
+</main>
 {% endblock %}
 
 {% block scripts %}
-    <script src="{% static 'portfolio/scripts/projeto.js' %}"></script>
+<script src="{% static 'portfolio/scripts/projeto.js' %}"></script>
 {% endblock %}

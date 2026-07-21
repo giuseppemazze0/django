@@ -1,12 +1,17 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/faculdade.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <main class="main-faculdade">
 
     <section class="cabecalho">
-        <img class="imagem-faculdade" src="{% static 'img/image/faculdade.avif' %}" alt="Imagem vista da rua da faculdade Lusofona de Lisboa">
+        <img class="imagem-faculdade" src="{% static 'img/image/faculdade.avif' %}"
+            alt="Imagem vista da rua da faculdade Lusofona de Lisboa">
         <h1>Universidade Lusófona - Centro Universitário de Lisboa</h1>
     </section>
 
@@ -20,7 +25,8 @@
 
         <div class="card">
             <a href="#licenciatura">
-                <img src="{% static 'img/image/licenciatura.png' %}" alt="Imagem de varias pessoas trabalhando em diferentes areas">
+                <img src="{% static 'img/image/licenciatura.png' %}"
+                    alt="Imagem de varias pessoas trabalhando em diferentes areas">
                 <h4>Licenciatura <span>></span></h4>
             </a>
         </div>
@@ -146,7 +152,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-    <script src="{% static 'portfolio/scripts/faculdade.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<script src="{% static 'portfolio/scripts/faculdade.js' %}"></script>
 {% endblock %}

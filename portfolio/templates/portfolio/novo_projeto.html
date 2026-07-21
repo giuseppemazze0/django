@@ -1,19 +1,90 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/novo-projeto.css' %}">
+{% endblock %}
 
 {% block content %}
-<main class="main-projeto">
+<main class="main-novo-projeto">
+    <section>
+        <div class="esquerda">
+            <div class="icone">
+                <i class="fi fi-rr-confetti"></i>
+                <p>Comece um projeto</p>
+            </div>
 
-    <h1>Novo Projeto</h1>
+            <h1>Criação de um <strong>Novo Projeto</strong></h1>
+        </div>
 
-    <form action="{% url 'novo_projeto' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+        <form action="{% url 'novo_projeto' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
-        <table>
-            {{ form }}
-        </table>
-        
-        <button type="submit">Criar</button>
-    </form>
+            <div class="dupla">
+                <div class="campo campo-nome">
+                    {{ form.nome.label_tag }}
+                    {{ form.nome }}
+                    {{ form.nome.errors }}
+                </div>
+
+                <div class="campo campo-ano">
+                    {{ form.ano_semestre.label_tag }}
+                    {{ form.ano_semestre }}
+                    {{ form.ano_semestre.errors }}
+                </div>
+            </div>
+
+            <div class="dupla">
+                <div class="campo campo-tecnologia">
+                    {{ form.tecnologias.label_tag }}
+                    {{ form.tecnologias }}
+                    {{ form.tecnologias.errors }}
+                </div>
+
+                <div class="campo campo-uc">
+                    {{ form.uc.label_tag }}
+                    {{ form.uc }}
+                    {{ form.uc.errors }}
+                </div>
+            </div>
+
+            <div class="campo campo-descricao">
+                {{ form.descricao.label_tag }}
+                {{ form.descricao }}
+                {{ form.descricao.errors }}
+            </div>
+
+
+            <div class="dupla">
+                <div class="campo campo-link-github">
+                    {{ form.link_github.label_tag }}
+                    {{ form.link_github }}
+                    {{ form.link_github.errors }}
+                </div>
+
+                <div class="campo">
+                    {{ form.link_video.label_tag }}
+                    {{ form.link_video }}
+                    {{ form.link_video.errors }}
+                </div>
+            </div>
+
+
+
+            <div class="dupla">
+                <div class="campo campo-imagem">
+                    {{ form.imagem.label_tag }}
+                    {{ form.imagem }}
+                    {{ form.imagem.errors }}
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Criar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </section>
 
 </main>
 {% endblock %}
