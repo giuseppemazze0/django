@@ -40,6 +40,18 @@ class TecnologiaForm(forms.ModelForm):
         model = Tecnologia
         fields = '__all__'
 
+        error_messages = {
+            "nome": {
+                "required": "*",
+            },
+            "logo": {
+                "required": "*",
+            },
+            "link_website_oficial": {
+                "required": "*",
+            },
+        }
+
 class CompetenciaForm(forms.ModelForm):
     class Meta:
         model = Competencia

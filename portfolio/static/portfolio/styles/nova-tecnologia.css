@@ -1,14 +1,9 @@
 :root {
-    --verde: #184D43;
+    --azul: #153E5F;
 }
 
-.main-novo-projeto {
-    position: relative;
-    display: flex;
-    width: 100vw;
-    max-height: 760px;
-    height: 110vh;
-    padding: 0 12px;
+.main-nova-tecnologia {
+    padding: 0 12px 20px;
 
     section {
         display: flex;
@@ -18,9 +13,7 @@
         max-width: 1300px;
         width: 100%;
         height: fit-content;
-        padding: clamp(24px, 3vw, 48px)
-                 clamp(12px, 3vw, 58px)
-                 80px;
+        padding: clamp(24px, 3vw, 48px) clamp(12px, 3vw, 58px) 80px;
         margin: auto;
         border: 1px solid black;
         border-radius: 20px;
@@ -37,8 +30,8 @@
                 padding: 4px;
                 padding-right: 8px;
                 border-radius: 20px;
-                border: 1px solid var(--verde);
-                background-color: rgba(24, 77, 67, 0.1);
+                border: 1px solid var(--azul);
+                background-color: rgba(21, 62, 95, 0.1);
 
                 i {
                     display: flex;
@@ -50,7 +43,7 @@
                 }
 
                 p {
-                    color: var(--verde);
+                    color: var(--azul);
                 }
             }
 
@@ -65,23 +58,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 20px;
             width: 100%;
-            padding: 20px 12px;
+            padding: 32px 12px;
             margin: 0;
             border-radius: 20px;
-            background-color: var(--verde);
-
-            .dupla {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                padding: 0 20px;
-            }
-
-            .dupla-link {
-                flex-direction: column;
-                width: 50%;
-            }
+            background-color: var(--azul);
 
             .campo {
                 position: relative;
@@ -95,9 +77,7 @@
                     color: rgba(255, 255, 255, 0.8);
                 }
 
-                input,
-                textarea,
-                select {
+                input {
                     padding: 8px 8px;
                     border: none;
                     border-radius: 8px;
@@ -119,37 +99,16 @@
                 }
             }
 
-            .campo-descricao {
-                width: 50%;
-                height: 140px;
-            }
-
             .campo-nome .errorlist {
                 left: 48px;
             }
 
-            .campo-ano .errorlist {
-                left: 104px;
+            .campo-logo .errorlist {
+                left: 40px;
             }
 
-            .campo-descricao .errorlist {
-                left: 76px;
-            }
-
-            .campo-tecnologia .errorlist {
-                left: 90px;
-            }
-
-            .campo-link-github .errorlist {
-                left: 82px;
-            }
-
-            .campo-uc .errorlist {
-                left: 24px;
-            }
-
-            .campo-imagem .errorlist {
-                left: 64px;
+            .campo-link .errorlist {
+                left: 140px;
             }
 
             .botoes {
@@ -179,25 +138,23 @@
                     }
 
                     &[type="submit"] {
-                        background-color: var(--verde);
+                        background-color: var(--azul);
                         color: white;
 
                         &:hover {
-                            background-color: #0e2e28;
+                            background-color: #0f2b42;
                         }
                     }
 
                     &[type="reset"] {
-                        border-color: var(--verde);
-                        color: var(--verde);
+                        border-color: var(--azul);
+                        color: var(--azul);
 
                         &:hover {
                             background-color: rgba(0, 0, 0, 0.3);
                         }
                     }
                 }
-
-
             }
         }
     }
@@ -205,22 +162,9 @@
 
 
 @media screen and (max-width: 900px) {
-    .main-novo-projeto {
-        width: 100%;
-        max-height: none;
-        height: 100%;
-        padding-bottom: 10vh;
-
+    .main-nova-tecnologia {
         section {
             form {
-                .dupla {
-                    flex-direction: column;
-                }
-
-                .dupla-link {
-                    width: 100%;
-                }
-
                 .campo {
                     width: 100%;
                 }
