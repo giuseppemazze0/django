@@ -1,50 +1,52 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/tecnologia.css' %}">
+{% endblock %}
 
 {% block content %}
-<main class="main-projeto">
-
-    <h1>
-        Tecnologias 
+<main class="main-tecnologia">
+    <div class="titulo">
+        <h1>Tecnologias <span>( {{ tecnologias|length }} )</span></h1>
 
         {% if is_gestor %}
-            <a class="botao" href="{% url 'nova_tecnologia' %}">Criar uma Tecnologia</a>
+        <a class="criarTecnologia botaoTecnologia" href="{% url 'novo_projeto' %}">+</a>
         {% endif %}
-    </h1>
+    </div>
 
-    {% for tecnologia in tecnologias %}
+    <section class="tecnologias">
+        <img class="mascara" src="{% static 'img/image/fundo-tec.jpg' %}"
+            alt="Uma pessoa com a mão estentida tentando agarrar um mundo digital.">
 
-    <section class="projeto">
-        <h3>
-            {{ tecnologia.nome }}
+        <div class="superior"></div>
 
-            {% if is_gestor %}
-                <a class="botao" href="{% url 'editar_tecnologia' tecnologia.id %}">Editar</a>
-                <a class="botao" href="{% url 'apagar_tecnologia' tecnologia.id %}">Apagar</a>
-            {% endif %}
-        </h3>
-
-        <div class="conteudo">
-            <p>
-                Website Oficial:
-                <a href="{{ tecnologia.link_website_oficial }}" target="_blank">
-                    {{ tecnologia.link_website_oficial }}
-                </a>
-            </p>
-        </div>
-
-        {% if tecnologia.logo %}
-            <a class="botao" href="{{ tecnologia.logo.url }}" target="_blank">
-                Ver Logo
-            </a>
-        {% else %}
-            <p>Sem logo.</p>
-        {% endif %}
-
+        <div class="inferior"></div>
     </section>
 
-    {% empty %}
-        <p>Sem tecnologias.</p>
-    {% endfor %}
-
 </main>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+const tecnologias = [
+{% for tecnologia in tecnologias %}
+{
+    id: {{ tecnologia.id }},
+    nome: "{{ tecnologia.nome|escapejs }}",
+
+    {% if tecnologia.logo %}
+    logo: "{{ tecnologia.logo.url }}",
+    {% else %}
+    logo: null,
+    {% endif %}
+
+    website: "{{ tecnologia.link_website_oficial }}"
+},
+{% endfor %}
+];
+</script>
+
+<script src="{% static 'portfolio/scripts/tecnologia.js' %}"></script>
 {% endblock %}

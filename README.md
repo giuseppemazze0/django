@@ -37,3 +37,6 @@
 
 Sempre que alterar algum ficheiro estático deverá executar 
 python manage.py collectstatic
+
+source venv/bin/activate
+python manage.py runserver
