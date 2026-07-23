@@ -31,11 +31,31 @@ function criarHtml(tecnologia) {
     const titulo = document.createElement("h3");
     titulo.textContent = tecnologia.nome;
 
+    const user = document.createElement("div");
+    user.classList.add("user");
+
+    const apagar = document.createElement("a");
+    apagar.classList.add("deletar", "botaoTecnologia");
+    apagar.href = `/tecnologia/${tecnologia.id}/apagar`;
+    apagar.textContent = "-";
+
+    const editar = document.createElement("a");
+    editar.classList.add("editar", "botaoTecnologia");
+    editar.href = `/tecnologia/${tecnologia.id}/editar`;
+
+    const iconeEditar = document.createElement("i");
+    iconeEditar.classList.add("fi", "fi-rr-file-edit");
+
+    editar.appendChild(iconeEditar);
+
+    user.appendChild(apagar);
+    user.appendChild(editar);
+
     link.appendChild(icone);
 
     card.appendChild(link);
     card.appendChild(titulo);
-
+    card.appendChild(user);
 
     divTec.appendChild(card);
 

@@ -87,41 +87,7 @@
             width: fit-content;
             height: fit-content;
 
-            .user {
-                position: absolute;
-                top: -48px;
-                left: 32px;
-                z-index: 1;
-                display: flex;
-                gap: 12px;
-
-                .deletar,
-                .editar {
-                    text-decoration: none;
-                    color: rgba(0, 0, 0, 0.9);
-                }
-
-                .deletar {
-                    font-size: 32px;
-                    background-color: #EC4134;
-
-                    &:hover {
-                        background-color: #aa2e25;
-                    }
-                }
-
-                .editar {
-                    font-size: 20px;
-                    background-color: #8A857F;
-
-                    &:hover {
-                        background-color: #76736e;
-                    }
-                }
-            }
-
             .card {
-                overflow: hidden;
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -134,6 +100,39 @@
                 -webkit-backdrop-filter: blur(15px);
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
+                .user {
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    z-index: 1;
+                    display: flex;
+                    gap: 12px;
+
+                    .deletar,
+                    .editar {
+                        text-decoration: none;
+                        color: rgba(0, 0, 0, 0.9);
+                    }
+
+                    .deletar {
+                        font-size: 32px;
+                        background-color: #EC4134;
+
+                        &:hover {
+                            background-color: #aa2e25;
+                        }
+                    }
+
+                    .editar {
+                        font-size: 20px;
+                        background-color: #8A857F;
+
+                        &:hover {
+                            background-color: #76736e;
+                        }
+                    }
+                }
+
                 .fi-bs-up-right-from-square {
                     position: absolute;
                     z-index: 10;
@@ -145,7 +144,8 @@
                     background-color: rgba(255, 255, 255, 0.8);
                 }
 
-                img, .fi-rr-picture {
+                img,
+                .fi-rr-picture {
                     width: 100%;
                     height: 70%;
                     object-fit: cover;

@@ -22,8 +22,7 @@
             {% if is_gestor %}
             <div class="user">
                 <a class="deletar botaoProjeto" href="{% url 'apagar_projeto' projeto.id %}">-</a>
-                <a class="editar botaoProjeto" href="{% url 'editar_projeto' projeto.id %}"><i
-                        class="fi fi-rr-file-edit"></i></a>
+                <a class="editar botaoProjeto" href="{% url 'editar_projeto' projeto.id %}"><i class="fi fi-rr-file-edit"></i></a>
             </div>
             {% endif %}
 
