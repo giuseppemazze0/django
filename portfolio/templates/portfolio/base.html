@@ -76,6 +76,7 @@
 
                     <div class="botoes-header">
                         {% if user.is_authenticated %}
+                            <p>Ola, {{ user }}!</p>
                             <a class="botao-login" href="{% url 'logout' %}">Logout</a>
                         {% else %}
                             <a class="botao-login" href="{% url 'login' %}">Login</a>
