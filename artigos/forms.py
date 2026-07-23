@@ -12,6 +12,21 @@ class ArtigoForm(forms.ModelForm):
             'link_externo'
         ]
 
+        error_messages = {
+            "titulo": {
+                "required": "*",
+            },
+            "texto": {
+                "required": "*",
+            },
+            "fotografia": {
+                "required": "*",
+            },
+            "link_externo": {
+                "invalid": "Insira uma URL válida.",
+            },
+        }
+
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario

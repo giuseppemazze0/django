@@ -119,37 +119,12 @@
                 }
             }
 
-            .campo-descricao {
-                width: 50%;
-                height: 140px;
-            }
-
-            .campo-nome .errorlist {
+            .campo-titulo .errorlist {
                 left: 48px;
             }
 
-            .campo-ano .errorlist {
-                left: 104px;
-            }
-
-            .campo-descricao .errorlist {
-                left: 76px;
-            }
-
-            .campo-tecnologia .errorlist {
-                left: 90px;
-            }
-
-            .campo-link-github .errorlist {
-                left: 82px;
-            }
-
-            .campo-uc .errorlist {
-                left: 24px;
-            }
-
-            .campo-imagem .errorlist {
-                left: 64px;
+            .campo-texto .errorlist {
+                left: 48px;
             }
 
             .botoes {

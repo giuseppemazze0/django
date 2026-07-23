@@ -20,13 +20,13 @@
         <form action="{% url 'novo_artigo' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
-            <div class="campo">
+            <div class="campo campo-titulo">
                 {{ form.titulo.label_tag }}
                 {{ form.titulo }}
                 {{ form.titulo.errors }}
             </div>
 
-            <div class="campo">
+            <div class="campo campo-texto">
                 {{ form.texto.label_tag }}
                 {{ form.texto }}
                 {{ form.texto.errors }}
