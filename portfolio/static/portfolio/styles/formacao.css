@@ -1,0 +1,182 @@
+.main-formacao {
+    .botaoFormacao {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
+            inset 4px 4px 12px rgba(255, 255, 255, 0.3);
+        transition: .3s ease;
+    }
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 60px;
+
+        h1 {
+            display: flex;
+            align-items: self-end;
+            gap: 16px;
+            font-size: 40px;
+            margin-left: 5vw;
+
+            span {
+                font-size: 24px;
+            }
+        }
+
+        .criarFormacao {
+            font-size: 24px;
+            text-decoration: none;
+            background-color: #01903F;
+            color: rgba(255, 255, 255, 0.8);
+
+            &:hover {
+                background-color: #026c30;
+            }
+
+        }
+    }
+
+    .formacoes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+
+        .formacao {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 320px;
+            width: 100%;
+            height: 320px;
+            padding: 12px 20px 12px;
+            background-color: #dfdfdf;
+            box-shadow: 0 16px 14px -10px rgba(71, 44, 126, .5);
+            transition: .3s ease;
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(to top, rgba(71, 44, 126, 0.66) 1%, transparent 50%);
+                opacity: 0;
+                transition: opacity .3s ease;
+                pointer-events: none;
+            }
+
+            &:hover {
+                box-shadow: 0 20px 14px -10px rgba(71, 44, 126, .7);
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            .user {
+                position: absolute;
+                top: -20px;
+                left: 4px;
+                z-index: 1;
+                display: flex;
+                gap: 12px;
+
+                .deletar,
+                .editar {
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.9);
+                }
+
+                .deletar {
+                    font-size: 32px;
+                    background-color: #EC4134;
+
+                    &:hover {
+                        background-color: #aa2e25;
+                    }
+                }
+
+                .editar {
+                    font-size: 20px;
+                    background-color: #8A857F;
+
+                    &:hover {
+                        background-color: #76736e;
+                    }
+                }
+            }
+
+            .cabecalho {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                text-align: center;
+
+                h3 {
+                    font-size: 32px;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .texto {
+                display: flex;
+                width: 100%;
+                height: 200px;
+
+                p {
+                    overflow-wrap: break-word;
+                    width: 100%;
+                }
+            }
+
+            .datas {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    font-size: 13px;
+
+                    i {
+                        display: flex;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .semFormacao {
+        position: relative;
+        max-width: 800px;
+        width: 100%;
+
+        p {
+            position: absolute;
+            top: 6%;
+            left: 6%;
+            padding: 10px 28px;
+            border-radius: 12px;
+            font-size: clamp(32px, 7vw, 72px);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

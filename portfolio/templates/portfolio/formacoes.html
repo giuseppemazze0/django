@@ -1,48 +1,53 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/formacao.css' %}">
+{% endblock %}
+
 
 {% block content %}
-<main class="main-projeto">
+<main class="main-formacao">
+    <div class="titulo">
+        <h1>Formações <span>( {{ formacoes|length }} )</span></h1>
 
-    <h1>
-        Formações 
-        
         {% if is_gestor %}
-            <a class="botao" href="{% url 'nova_formacao' %}">Criar uma Formação</a>
+        <a class="criarFormacao botaoFormacao" href="{% url 'nova_formacao' %}">+</a>
         {% endif %}
-    </h1>
+    </div>
 
-    {% for formacao in formacoes %}
-
-    <section class="projeto">
-        <h3>
-            {{ formacao.nome }}
-            <span>{{ formacao.instituicao }}</span>
-
+    <section class="formacoes">
+        {% for formacao in formacoes %}
+        <section class="formacao">
             {% if is_gestor %}
-                <a class="botao" href="{% url 'editar_formacao' formacao.id %}">Editar</a>
-                <a class="botao" href="{% url 'apagar_formacao' formacao.id %}">Apagar</a>
+            <div class="user">
+                <a class="deletar botaoFormacao" href="{% url 'apagar_formacao' formacao.id %}">-</a>
+                <a class="editar botaoFormacao" href="{% url 'editar_formacao' formacao.id %}"><i class="fi fi-rr-file-edit"></i></a>
+            </div>
             {% endif %}
-        </h3>
 
-        <div class="conteudo">
-            <p>{{ formacao.descricao }}</p>
+            <div class="cabecalho">
+                <h3>{{ formacao.nome }}</h3>
+                <p><i class="fi fi-ss-house-building"></i> {{ formacao.instituicao }}</p>
+                <p>{{ formacao.nome }}</p>
+            </div>
 
-            <p>Período: {{ formacao.data_inicio }} - {{ formacao.data_fim }}</p>
+            <div class="texto">
+                <p>{{ formacao.descricao }}</p>
+            </div>
+            
 
-            <p>Competências:
-                {% for competencia in formacao.competencias.all %}
-                    <span>{{ competencia.nome }}</span>
-                {% empty %}
-                    <span>Sem competências.</span>
-                {% endfor %}
-            </p>
+            <div class="datas">
+                <p><i class="fi fi-sr-clock-three"></i>Início - {{ formacao.data_inicio }}</p>
+                <p><i class="fi fi-rr-clock-three"></i><strong>Fim</strong> - {{ formacao.data_fim }}</p>
+            </div>
+        </section>
+        {% empty %}
+        <div class="semFormacao">
+            <p>Sem formações</p>
+            <img src="{% static 'img/image/triste.avif' %}" alt="Boneco Triste">
         </div>
-
+        {% endfor %}
     </section>
-
-    {% empty %}
-        <p>Sem formações.</p>
-    {% endfor %}
-
 </main>
 {% endblock %}
