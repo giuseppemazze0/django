@@ -337,6 +337,10 @@
 
                 .inferior {
                     flex-direction: row;
+
+                    &::after {
+                        top: -6px;
+                    }
                 }
             }
 

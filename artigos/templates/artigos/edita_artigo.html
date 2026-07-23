@@ -1,0 +1,54 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'artigos/styles/edita-artigo.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-novo-artigo">
+    <section>
+        <div class="esquerda">
+            <div class="icone">
+                <i class="fi fi-rr-confetti"></i>
+                <p>Edite o artigo</p>
+            </div>
+
+            <h1>Edição de um <strong>Artigo</strong></h1>
+        </div>
+
+        <form action="{% url 'edita_artigo' artigo.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="campo campo-titulo">
+                {{ form.titulo.label_tag }}
+                {{ form.titulo }}
+                {{ form.titulo.errors }}
+            </div>
+
+            <div class="campo campo-texto">
+                {{ form.texto.label_tag }}
+                {{ form.texto }}
+                {{ form.texto.errors }}
+            </div>
+
+            <div class="campo campo-imagem">
+                {{ form.fotografia.label_tag }}
+                {{ form.fotografia }}
+                {{ form.fotografia.errors }}
+            </div>
+
+            <div class="campo">
+                {{ form.link_externo.label_tag }}
+                {{ form.link_externo }}
+                {{ form.link_externo.errors }}
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Gravar</button>
+                <button class="deletar"><a href="{% url 'apaga_artigo' artigo.id %}">Apagar</a></button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

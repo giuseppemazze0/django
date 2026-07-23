@@ -74,11 +74,7 @@ def edita_artigo_view(request, artigo_id):
         form = ArtigoForm(instance=artigo)
 
     return render(
-        request,
-        "artigos/edita_artigo.html",
-        {
-            "form": form,
-        },
+        request, "artigos/edita_artigo.html", {"form": form, "artigo": artigo,},
     )
 
 

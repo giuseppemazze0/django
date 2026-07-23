@@ -3,12 +3,7 @@
 }
 
 .main-novo-artigo {
-    position: relative;
-    display: flex;
-    width: 100vw;
-    max-height: 760px;
-    height: 110vh;
-    padding: 0 12px;
+    padding: 0 12px 20px;
 
     section {
         display: flex;
