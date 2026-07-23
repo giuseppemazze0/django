@@ -73,3 +73,39 @@ class FormacaoForm(forms.ModelForm):
     class Meta:
         model = Formacao
         fields = '__all__'
+
+        error_messages = {
+            "nome": {
+                "required": "*",
+            },
+            "instituicao": {
+                "required": "*",
+            },
+            "data_inicio": {
+                "required": "*",
+            },
+            "data_fim": {
+                "required": "*",
+            },
+            "descricao": {
+                "required": "*",
+            },
+             "competencias": {
+                "required": "*",
+            },
+        }
+
+        widgets = {
+    "data_inicio": forms.DateInput(
+        attrs={
+            "type": "date",
+            "placeholder": "xx/xx/xxxx",
+        }
+    ),
+    "data_fim": forms.DateInput(
+        attrs={
+            "type": "date",
+            "placeholder": "xx/xx/xxxx",
+        }
+    ),
+}
