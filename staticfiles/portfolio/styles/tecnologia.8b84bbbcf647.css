@@ -1,0 +1,168 @@
+.main-tecnologia {
+    .botaoTecnologia {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
+            inset 4px 4px 12px rgba(255, 255, 255, 0.3);
+        transition: .3s ease;
+    }
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        h1 {
+            display: flex;
+            align-items: self-end;
+            gap: 16px;
+            font-size: 40px;
+            margin-left: 5vw;
+
+            span {
+                font-size: 24px;
+            }
+        }
+
+        .criarTecnologia {
+            font-size: 24px;
+            text-decoration: none;
+            background-color: #01903F;
+            color: rgba(255, 255, 255, 0.8);
+
+            &:hover {
+                background-color: #026c30;
+            }
+
+        }
+    }
+
+    .tecnologias {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 1200px;
+        height: 700px;
+        padding: 36px 28px;
+        border-radius: 32px;
+        margin: auto;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .mascara {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+        }
+
+        .superior,
+        .inferior {
+            z-index: 10;
+            display: flex;
+            gap: 40px;
+            width: max-content;
+        }
+
+        .tecnologia {
+            width: fit-content;
+            height: fit-content;
+
+            .card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                height: 300px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+                .user {
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    z-index: 1;
+                    display: flex;
+                    gap: 12px;
+
+                    .deletar,
+                    .editar {
+                        text-decoration: none;
+                        color: rgba(0, 0, 0, 0.9);
+                    }
+
+                    .deletar {
+                        font-size: 32px;
+                        background-color: #EC4134;
+
+                        &:hover {
+                            background-color: #aa2e25;
+                        }
+                    }
+
+                    .editar {
+                        font-size: 20px;
+                        background-color: #8A857F;
+
+                        &:hover {
+                            background-color: #76736e;
+                        }
+                    }
+                }
+
+                .fi-bs-up-right-from-square {
+                    position: absolute;
+                    z-index: 10;
+                    top: 8px;
+                    right: 8px;
+                    display: flex;
+                    padding: 4px;
+                    border-radius: 4px;
+                    background-color: rgba(255, 255, 255, 0.8);
+                }
+
+                img,
+                .fi-rr-picture {
+                    width: 100%;
+                    height: 70%;
+                    object-fit: cover;
+                }
+
+                .fi-rr-picture {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 100px;
+                }
+
+                h3 {
+                    height: 30%;
+                    padding: 12px 10px;
+                }
+            }
+        }
+    }
+}

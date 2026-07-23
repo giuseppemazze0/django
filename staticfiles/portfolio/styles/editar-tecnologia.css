@@ -1,0 +1,22 @@
+@import url("nova-tecnologia.css");
+
+.main-nova-tecnologia {
+    section {
+        form {
+            .botoes {
+                button.deletar {
+                    background-color: #be352b;
+
+                    &:hover {
+                        background-color: #8d261f;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

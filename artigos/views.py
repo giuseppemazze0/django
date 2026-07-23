@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ArtigoForm, ComentarioForm
 from .models import Artigo
+from django.contrib.auth.models import User
 
 
 def eh_autor(user):
@@ -15,12 +16,14 @@ def eh_autor(user):
 def artigos_view(request):
     artigos = Artigo.objects.all().order_by("-data_criacao")
     comentario_form = ComentarioForm()
+    autores = User.objects.filter(artigo__isnull=False).distinct()
 
     return render(
         request,
         "artigos/artigos.html",
         {
             "artigos": artigos,
+            "autores": autores,
             "comentario_form": comentario_form,
             "is_autor": eh_autor(request.user),
         },

@@ -1,0 +1,24 @@
+@import url("novo-projeto.6ef6eef6a379.css");
+
+.main-novo-projeto {
+    max-height: 860px;
+
+    section {
+        form {
+            .botoes {
+                button.deletar {
+                    background-color: #be352b;
+
+                    &:hover {
+                        background-color: #8d261f;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

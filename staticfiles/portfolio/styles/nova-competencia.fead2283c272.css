@@ -1,0 +1,174 @@
+:root {
+    --marrom: #5d361b;
+}
+
+.main-nova-competencia {
+    padding: 0 12px 20px;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        max-width: 1300px;
+        width: 100%;
+        height: fit-content;
+        padding: clamp(24px, 3vw, 48px) clamp(12px, 3vw, 58px) 80px;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+
+        .esquerda {
+            width: 100%;
+
+            .icone {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                width: fit-content;
+                padding: 4px;
+                padding-right: 8px;
+                border-radius: 20px;
+                border: 1px solid var(--marrom);
+
+                i {
+                    display: flex;
+                    padding: 6px;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    color: rgba(255, 255, 255, 0.9);
+                }
+
+                p {
+                    color: var(--marrom);
+                }
+            }
+
+            h1 {
+                margin: 20px 0 0;
+                font-size: clamp(32px, 11vw, 60px);
+            }
+
+        }
+
+        form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            padding: 32px 12px;
+            margin: 0;
+            border-radius: 20px;
+            background-color: var(--marrom);
+
+            .campo {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 70%;
+                margin: 4px auto 0;
+
+                label {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+
+                input,
+                textarea {
+                    padding: 8px 8px;
+                    border: none;
+                    border-radius: 8px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    transition: .3s ease;
+
+                    &:focus {
+                        outline: none;
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+
+                .errorlist {
+                    position: absolute;
+                    top: 0;
+                    list-style: none;
+                    font-size: 20px;
+                    color: red;
+                }
+            }
+
+            .campo-nome .errorlist {
+                left: 48px;
+            }
+
+            .campo-nivel .errorlist {
+                left: 40px;
+            }
+
+            .campo-descricao .errorlist {
+                left: 76px;
+            }
+
+            .botoes {
+                position: absolute;
+                bottom: -64px;
+                left: 50%;
+                display: flex;
+                gap: 40px;
+                transform: translateX(-50%);
+
+                button {
+                    cursor: pointer;
+                    width: 132px;
+                    padding: 12px 32px;
+                    outline: none;
+                    border: 1px solid transparent;
+                    border-radius: 12px;
+                    font-size: 20px;
+                    text-align: center;
+                    background-color: transparent;
+                    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+                        inset 4px 4px 12px rgba(255, 255, 255, 0.15);
+                    transition: .3s ease;
+
+                    &:active {
+                        transform: scale(.9);
+                    }
+
+                    &[type="submit"] {
+                        background-color: var(--marrom);
+                        color: rgba(255, 255, 255, 0.8);
+
+                        &:hover {
+                            background-color: #351f0f;
+                        }
+                    }
+
+                    &[type="reset"] {
+                        border-color: var(--marrom);
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .main-nova-tecnologia {
+        section {
+            form {
+                .campo {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

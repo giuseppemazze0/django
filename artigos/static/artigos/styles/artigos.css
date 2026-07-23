@@ -1,0 +1,252 @@
+.main-artigos {
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 40px;
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 72px;
+
+        h1 {
+            position: relative;
+            width: fit-content;
+            font-size: clamp(20px, 6vw, 60px);
+            letter-spacing: 1px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        p {
+            max-width: 500px;
+        }
+    }
+
+    .doisPrimeiros {
+        display: flex;
+        gap: 20px;
+    }
+
+    .ultimasNoticias {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -28px;
+            right: 0;
+            width: 85%;
+            height: 4px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .outrosArtigos {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        .ultimas {
+            position: absolute;
+            top: -36px;
+            left: 0;
+            letter-spacing: 1px;
+        }
+    }
+
+    .topAutores {
+
+    }
+
+    .artigo {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        max-width: 800px;
+        width: 100%;
+        height: 360px;
+
+        .conteudo {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 28px 20px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+
+            .superior {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -24px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                .like {
+                    position: absolute;
+                    top: -4px;
+                    right: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    background-color: white;
+
+                    i {
+                        display: flex;
+                        font-size: 20px;
+                    }
+                }
+
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 16px;
+                    color: rgba(0, 0, 0, 0.9);
+                }
+
+                .texto {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                    line-height: 24px;
+                    color: rgba(0, 0, 0, 0.7);
+                }
+            }
+
+            .inferior {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+
+                .autor {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    i {
+                        display: flex;
+                        font-size: 20px;
+                    }
+                }
+
+                .data {
+                    font-size: 12px;
+                    color: rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+
+        img {
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        &.primeiro {
+            flex-direction: row;
+            gap: 28px;
+            max-width: 800px;
+            padding: 20px 0;
+
+            .conteudo {
+                width: 300px;
+                box-shadow: none;
+
+                .recente {
+                    display: flex;
+                    gap: 8px;
+                    width: fit-content;
+                    padding: 8px 12px;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    border-radius: 4px;
+                    margin-bottom: 28px;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    background-color: #f9f9f9a5;
+                }
+
+                .like {
+                    top: 0px;
+                    right: -16px;
+                    background-color: transparent;
+                }
+
+                h3 {
+                    font-size: 26px;
+                }
+
+                .texto {
+                    -webkit-line-clamp: 3;
+                    line-height: 20px;
+                }
+
+                .inferior {
+                    flex-direction: column;
+                }
+            }
+
+            img {
+                max-width: none;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        &.segundo {
+            flex-direction: column-reverse;
+            gap: 8px;
+            width: 300px;
+            padding: 20px 0;
+
+            .conteudo {
+                height: 174px;
+                padding: 0;
+                box-shadow: none;
+
+                .like {
+                    top: 0;
+                }
+
+                .texto {
+                    -webkit-line-clamp: 3;
+                    line-height: 20px;
+                }
+
+                .inferior {
+                    flex-direction: row;
+                }
+            }
+
+            img {
+                height: 186px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+}

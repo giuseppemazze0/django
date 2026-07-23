@@ -20,48 +20,50 @@
         <form action="{% url 'nova_formacao' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
-            <div class="campo">
-                {{ form.nome.label_tag }}
-                {{ form.nome }}
-                {{ form.nome.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.instituicao.label_tag }}
-                {{ form.instituicao }}
-                {{ form.instituicao.errors }}
-            </div>
-
-            <div class="campo">
-                {{ form.competencias.label_tag }}
-                {{ form.competencias }}
-                {{ form.competencias.errors }}
-            </div>
-
-            <div class="campo campo-descricao">
-                {{ form.descricao.label_tag }}
-                {{ form.descricao }}
-                {{ form.descricao.errors }}
-            </div>
-
-            <div class="dupla">
-                <div class="campo campo-data-inicio">
-                    {{ form.data_inicio.label_tag }}
-                    {{ form.data_inicio }}
-                    {{ form.data_inicio.errors }}
+            <table>
+                <div class="campo campo-nome">
+                    {{ form.nome.label_tag }}
+                    {{ form.nome }}
+                    {{ form.nome.errors }}
                 </div>
 
-                <div class="campo campo-data-fim">
-                    {{ form.data_fim.label_tag }}
-                    {{ form.data_fim }}
-                    {{ form.data_fim.errors }}
+                <div class="campo campo-instituicao">
+                    {{ form.instituicao.label_tag }}
+                    {{ form.instituicao }}
+                    {{ form.instituicao.errors }}
                 </div>
-            </div>
 
-            <div class="botoes">
-                <button type="submit">Gravar</button>
-                <button class="deletar"><a href="{% url 'apagar_formacao' formacao.id %}">Apagar</a></button>
-            </div>
+                <div class="campo campo-competencia">
+                    {{ form.competencias.label_tag }}
+                    {{ form.competencias }}
+                    {{ form.competencias.errors }}
+                </div>
+
+                <div class="campo campo-descricao">
+                    {{ form.descricao.label_tag }}
+                    {{ form.descricao }}
+                    {{ form.descricao.errors }}
+                </div>
+
+                <div class="dupla">
+                    <div class="campo campo-data-inicio">
+                        {{ form.data_inicio.label_tag }}
+                        {{ form.data_inicio }}
+                        {{ form.data_inicio.errors }}
+                    </div>
+
+                    <div class="campo campo-data-fim">
+                        {{ form.data_fim.label_tag }}
+                        {{ form.data_fim }}
+                        {{ form.data_fim.errors }}
+                    </div>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit">Gravar</button>
+                    <button class="deletar"><a href="{% url 'apagar_formacao' formacao.id %}">Apagar</a></button>
+                </div>
+            </table>
         </form>
     </section>
 

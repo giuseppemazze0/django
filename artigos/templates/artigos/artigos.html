@@ -1,0 +1,140 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'artigos/styles/artigos.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-artigos">
+    <div class="cabecalho">
+        <h1>New York PW</h1>
+
+        <div class="apresentacao">
+            <p>
+                Um espaço sereno para pensamentos sem pressa. Sem distrações — apenas reflexões, significado e
+                curiosidade silenciosa
+            </p>
+
+        </div>
+    </div>
+
+
+    {% for artigo in artigos %}
+
+    {% if forloop.first %}
+
+    <article class="doisPrimeiros">
+        <section class="artigo primeiro">
+            <div class="conteudo">
+                <div class="superior">
+                    <p class="recente"><i class="fi fi-sr-fire-flame-curved"></i>Mais Recente</p>
+
+                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+
+                    <h3>{{ artigo.titulo }}</h3>
+
+                    <p class="texto">{{ artigo.texto }}</p>
+                </div>
+
+                <div class="inferior">
+                    <div class="autor">
+                        <i class="fi fi-rr-circle-user"></i>
+                        <p>{{ artigo.autor }}</p>
+                    </div>
+
+                    <p class="data">{{ artigo.data_criacao }}</p>
+                </div>
+            </div>
+
+            {% if artigo.fotografia %}
+            <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+            {% else %}
+            <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+            {% endif %}
+        </section>
+
+        {% elif forloop.counter == 2 %}
+
+        <section class="artigo segundo">
+            <div class="conteudo">
+                <div class="superior">
+                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+
+                    <h3>{{ artigo.titulo }}</h3>
+
+                    <p class="texto">{{ artigo.texto }}</p>
+                </div>
+
+                <div class="inferior">
+                    <div class="autor">
+                        <i class="fi fi-rr-circle-user"></i>
+                        <p>{{ artigo.autor }}</p>
+                    </div>
+
+                    <p class="data">{{ artigo.data_criacao }}</p>
+                </div>
+            </div>
+
+            {% if artigo.fotografia %}
+            <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+            {% else %}
+            <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+            {% endif %}
+        </section>
+    </article>
+
+    <article class="ultimasNoticias">
+        <article class="outrosArtigos">
+            <div class="ultimas">
+                # Últimas Notícias
+            </div>
+
+            {% else %}
+            <section class="artigo">
+                <div class="conteudo">
+                    <div class="superior">
+                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+
+                        <h3>{{ artigo.titulo }}</h3>
+
+                        <p class="texto">{{ artigo.texto }}</p>
+                    </div>
+
+                    <div class="inferior">
+                        <div class="autor">
+                            <i class="fi fi-rr-circle-user"></i>
+                            <p>{{ artigo.autor }}</p>
+                        </div>
+
+                        <p class="data">{{ artigo.data_criacao }}</p>
+                    </div>
+                </div>
+
+                {% if artigo.fotografia %}
+                <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+                {% else %}
+                <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+                {% endif %}
+            </section>
+            {% endif %}
+            {% if forloop.last and forloop.counter >= 2 %}
+        </article>
+
+        <article class="topAutores">
+            <h4>Top Autores</h4>
+            {% for autor in autores %}
+            <div class="autor">
+                <p>{{ forloop.counter }}</p>
+                <p>{{ autor.username }}</p>
+                <i class="fi fi-rr-circle-user"></i>
+            </div>
+            {% endfor %}
+        </article>
+    </article>
+    {% endif %}
+
+    {% endfor %}
+
+</main>
+{% endblock %}

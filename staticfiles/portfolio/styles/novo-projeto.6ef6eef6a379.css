@@ -1,0 +1,230 @@
+:root {
+    --verde: #184D43;
+}
+
+.main-novo-projeto {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    max-height: 760px;
+    height: 110vh;
+    padding: 0 12px;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        max-width: 1300px;
+        width: 100%;
+        height: fit-content;
+        padding: clamp(24px, 3vw, 48px)
+                 clamp(12px, 3vw, 58px)
+                 80px;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+
+        .esquerda {
+            width: 100%;
+
+            .icone {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                width: fit-content;
+                padding: 4px;
+                padding-right: 8px;
+                border-radius: 20px;
+                border: 1px solid var(--verde);
+                background-color: rgba(24, 77, 67, 0.1);
+
+                i {
+                    display: flex;
+                    padding: 6px;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    color: rgba(255, 255, 255, 0.9);
+                }
+
+                p {
+                    color: var(--verde);
+                }
+            }
+
+            h1 {
+                margin: 20px 0 0;
+                font-size: clamp(32px, 11vw, 60px);
+            }
+        }
+
+        form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 12px;
+            margin: 0;
+            border-radius: 20px;
+            background-color: var(--verde);
+
+            .dupla {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding: 0 20px;
+            }
+
+            .dupla-link {
+                flex-direction: column;
+                width: 50%;
+            }
+
+            .campo {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 70%;
+                margin: 4px auto 0;
+
+                label {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+
+                input,
+                textarea,
+                select {
+                    padding: 8px 8px;
+                    border: none;
+                    border-radius: 8px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    transition: .3s ease;
+
+                    &:focus {
+                        outline: none;
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+
+                .errorlist {
+                    position: absolute;
+                    top: 0;
+                    list-style: none;
+                    font-size: 20px;
+                    color: red;
+                }
+            }
+
+            .campo-descricao {
+                width: 50%;
+                height: 140px;
+            }
+
+            .campo-nome .errorlist {
+                left: 48px;
+            }
+
+            .campo-ano .errorlist {
+                left: 104px;
+            }
+
+            .campo-descricao .errorlist {
+                left: 76px;
+            }
+
+            .campo-tecnologia .errorlist {
+                left: 90px;
+            }
+
+            .campo-link-github .errorlist {
+                left: 82px;
+            }
+
+            .campo-uc .errorlist {
+                left: 24px;
+            }
+
+            .campo-imagem .errorlist {
+                left: 64px;
+            }
+
+            .botoes {
+                position: absolute;
+                bottom: -64px;
+                left: 50%;
+                display: flex;
+                gap: 40px;
+                transform: translateX(-50%);
+
+                button {
+                    cursor: pointer;
+                    width: 132px;
+                    padding: 12px 32px;
+                    outline: none;
+                    border: 1px solid transparent;
+                    border-radius: 12px;
+                    font-size: 20px;
+                    text-align: center;
+                    background-color: transparent;
+                    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+                        inset 4px 4px 12px rgba(255, 255, 255, 0.15);
+                    transition: .3s ease;
+
+                    &:active {
+                        transform: scale(.9);
+                    }
+
+                    &[type="submit"] {
+                        background-color: var(--verde);
+                        color: white;
+
+                        &:hover {
+                            background-color: #0e2e28;
+                        }
+                    }
+
+                    &[type="reset"] {
+                        border-color: var(--verde);
+                        color: var(--verde);
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .main-novo-projeto {
+        width: 100%;
+        max-height: none;
+        height: 100%;
+        padding-bottom: 10vh;
+
+        section {
+            form {
+                .dupla {
+                    flex-direction: column;
+                }
+
+                .dupla-link {
+                    width: 100%;
+                }
+
+                .campo {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

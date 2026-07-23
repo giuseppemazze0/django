@@ -32,5 +32,6 @@ urlpatterns = [
     #path("pessoas-api/", pessoasAPI.urls),
     path("pokemon-api/", pokemonAPI.urls),
     path("accounts/", include("accounts.urls")),
+    path("artigos/", include("artigos.urls")),
 ] 
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

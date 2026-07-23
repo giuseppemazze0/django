@@ -96,16 +96,16 @@ class FormacaoForm(forms.ModelForm):
         }
 
         widgets = {
-    "data_inicio": forms.DateInput(
-        attrs={
-            "type": "date",
-            "placeholder": "xx/xx/xxxx",
-        }
-    ),
-    "data_fim": forms.DateInput(
-        attrs={
-            "type": "date",
-            "placeholder": "xx/xx/xxxx",
-        }
-    ),
+            "data_inicio": forms.DateInput(
+                attrs={
+                    "type": "date",
+                    "placeholder": "xx/xx/xxxx",
+                }
+            ),
+            "data_fim": forms.DateInput(
+                attrs={
+                    "type": "date",
+                    "placeholder": "xx/xx/xxxx",
+                }
+            ),
 }
