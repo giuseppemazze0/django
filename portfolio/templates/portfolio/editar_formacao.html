@@ -1,21 +1,69 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/editar-formacao.css' %}">
+{% endblock %}
 
 {% block content %}
-<main class="main-projeto">
+<main class="main-nova-formacao">
+    <section>
+        <div class="esquerda">
+            <div class="icone">
+                <i class="fi fi-rr-confetti"></i>
+                <p>Edite uma formação</p>
+            </div>
 
-    <h1>Editar Formação</h1>
+            <h1>Edição de uma<strong>Formação</strong></h1>
+        </div>
 
-    <form action="{% url 'editar_formacao' formacao.id %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+        <form action="{% url 'nova_formacao' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
-        <table>
-            {{ form }}
-        </table>
-        
-        <button type="submit">Gravar</button>
+            <div class="campo">
+                {{ form.nome.label_tag }}
+                {{ form.nome }}
+                {{ form.nome.errors }}
+            </div>
 
-        <a href="{% url 'editar_formacao' formacao.id %}">Apagar</a>
-    </form>
+            <div class="campo">
+                {{ form.instituicao.label_tag }}
+                {{ form.instituicao }}
+                {{ form.instituicao.errors }}
+            </div>
+
+            <div class="campo">
+                {{ form.competencias.label_tag }}
+                {{ form.competencias }}
+                {{ form.competencias.errors }}
+            </div>
+
+            <div class="campo campo-descricao">
+                {{ form.descricao.label_tag }}
+                {{ form.descricao }}
+                {{ form.descricao.errors }}
+            </div>
+
+            <div class="dupla">
+                <div class="campo campo-data-inicio">
+                    {{ form.data_inicio.label_tag }}
+                    {{ form.data_inicio }}
+                    {{ form.data_inicio.errors }}
+                </div>
+
+                <div class="campo campo-data-fim">
+                    {{ form.data_fim.label_tag }}
+                    {{ form.data_fim }}
+                    {{ form.data_fim.errors }}
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Gravar</button>
+                <button class="deletar"><a href="{% url 'apagar_formacao' formacao.id %}">Apagar</a></button>
+            </div>
+        </form>
+    </section>
 
 </main>
 {% endblock %}
