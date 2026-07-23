@@ -1,39 +1,54 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
-{% block content %}
-<main class="main-projeto">
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/competencia.css' %}">
+{% endblock %}
 
-    <h1>
-        Competências 
+{% block content %}
+<main class="main-competencia">
+    <div class="titulo">
+        <h1>Competências <span>( {{ competencias|length }} )</span></h1>
 
         {% if is_gestor %}
-            <a class="botao" href="{% url 'nova_competencia' %}">Criar uma Competência</a>
+        <a class="criarCompetencia botaoCompetencia" href="{% url 'nova_competencia' %}">+</a>
         {% endif %}
-        </h1>
+    </div>
 
-    {% for competencia in competencias %}
-
-    <section class="projeto">
-        <h3>
-            {{ competencia.nome }}
-            <span>{{ competencia.nivel }}</span>
-
+    <section class="competencias">
+        {% for competencia in competencias %}
+        <section class="competencia">
             {% if is_gestor %}
-                <a class="botao" href="{% url 'editar_competencia' competencia.id %}">Editar</a>
-                <a class="botao" href="{% url 'apagar_competencia' competencia.id %}">Apagar</a>
+            <div class="user">
+                <a class="deletar botaoCompetencia" href="{% url 'apagar_competencia' competencia.id %}">-</a>
+                <a class="editar botaoCompetencia" href="{% url 'editar_competencia' competencia.id %}"><i
+                        class="fi fi-rr-file-edit"></i></a>
+            </div>
             {% endif %}
-        </h3>
 
-        <div class="conteudo">
-            <p>{{ competencia.descricao }}</p>
+            {% if competencia.descricao %}
+            <p class="texto">{{ competencia.descricao }}</p>
+            {% else %}
+            <em class="texto">Sem descrição...</em>
+            {% endif %}
+
+            <div class="inferior">
+                <h3>{{ competencia.nome }}</h3>
+
+                <p>Nível: {{ competencia.nivel }}</p>
+            </div>
+        </section>
+
+        {% empty %}
+        <div class="semCompetencia">
+            <p>Sem competência</p>
+            <img src="{% static 'img/image/triste.avif' %}" alt="Boneco Triste">
         </div>
-
+        {% endfor %}
     </section>
-
-    {% empty %}
-        <p>Sem competências.</p>
-    {% endfor %}
-
 </main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'portfolio/scripts/competencia.js' %}"></script>
 {% endblock %}

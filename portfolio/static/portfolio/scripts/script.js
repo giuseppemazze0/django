@@ -1,6 +1,3 @@
-import './home.js';
-import './resumo.js';
-
 gsap.registerPlugin(ScrollSmoother);
 
 const smoother = ScrollSmoother.create({
