@@ -5,13 +5,14 @@
 
     .cabecalho {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         margin-bottom: 72px;
 
         h1 {
             position: relative;
             width: fit-content;
-            font-size: clamp(20px, 6vw, 60px);
+            font-size: clamp(36px, 6vw, 60px);
             letter-spacing: 1px;
 
             &::after {
@@ -35,10 +36,69 @@
         gap: 20px;
     }
 
+    .botaoArtigo {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
+            inset 4px 4px 12px rgba(255, 255, 255, 0.3);
+        transition: .3s ease;
+    }
+
+    .criarArtigo {
+        font-size: 24px;
+        text-decoration: none;
+        background-color: #01903F;
+        color: rgba(255, 255, 255, 0.8);
+
+        &:hover {
+            background-color: #026c30;
+        }
+    }
+
+    .user {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        gap: 12px;
+
+        .deletar,
+        .editar {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        .deletar {
+            font-size: 32px;
+            background-color: #EC4134;
+
+            &:hover {
+                background-color: #aa2e25;
+            }
+        }
+
+        .editar {
+            font-size: 20px;
+            background-color: #8A857F;
+
+            &:hover {
+                background-color: #76736e;
+            }
+        }
+    }
+
     .ultimasNoticias {
         position: relative;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        padding: 0 8px 20px;
         margin-top: 100px;
 
         &::after {
@@ -66,10 +126,41 @@
     }
 
     .topAutores {
+        max-width: 160px;
+        width: 100%;
+        height: fit-content;
 
+        h4 {
+            margin-bottom: 12px;
+        }
+
+        .autor {
+            display: flex;
+            align-items: center;
+
+            .count {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 24px;
+                height: 24px;
+                padding: 4px;
+                border-radius: 4px;
+                margin-right: 16px;
+                font-size: 12px;
+                background-color: #191919;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            i {
+                display: flex;
+                margin-right: 8px;
+            }
+        }
     }
 
     .artigo {
+        position: relative;
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-end;
@@ -90,18 +181,6 @@
             box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
 
             .superior {
-                position: relative;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    bottom: -24px;
-                    left: 0;
-                    width: 100%;
-                    height: 2px;
-                    background-color: rgba(0, 0, 0, 0.1);
-                }
-
                 .like {
                     position: absolute;
                     top: -4px;
@@ -136,9 +215,20 @@
             }
 
             .inferior {
+                position: relative;
                 display: flex;
                 justify-content: space-between;
                 gap: 20px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -24px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
 
                 .autor {
                     display: flex;
@@ -177,6 +267,10 @@
                 width: 300px;
                 box-shadow: none;
 
+                .superior {
+                    margin-bottom: 12px;
+                }
+
                 .recente {
                     display: flex;
                     gap: 8px;
@@ -184,7 +278,7 @@
                     padding: 8px 12px;
                     border: 1px solid rgba(0, 0, 0, 0.3);
                     border-radius: 4px;
-                    margin-bottom: 28px;
+                    margin-bottom: 20px;
                     font-size: 12px;
                     letter-spacing: 1px;
                     background-color: #f9f9f9a5;
@@ -207,6 +301,10 @@
 
                 .inferior {
                     flex-direction: column;
+
+                    &::after {
+                        top: -10px;
+                    }
                 }
             }
 
@@ -247,6 +345,18 @@
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-artigos {
+        .cabecalho {
+            flex-wrap: wrap;
+        }
+
+        .doisPrimeiros {
+            flex-wrap: wrap;
         }
     }
 }

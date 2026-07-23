@@ -1,0 +1,54 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'artigos/styles/novo-artigo.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-novo-artigo">
+    <section>
+        <div class="esquerda">
+            <div class="icone">
+                <i class="fi fi-rr-confetti"></i>
+                <p>Comece um artigo</p>
+            </div>
+
+            <h1>Criação de um <strong>Novo Artigo</strong></h1>
+        </div>
+
+        <form action="{% url 'novo_artigo' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="campo">
+                {{ form.titulo.label_tag }}
+                {{ form.titulo }}
+                {{ form.titulo.errors }}
+            </div>
+
+            <div class="campo">
+                {{ form.texto.label_tag }}
+                {{ form.texto }}
+                {{ form.texto.errors }}
+            </div>
+
+            <div class="campo campo-imagem">
+                {{ form.fotografia.label_tag }}
+                {{ form.fotografia }}
+                {{ form.fotografia.errors }}
+            </div>
+
+            <div class="campo">
+                {{ form.link_externo.label_tag }}
+                {{ form.link_externo }}
+                {{ form.link_externo.errors }}
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Criar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

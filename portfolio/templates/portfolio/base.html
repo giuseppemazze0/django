@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet'
@@ -19,7 +19,7 @@
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-        <link rel='stylesheet'
+    <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -31,19 +31,21 @@
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-chubby/css/uicons-regular-chubby.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
 
-    
+
     <link rel="stylesheet" href="{% static 'portfolio/styles/style-geral.css' %}">
     {% block css %}
     {% endblock %}
-    
+
     <link rel="stylesheet" href="{% static 'portfolio/styles/sobre_aplicacao.css' %}">
-    
+
     <link rel="shortcut icon" href="{% static 'img/image/letra-g.png' %}" type="image/x-icon">
 
     <title>Portfolio</title>
@@ -58,7 +60,7 @@
                         <i class="fi fi-rr-site-alt"></i>
                         <h2>PW.</h2>
                     </div>
-                  <!--  <nav>
+                    <nav>
                         <ul class="mostrarMenu">
                             <li><a href="{% url 'desenvolvedor' %}">Desenvolvedor</a></li>
                             <li><a href="{% url 'faculdade' %}">Faculdade</a></li>
@@ -74,16 +76,17 @@
                     </nav>
 
                     <button class="hamburguer"><i class="fi fi-rr-menu-burger"></i></button>
-                -->
+
                     <div class="botoes-header">
                         {% if user.is_authenticated %}
-                            <p>Ola, {{ user }}!</p>
-                            <a class="botao-login" href="{% url 'logout' %}">Logout</a>
+                        <p>Ola, {{ user }}!</p>
+                        <a class="botao-login" href="{% url 'logout' %}">Logout</a>
                         {% else %}
-                            <a class="botao-login" href="{% url 'login' %}">Login</a>
-                            <a class="botao-registrar" href="{% url 'registo' %}">Junta-te</a>
+                        <a class="botao-login" href="{% url 'login' %}">Login</a>
+                        <a class="botao-registrar" href="{% url 'registo' %}">Junta-te</a>
                         {% endif %}
-                        <a class="botao-github" href="https://github.com/giuseppe-mazzeo" target="_blank"><i class="fi fi-brands-github"></i></a>
+                        <a class="botao-github" href="https://github.com/giuseppe-mazzeo" target="_blank"><i
+                                class="fi fi-brands-github"></i></a>
                     </div>
                 </section>
             </header>

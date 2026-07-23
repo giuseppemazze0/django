@@ -1,5 +1,5 @@
 :root {
-    --verde: #184D43;
+    --vermelho: #682B35;
 }
 
 .main-novo-artigo {
@@ -37,8 +37,8 @@
                 padding: 4px;
                 padding-right: 8px;
                 border-radius: 20px;
-                border: 1px solid var(--verde);
-                background-color: rgba(24, 77, 67, 0.1);
+                border: 1px solid var(--vermelho);
+                background-color: rgba(104, 43, 53, 0.1);
 
                 i {
                     display: flex;
@@ -50,7 +50,7 @@
                 }
 
                 p {
-                    color: var(--verde);
+                    color: var(--vermelho);
                 }
             }
 
@@ -69,7 +69,7 @@
             padding: 20px 12px;
             margin: 0;
             border-radius: 20px;
-            background-color: var(--verde);
+            background-color: var(--vermelho);
 
             .dupla {
                 display: flex;
@@ -179,17 +179,17 @@
                     }
 
                     &[type="submit"] {
-                        background-color: var(--verde);
+                        background-color: var(--vermelho);
                         color: white;
 
                         &:hover {
-                            background-color: #0e2e28;
+                            background-color: #4b1e26;
                         }
                     }
 
                     &[type="reset"] {
-                        border-color: var(--verde);
-                        color: var(--verde);
+                        border-color: var(--vermelho);
+                        color: var(--vermelho);
 
                         &:hover {
                             background-color: rgba(0, 0, 0, 0.3);

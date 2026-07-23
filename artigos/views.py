@@ -82,6 +82,13 @@ def edita_artigo_view(request, artigo_id):
     )
 
 
+@login_required
+@user_passes_test(eh_autor)
+def apaga_artigo_view(request, artigo_id):
+    Artigo.objects.get(id=artigo_id).delete()
+    return redirect('artigos')
+
+
 
 @login_required
 def like_artigo_view(request, artigo_id):

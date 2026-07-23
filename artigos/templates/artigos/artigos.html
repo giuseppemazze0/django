@@ -10,6 +10,10 @@
     <div class="cabecalho">
         <h1>New York PW</h1>
 
+        {% if is_autor %}
+        <a class="criarArtigo botaoArtigo" href="{% url 'novo_artigo' %}">+</a>
+        {% endif %}
+
         <div class="apresentacao">
             <p>
                 Um espaço sereno para pensamentos sem pressa. Sem distrações — apenas reflexões, significado e
@@ -19,13 +23,20 @@
         </div>
     </div>
 
-
     {% for artigo in artigos %}
 
     {% if forloop.first %}
 
     <article class="doisPrimeiros">
         <section class="artigo primeiro">
+            {% if is_autor %}
+            <div class="user">
+                <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
+                <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i
+                        class="fi fi-rr-file-edit"></i></a>
+            </div>
+            {% endif %}
+
             <div class="conteudo">
                 <div class="superior">
                     <p class="recente"><i class="fi fi-sr-fire-flame-curved"></i>Mais Recente</p>
@@ -57,6 +68,14 @@
         {% elif forloop.counter == 2 %}
 
         <section class="artigo segundo">
+            {% if is_autor %}
+            <div class="user">
+                <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
+                <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i
+                        class="fi fi-rr-file-edit"></i></a>
+            </div>
+            {% endif %}
+
             <div class="conteudo">
                 <div class="superior">
                     <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
@@ -92,6 +111,14 @@
 
             {% else %}
             <section class="artigo">
+                {% if is_autor %}
+                <div class="user">
+                    <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
+                    <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i
+                            class="fi fi-rr-file-edit"></i></a>
+                </div>
+                {% endif %}
+
                 <div class="conteudo">
                     <div class="superior">
                         <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
@@ -125,9 +152,9 @@
             <h4>Top Autores</h4>
             {% for autor in autores %}
             <div class="autor">
-                <p>{{ forloop.counter }}</p>
-                <p>{{ autor.username }}</p>
+                <p class="count">{{ forloop.counter }}</p>
                 <i class="fi fi-rr-circle-user"></i>
+                <p>{{ autor.username }}</p>
             </div>
             {% endfor %}
         </article>
