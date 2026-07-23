@@ -55,7 +55,19 @@ class TecnologiaForm(forms.ModelForm):
 class CompetenciaForm(forms.ModelForm):
     class Meta:
         model = Competencia
-        fields = '__all__'
+        fields = "__all__"
+
+        error_messages = {
+            "nome": {
+                "required": "*",
+            },
+            "nivel": {
+                "required": "*",
+            },
+            "descricao": {
+                "required": "*",
+            },
+        }
 
 class FormacaoForm(forms.ModelForm):
     class Meta:
