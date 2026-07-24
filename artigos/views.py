@@ -30,6 +30,23 @@ def artigos_view(request):
     )
 
 
+def artigo_view(request, artigo_id):
+    artigo = Artigo.objects.get(id=artigo_id)
+    comentarios = artigo.comentarios.order_by("-data")
+    comentario_form = ComentarioForm()
+
+    return render(
+        request,
+        "artigos/artigo.html",
+        {
+            "artigo": artigo,
+            "comentario_form": comentario_form,
+            "comentarios": comentarios,
+            "is_autor": eh_autor(request.user),
+        },
+    )
+
+
 
 @login_required
 @user_passes_test(eh_autor)
@@ -95,7 +112,7 @@ def like_artigo_view(request, artigo_id):
     else:
         artigo.likes.add(request.user)
 
-    return redirect("artigos")
+    return redirect("artigo",  artigo_id=artigo.id)
 
 
 
@@ -110,4 +127,4 @@ def comentario_view(request, artigo_id):
         comentario.artigo = artigo
         comentario.save()
 
-    return redirect("artigos")
+    return redirect("artigo", artigo_id=artigo.id)

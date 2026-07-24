@@ -1,0 +1,134 @@
+.main-artigo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+
+    img {
+
+        width: 100%;
+        object-fit: contain;
+    }
+
+    h3 {
+        max-width: 700px;
+        margin: 40px auto;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .autor {
+            display: flex;
+
+            i {
+                display: flex;
+                margin: 0 4px 0 8px;
+            }
+        }
+
+        .data {
+            font-size: 14px;
+        }
+    }
+
+    .texto {
+        position: relative;
+        margin: 24px 40px 52px;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: .3px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .feedback {
+        display: flex;
+        gap: 40px;
+        margin: auto;
+
+        a,
+        p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        a {
+            border-color: rgba(0, 0, 0, 0.2);
+            transition: .3s ease;
+
+            &:hover {
+                border-color: rgba(0, 0, 0, 0.6);
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        textarea {
+            padding: 8px 8px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: .3s ease;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        button {
+            cursor: pointer;
+            width: 132px;
+            padding: 12px 32px;
+            outline: none;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            font-size: 20px;
+            text-align: center;
+            background-color: transparent;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
+                inset 4px 4px 12px rgba(255, 255, 255, 0.15);
+            transition: .3s ease;
+
+            &:active {
+                transform: scale(.9);
+            }
+
+            &[type="submit"] {
+                background-color: var(--marrom);
+                color: rgba(255, 255, 255, 0.8);
+
+                &:hover {
+                    background-color: #351f0f;
+                }
+            }
+        }
+    }
+}

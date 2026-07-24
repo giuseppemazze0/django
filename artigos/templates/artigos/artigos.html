@@ -41,10 +41,14 @@
                 <div class="superior">
                     <p class="recente"><i class="fi fi-sr-fire-flame-curved"></i>Mais Recente</p>
 
-                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+                    <div class="feedback">
+                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes }}</p>
+                        <p class="comentarios"><i class="fi fi-rs-comments"></i>{{ artigo.comentarios.all|length }}</p>
+                    </div>
 
-                    <h3>{{ artigo.titulo }}</h3>
-
+                    <a href="{% url 'artigo' artigo.id %}">
+                        <h3>{{ artigo.titulo }}</h3>
+                    </a>
                     <p class="texto">{{ artigo.texto }}</p>
                 </div>
 
@@ -78,7 +82,7 @@
 
             <div class="conteudo">
                 <div class="superior">
-                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes}}</p>
 
                     <h3>{{ artigo.titulo }}</h3>
 
@@ -121,7 +125,7 @@
 
                 <div class="conteudo">
                     <div class="superior">
-                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.likes|length }}</p>
+                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes}}</p>
 
                         <h3>{{ artigo.titulo }}</h3>
 
