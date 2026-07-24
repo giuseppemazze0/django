@@ -168,6 +168,10 @@
         width: 100%;
         height: 360px;
 
+        &:hover .titulo h3 {
+            text-decoration: underline rgba(0, 0, 0, 1);
+        }
+
         .conteudo {
             position: relative;
             display: flex;
@@ -181,16 +185,27 @@
             box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
 
             .superior {
-                .like {
+                .titulo {
+                    text-decoration: underline rgba(0, 0, 0, 0.1);
+                }
+
+                .feedback {
                     position: absolute;
-                    top: -4px;
-                    right: 0;
+                    top: 12px;
+                    right: 8px;
                     display: flex;
                     align-items: center;
                     gap: 8px;
                     padding: 6px 12px;
                     border-radius: 4px;
                     background-color: white;
+                    color: rgba(0, 0, 0, 0.7);
+
+                    .comentarios,
+                    .like {
+                        display: flex;
+                        gap: 4px;
+                    }
 
                     i {
                         display: flex;
@@ -248,13 +263,30 @@
             }
         }
 
-        img {
+        .fotografia {
+            position: relative;
             overflow: hidden;
             max-width: 400px;
             width: 100%;
-            object-fit: cover;
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
+
+            .fi-bs-up-right-from-square {
+                position: absolute;
+                z-index: 10;
+                top: 8px;
+                right: 8px;
+                display: flex;
+                padding: 4px;
+                border-radius: 4px;
+                background-color: rgba(255, 255, 255, 0.8);
+                color: black;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
         }
 
         &.primeiro {
@@ -269,6 +301,12 @@
 
                 .superior {
                     margin-bottom: 12px;
+
+                    .feedback {
+                        top: -4px;
+                        right: 0;
+                        flex-direction: column;
+                    }
                 }
 
                 .recente {
@@ -308,7 +346,7 @@
                 }
             }
 
-            img {
+            .fotografia {
                 max-width: none;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
@@ -325,6 +363,11 @@
                 height: 174px;
                 padding: 0;
                 box-shadow: none;
+
+                .feedback {
+                    top: -4px;
+                    right: 0;
+                }
 
                 .like {
                     top: 0;
@@ -344,7 +387,7 @@
                 }
             }
 
-            img {
+            .fotografia {
                 height: 186px;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;

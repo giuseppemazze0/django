@@ -87,32 +87,47 @@
 
     form {
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        gap: 20px;
+        margin: 20px 0 60px;
 
-        textarea {
-            padding: 8px 8px;
-            border: none;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.7);
-            transition: .3s ease;
-        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
 
-        &:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 1);
+            i {
+                display: flex;
+                font-size: 32px;
+            }
+
+            textarea {
+                height: 48px;
+                padding: 8px 8px;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                border-radius: 8px;
+                background-color: rgba(255, 255, 255, 0.7);
+                transition: .3s ease;
+
+                &:focus {
+                    outline: none;
+                    background-color: rgba(255, 255, 255, 1);
+                }
+            }
         }
 
         button {
             cursor: pointer;
-            width: 132px;
-            padding: 12px 32px;
+            padding: 8px 16px;
             outline: none;
             border: 1px solid transparent;
             border-radius: 12px;
-            font-size: 20px;
+            font-size: 16px;
             text-align: center;
             background-color: transparent;
+            color: rgba(0, 0, 0, 0.9);
             box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15),
                 inset 4px 4px 12px rgba(255, 255, 255, 0.15);
             transition: .3s ease;
@@ -121,13 +136,68 @@
                 transform: scale(.9);
             }
 
-            &[type="submit"] {
-                background-color: var(--marrom);
-                color: rgba(255, 255, 255, 0.8);
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
 
-                &:hover {
-                    background-color: #351f0f;
+    .comentarios {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: auto;
+        margin-bottom: 40px;
+
+        .comentario {
+            position: relative;
+            padding: 12px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+
+            .botaoComentario {
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 4px;
+                box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1),
+                    inset 4px 4px 12px rgba(255, 255, 255, 0.3);
+                transition: .3s ease;
+            }
+
+            .user {
+                position: absolute;
+                top: 0;
+                left: -32px;
+                z-index: 1;
+                display: flex;
+                gap: 12px;
+
+                .deletar {
+                    font-size: 32px;
+                    background-color: #EC4134;
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.9);
+
+                    &:hover {
+                        background-color: #aa2e25;
+                    }
                 }
+            }
+
+            strong {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            small {
+                display: block;
+                color: rgba(0, 0, 0, 0.6);
+                margin-bottom: 8px;
             }
         }
     }

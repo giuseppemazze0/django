@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ArtigoForm, ComentarioForm
-from .models import Artigo
+from .models import Artigo, Comentario
 from django.contrib.auth.models import User
 
 
@@ -128,3 +128,12 @@ def comentario_view(request, artigo_id):
         comentario.save()
 
     return redirect("artigo", artigo_id=artigo.id)
+
+
+@login_required
+@user_passes_test(eh_autor)
+def apaga_comentario_view(request, artigo_id, comentario_id):
+    comentario = get_object_or_404(Comentario, id=comentario_id)
+    comentario.delete()
+
+    return redirect('artigo', artigo_id=artigo_id)

@@ -35,23 +35,34 @@
     <form action="{% url 'comentario' artigo.id %}" method="post">
         {% csrf_token %}
 
-        {{ comentario_form.texto }}
+        <div>
+            <i class="fi fi-sr-circle-user"></i>
+            {{ comentario_form.texto }}
+        </div>
+
 
         <button type="submit">
             Comentar
         </button>
     </form>
 
-    {% for comentario in comentarios %}
-    <div class="comentario">
-        <strong>{{ comentario.autor.username }}</strong>
+    <section class="comentarios">
+        {% for comentario in comentarios %}
+        <div class="comentario">
+            {% if is_autor %}
+            <div class="user">
+                <a class="deletar botaoComentario" href="{% url 'apaga_comentario' artigo.id comentario.id %}">-</a>
+            </div>
+            {% endif %}
+            <strong><i class="fi fi-rr-circle-user"></i>{{ comentario.autor.username }}</strong>
 
-        <small>{{ comentario.data }}</small>
+            <small>{{ comentario.data }}</small>
 
-        <p>{{ comentario.texto }}</p>
-    </div>
-    {% empty %}
-    <p>Ainda não existem comentários. Seja o primeiro a comentar!</p>
-    {% endfor %}
+            <p>{{ comentario.texto }}</p>
+        </div>
+        {% empty %}
+        <i>Ainda não existem comentários. Seja o primeiro a comentar!</i>
+        {% endfor %}
+    </section>
 </main>
 {% endblock %}

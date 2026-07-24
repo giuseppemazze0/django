@@ -46,7 +46,7 @@
                         <p class="comentarios"><i class="fi fi-rs-comments"></i>{{ artigo.comentarios.all|length }}</p>
                     </div>
 
-                    <a href="{% url 'artigo' artigo.id %}">
+                    <a class="titulo" href="{% url 'artigo' artigo.id %}">
                         <h3>{{ artigo.titulo }}</h3>
                     </a>
                     <p class="texto">{{ artigo.texto }}</p>
@@ -62,11 +62,17 @@
                 </div>
             </div>
 
-            {% if artigo.fotografia %}
-            <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
-            {% else %}
-            <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
-            {% endif %}
+            <div class="fotografia">
+                {% if artigo.fotografia %}
+                <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+                {% else %}
+                <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+                {% endif %}
+
+                {% if artigo.link_externo %}
+                <a target="_blank" href="{{ artigo.link_externo }}"><i class="fi fi-bs-up-right-from-square"></i></a>
+                {% endif %}
+            </div>
         </section>
 
         {% elif forloop.counter == 2 %}
@@ -82,9 +88,14 @@
 
             <div class="conteudo">
                 <div class="superior">
-                    <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes}}</p>
+                    <div class="feedback">
+                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes }}</p>
+                        <p class="comentarios"><i class="fi fi-rs-comments"></i>{{ artigo.comentarios.all|length }}</p>
+                    </div>
 
-                    <h3>{{ artigo.titulo }}</h3>
+                    <a class="titulo" href="{% url 'artigo' artigo.id %}">
+                        <h3>{{ artigo.titulo }}</h3>
+                    </a>
 
                     <p class="texto">{{ artigo.texto }}</p>
                 </div>
@@ -99,11 +110,17 @@
                 </div>
             </div>
 
-            {% if artigo.fotografia %}
-            <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
-            {% else %}
-            <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
-            {% endif %}
+            <div class="fotografia">
+                {% if artigo.fotografia %}
+                <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+                {% else %}
+                <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+                {% endif %}
+
+                {% if artigo.link_externo %}
+                <a target="_blank" href="{{ artigo.link_externo }}"><i class="fi fi-bs-up-right-from-square"></i></a>
+                {% endif %}
+            </div>
         </section>
     </article>
 
@@ -125,9 +142,15 @@
 
                 <div class="conteudo">
                     <div class="superior">
-                        <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes}}</p>
+                        <div class="feedback">
+                            <p class="like"><i class="fi fi-rs-social-network"></i>{{ artigo.total_likes }}</p>
+                            <p class="comentarios"><i class="fi fi-rs-comments"></i>{{ artigo.comentarios.all|length }}
+                            </p>
+                        </div>
 
-                        <h3>{{ artigo.titulo }}</h3>
+                        <a class="titulo" href="{% url 'artigo' artigo.id %}">
+                            <h3>{{ artigo.titulo }}</h3>
+                        </a>
 
                         <p class="texto">{{ artigo.texto }}</p>
                     </div>
@@ -142,11 +165,18 @@
                     </div>
                 </div>
 
-                {% if artigo.fotografia %}
-                <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
-                {% else %}
-                <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
-                {% endif %}
+                <div class="fotografia">
+                    {% if artigo.fotografia %}
+                    <img src="{{ artigo.fotografia.url }}" alt="{{ artigo.titulo }}">
+                    {% else %}
+                    <img src="{% static 'img/sem-imagem.avif' %}" alt="Sem imagem">
+                    {% endif %}
+
+                    {% if artigo.link_externo %}
+                    <a target="_blank" href="{{ artigo.link_externo }}"><i
+                            class="fi fi-bs-up-right-from-square"></i></a>
+                    {% endif %}
+                </div>
             </section>
             {% endif %}
             {% if forloop.last and forloop.counter >= 2 %}
