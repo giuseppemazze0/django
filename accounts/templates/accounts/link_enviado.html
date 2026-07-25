@@ -1,9 +1,36 @@
 {% extends '../portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/styles/enviado.css' %}">
+{% endblock %}
 
 {% block content %}
+<main class="main-login">
+    <section>
+        <div class="esquerda">
+            <h1>E-mail enviado</h1>
 
-<h2>Email enviado!</h2>
+            <p>
+                Se existir uma conta associada ao endereço de e-mail informado,
+                enviámos um link de acesso para a sua caixa de entrada.
+            </p>
 
-<p>Verifique sua caixa de entrada.</p>
+            <p>
+                O link é válido apenas por um período limitado e pode ser utilizado
+                para iniciar sessão sem necessidade de introduzir a palavra-passe.
+            </p>
 
+            <p>
+                Caso não encontre a mensagem, verifique também a pasta de
+                <strong>Spam</strong> ou <strong>Correio Não Solicitado</strong>.
+            </p>
+
+            <a href="{% url 'login' %}" class="botao">Voltar ao Login</a>
+        </div>
+        <div class="direita">
+            <img class="gato-email mostrar" src="{% static '/img/gato-email.webp' %}" alt="Gato sentado vendo uma tela de computador">
+        </div>
+    </section>
+</main>
 {% endblock %}

@@ -1,5 +1,6 @@
 const inputNome = document.querySelector("input[type='text']");
 const inputSenhas = document.querySelectorAll("input[type='password']");
+const inputEmail = document.querySelector("input[type='email']");
 const linkRegistrar = document.querySelector(".link-registrar");
 
 const gato = document.querySelector(".gato");
@@ -7,13 +8,19 @@ const gatoNome = document.querySelector(".gato-nome");
 const gatoSenha = document.querySelector(".gato-senha");
 const gatoConfirmar = document.querySelector(".gato-confirmar");
 const gatoRegistrar = document.querySelector(".gato-registrar");
+const gatoCima = document.querySelector(".gato-cima");
+const gatoBaixo = document.querySelector(".gato-baixo");
+
+let cima = true;
 
 const gatos = [
     gato,
     gatoNome,
     gatoSenha,
     gatoConfirmar,
-    gatoRegistrar
+    gatoRegistrar,
+    gatoCima,
+    gatoBaixo,
 ];
 
 function mostrarGato(gatoMostrar) {
@@ -91,5 +98,39 @@ inputSenhas[1].addEventListener("blur", () => {
 
 
 linkRegistrar.addEventListener("mouseleave", () => {
+    mostrarGato(gato);
+});
+
+
+
+
+
+
+
+inputEmail.addEventListener("mouseenter", () => {
+    mostrarGato(gatoCima)
+});
+
+inputEmail.addEventListener("focus", () => {
+    mostrarGato(gatoCima)
+});
+
+inputEmail.addEventListener("keydown", () => {
+    if (cima) {
+        mostrarGato(gatoCima);
+    } else {
+        mostrarGato(gatoBaixo);
+    }
+
+    cima = !cima;
+});
+
+inputEmail.addEventListener("mouseleave", () => {
+    if (document.activeElement !== inputEmail) {
+        mostrarGato(gato);
+    }
+});
+
+inputEmail.addEventListener("blur", () => {
     mostrarGato(gato);
 });
