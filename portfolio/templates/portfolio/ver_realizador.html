@@ -10,24 +10,17 @@
     <h1>API do colega</h1>
 
     <section>
-        <h3>Realizadores <a href="{% url 'criar_api_colega' %}"><i class="fi fi-rr-add-document"></i></a></h3>
+        <a class="voltar" href="{% url 'api_colega' %}"><i class="fi fi-rr-arrow-left"></i>Voltar</a>
+
+        <h3>{{ realizador.nome }} - {{ realizador.id }}</h3>
 
         <div class="agrupamento">
-            {% for realizador in realizadores %}
             <div class="realizador">
-                <div class="links">
-                    <a class="deletar" href="{% url 'apagar_realizador' realizador.id %}"><i class="fi fi-rr-remove-user"></i></a>
-                    <a class="editar" href="{% url 'editar_realizador' realizador.id %}"><i class="fi fi-rr-pencil"></i></a>
-                    <a class="ver" href="{% url 'ver_realizador' realizador.id %}"><i class="fi fi-rr-eye"></i></a>
-                </div>
                 <p><strong>ID:</strong> {{ realizador.id }}</p>
                 <p><strong>Nome:</strong> {{ realizador.nome }}</p>
                 <p><strong>Nacionalidade:</strong> {{ realizador.nacionalidade }}</p>
                 <p><strong>Data de nascimento:</strong> {{ realizador.data_nascimento }}</p>
             </div>
-            {% empty %}
-            <p>Sem dados.</p>
-            {% endfor %}
         </div>
     </section>
 </main>

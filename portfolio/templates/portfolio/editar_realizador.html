@@ -1,0 +1,26 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/api-colega.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-api-colega">
+    <h1>API do colega</h1>
+
+    <section>
+        <a class="voltar" href="{% url 'api_colega' %}"><i class="fi fi-rr-arrow-left"></i>Voltar</a>
+
+        <h3>Editar o Realizador</h3>
+        
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Gravar</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

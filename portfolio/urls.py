@@ -11,6 +11,11 @@ urlpatterns = [
     path('sobre_aplicacao/', views.sobre_aplicacao_view, name="sobre_aplicacao"),
 
     path('api_restful/', views.api_restful_view, name="api_restful"),
+    path('api_colega/', views.api_colega_view, name="api_colega"),
+    path('api_colega/criar_realizador/', views.criar_realizador_view, name="criar_api_colega"),
+    path('api_colega/<int:realizador_id>/', views.ver_realizador_view, name="ver_realizador"),
+    path('api_colega/<int:realizador_id>/editar/', views.editar_realizador_view, name="editar_realizador"),
+    path('api_colega/<int:realizador_id>/apagar/', views.apagar_realizador_view, name="apagar_realizador"),
 
     path('projetos/', views.projetos_view, name="projetos"),
     path('projeto/novo/', views.novo_projeto_view, name="novo_projeto"),

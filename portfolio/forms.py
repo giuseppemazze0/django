@@ -33,8 +33,6 @@ class ProjetoForm(forms.ModelForm):
             },
         }
 
-
-
 class TecnologiaForm(forms.ModelForm):
     class Meta:
         model = Tecnologia
@@ -109,3 +107,12 @@ class FormacaoForm(forms.ModelForm):
                 }
             ),
 }
+
+
+
+class RealizadorForm(forms.Form):
+    nome = forms.CharField(max_length=100)
+    nacionalidade = forms.CharField(max_length=100)
+    data_nascimento = forms.DateField(
+        widget=forms.DateInput(attrs={"type": "date"})
+    )

@@ -216,3 +216,120 @@ def editar_formacao_view(request, formacao_id):
 def apagar_formacao_view(request, formacao_id):
     Formacao.objects.get(id=formacao_id).delete()
     return redirect('formacoes')
+
+
+
+
+# ====================
+#
+# API Colega
+#
+# ====================
+
+import requests
+from .forms import RealizadorForm
+
+headers = {
+    "X-API-Key": "QEs-b60x8TpO-LSFOEuoABDlS5ZvUKAWM3-5pl3TVEc"
+}
+
+def criar_realizador_view(request):
+    if request.method == "POST":
+        form = RealizadorForm(request.POST)
+
+        if form.is_valid():
+            dados = form.cleaned_data.copy()
+
+            dados["data_nascimento"] = dados["data_nascimento"].isoformat()
+
+            requests.post(
+                "https://a22403160.pw.deisi.ulusofona.pt/api/realizadores",
+                json=dados,
+                verify=False
+            )
+
+            return redirect("api_colega")
+    else:
+        form = RealizadorForm()
+
+    return render(request, "portfolio/criar_realizador.html", { "form": form })
+
+
+def obter_json(url):
+    try:
+        response = requests.get(url, verify=False)
+
+        if response.status_code == 200:
+            return response.json()
+
+        print(f"Erro {response.status_code} em {url}")
+        return []
+
+    except requests.exceptions.JSONDecodeError:
+        print(f"A resposta de {url} não é um JSON válido.")
+        print(response.text[:200])
+        return []
+
+    except Exception as e:
+        print(f"Erro ao aceder a {url}: {e}")
+        return []
+
+
+def api_colega_view(request):
+    realizadores = obter_json("https://a22403160.pw.deisi.ulusofona.pt/api/realizadores?limit=100")
+    
+    return render(request, "portfolio/api_colega.html", {
+        "realizadores": realizadores,
+        }
+    )
+
+
+def ver_realizador_view(request, realizador_id):
+    r = requests.get(f"https://a22403160.pw.deisi.ulusofona.pt/api/realizadores/{realizador_id}", verify=False)
+    realizador = r.json()
+
+    return render(request, "portfolio/ver_realizador.html", {
+        "realizador": realizador,
+        }
+    )
+
+
+def editar_realizador_view(request, realizador_id):
+    url = f"https://a22403160.pw.deisi.ulusofona.pt/api/realizadores/{realizador_id}"
+
+    if request.method == "POST":
+        form = RealizadorForm(request.POST)
+
+        if form.is_valid():
+            dados = form.cleaned_data.copy()
+            dados["data_nascimento"] = dados["data_nascimento"].isoformat()
+
+            resposta = requests.put(
+                url,
+                json=dados,
+                headers=headers,
+                verify=False
+            )
+
+            return redirect("api_colega")
+
+    else:
+        resposta = requests.get(url, verify=False)
+        form = RealizadorForm(initial=resposta.json())
+
+    return render(request, "portfolio/editar_realizador.html", {
+        "form": form,
+        "realizador_id": realizador_id,
+    })
+
+
+def apagar_realizador_view(request, realizador_id):
+    url = f"https://a22403160.pw.deisi.ulusofona.pt/api/realizadores/{realizador_id}"
+
+    resposta = requests.delete(
+        url,
+        headers=headers,
+        verify=False
+    )
+
+    return redirect("api_colega")
