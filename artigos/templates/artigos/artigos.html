@@ -29,7 +29,7 @@
 
     <article class="doisPrimeiros">
         <section class="artigo primeiro">
-            {% if is_autor %}
+            {% if request.user == artigo.autor %}
             <div class="user">
                 <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
                 <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i
@@ -78,7 +78,7 @@
         {% elif forloop.counter == 2 %}
 
         <section class="artigo segundo">
-            {% if is_autor %}
+            {% if request.user == artigo.autor %}
             <div class="user">
                 <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
                 <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i
@@ -132,7 +132,7 @@
 
             {% else %}
             <section class="artigo">
-                {% if is_autor %}
+                {% if request.user == artigo.autor %}
                 <div class="user">
                     <a class="deletar botaoArtigo" href="{% url 'apaga_artigo' artigo.id %}">-</a>
                     <a class="editar botaoArtigo" href="{% url 'edita_artigo' artigo.id %}"><i

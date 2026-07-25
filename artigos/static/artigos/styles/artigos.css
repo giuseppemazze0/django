@@ -134,6 +134,9 @@
     }
 
     .topAutores {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         max-width: 160px;
         width: 100%;
         height: fit-content;

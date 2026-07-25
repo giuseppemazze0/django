@@ -49,7 +49,7 @@
     <section class="comentarios">
         {% for comentario in comentarios %}
         <div class="comentario">
-            {% if is_autor %}
+            {% if request.user == artigo.autor %}
             <div class="user">
                 <a class="deletar botaoComentario" href="{% url 'apaga_comentario' artigo.id comentario.id %}">-</a>
             </div>

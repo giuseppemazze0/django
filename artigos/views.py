@@ -98,8 +98,13 @@ def edita_artigo_view(request, artigo_id):
 @login_required
 @user_passes_test(eh_autor)
 def apaga_artigo_view(request, artigo_id):
-    Artigo.objects.get(id=artigo_id).delete()
-    return redirect('artigos')
+    artigo = get_object_or_404(Artigo, id=artigo_id)
+
+    if artigo.autor != request.user:
+        return redirect("artigos")
+
+    artigo.delete()
+    return redirect("artigos")
 
 
 
@@ -134,6 +139,9 @@ def comentario_view(request, artigo_id):
 @user_passes_test(eh_autor)
 def apaga_comentario_view(request, artigo_id, comentario_id):
     comentario = get_object_or_404(Comentario, id=comentario_id)
-    comentario.delete()
 
-    return redirect('artigo', artigo_id=artigo_id)
+    if comentario.autor != request.user:
+        return redirect("artigo", artigo_id=artigo_id)
+
+    comentario.delete()
+    return redirect("artigo", artigo_id=artigo_id)
