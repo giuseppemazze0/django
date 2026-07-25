@@ -1,8 +1,18 @@
+from django.conf import settings
 from ninja import NinjaAPI
 from django.shortcuts import get_object_or_404
 from typing import List
 from .schemas import *
 from .models import *
+from ninja.security import APIKeyHeader
+
+class AuthAPIKey(APIKeyHeader):
+    param_name = "X-API-Key"
+
+    def authenticate(self, request, key):
+        if key == settings.API_KEY:
+            return key
+        return None
 
 
 api = NinjaAPI(
@@ -12,7 +22,7 @@ api = NinjaAPI(
     A aplicação permite gerir informações sobre Pokémon, os seus tipos, treinadores e habitats, estabelecendo relações entre
     estas entidades através de uma base de dados relacional. A API disponibiliza operações CRUD e segue os princípios da 
     arquitetura REST, facilitando a integração com aplicações cliente.""",
-    version="1.0.0"
+    version="1.0.0",
 )
 
 
@@ -158,7 +168,8 @@ def criar_pokemon(request, data: PokemonIn):
     "pokemons/{pokemon_id}",
     response={200: PokemonOut, 400: ErrorSchema, 404: ErrorSchema},
     tags=["Pokemons"],
-    description="Atualiza dados de um pokemon na API"
+    description="Atualiza dados de um pokemon na API",
+    auth=AuthAPIKey()
 )
 def atualizar_pokemon(request, pokemon_id: int, data: PokemonUpdate):
     try:
@@ -210,7 +221,8 @@ def atualizar_pokemon(request, pokemon_id: int, data: PokemonUpdate):
     "pokemons/{pokemon_id}",
     response={204: None, 404: ErrorSchema},
     tags=["Pokemons"],
-    description="Apagar um pokemon na API"
+    description="Apagar um pokemon na API",
+    auth=AuthAPIKey()
 )
 def apagar_pokemon(request, pokemon_id: int):
     try:
@@ -282,7 +294,8 @@ def criar_tipagem(request, data: TipagemIn):
     "tipagens/{tipagem_id}",
     response={200: TipagemOut, 404: ErrorSchema},
     tags=["Tipagens"],
-    description="Atualiza dados de uma tipagem na API"
+    description="Atualiza dados de uma tipagem na API",
+    auth=AuthAPIKey()
 )
 def atualizar_tipagem(request, tipagem_id: int, data: TipagemIn):
     updated = Tipagem.objects.filter(id=tipagem_id).update(**data.dict())
@@ -300,7 +313,8 @@ def atualizar_tipagem(request, tipagem_id: int, data: TipagemIn):
     "tipagens/{tipagem_id}/",
     response={204: None, 404: ErrorSchema},
     tags=["Tipagens"],
-    description="Apagar uma tipagem"
+    description="Apagar uma tipagem",
+    auth=AuthAPIKey()
 )
 def apagar_tipagem(request, tipagem_id: int):
     tipagem = get_object_or_404(Tipagem, id=tipagem_id)
@@ -377,7 +391,8 @@ def criar_habitat(request, data: HabitatIn):
     "habitats/{habitat_id}",
     response={200: HabitatOut, 404: ErrorSchema},
     tags=["Habitats"],
-    description="Atualiza dados de um habitat na API"
+    description="Atualiza dados de um habitat na API",
+    auth=AuthAPIKey()
 )
 def atualizar_habitat(request, habitat_id: int, data: HabitatIn):
     updated = Habitat.objects.filter(id=habitat_id).update(**data.dict())
@@ -395,7 +410,8 @@ def atualizar_habitat(request, habitat_id: int, data: HabitatIn):
     "habitats/{habitat_id}/",
     response={204: None, 404: ErrorSchema},
     tags=["Habitats"],
-    description="Apagar um habitat"
+    description="Apagar um habitat",
+    auth=AuthAPIKey()
 )
 def apagar_habitat(request, habitat_id: int):
     habitat = get_object_or_404(Habitat, id=habitat_id)
@@ -474,7 +490,8 @@ def criar_treinador(request, data: TreinadorIn):
     "treinadores/{treinador_id}",
     response={200: TreinadorOut, 404: ErrorSchema},
     tags=["Treinadores"],
-    description="Atualiza dados de um treinador na API"
+    description="Atualiza dados de um treinador na API",
+    auth=AuthAPIKey()
 )
 def atualizar_treinadores(request, treinador_id: int, data: TreinadorIn):
     updated = Treinador.objects.filter(id=treinador_id).update(**data.dict())
@@ -492,7 +509,8 @@ def atualizar_treinadores(request, treinador_id: int, data: TreinadorIn):
     "treinadores/{treinador_id}/",
     response={204: None, 404: ErrorSchema},
     tags=["Treinadores"],
-    description="Apagar um treinador"
+    description="Apagar um treinador",
+    auth=AuthAPIKey()
 )
 def apagar_treinador(request, treinador_id: int):
     treinador = get_object_or_404(Treinador, id=treinador_id)

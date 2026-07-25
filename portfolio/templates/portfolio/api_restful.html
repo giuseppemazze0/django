@@ -1,0 +1,95 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/api-restful.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-api">
+    <h1>API RESTful</h1>
+    
+    <section class="projetos">
+        <div class="pokemon">
+            <h3>API Pokemon</h3>
+            <p>
+                Esta é a API que desenvolvi para gerir pokemons. Ela permite operações CRUD sobre pokemon, tipagem,
+                treinador e habitat. A documentação completa pode ser vista ao clicar no botão.
+            </p>
+
+            <a class="botao" href="/pokemon-api/docs#/" target="_blank">Clique aqui</a>
+        </div>
+
+
+        <div class="colega">
+            <h3>API Colega</h3>
+            <p>
+                Esta é a API de um colega. Clique para ver os dados consumidos. O objetivo é saber como consumir uma API
+                externa.
+            </p>
+
+            <a class="botao" href="/pokemon-api/docs#/" target="_blank">Clique aqui</a>
+        </div>
+    </section>
+
+    <section class="apresentacao">
+        <div class="card">
+            <h3>API</h3>
+            <p>
+                Uma API (Application Programming Interface) é um mecanismo que permite a comunicação entre diferentes
+                aplicações. Em vez de uma aplicação aceder diretamente à base de dados de outra, ela envia pedidos à
+                API, que processa a solicitação e devolve apenas os dados necessários. Desta forma, é possível integrar
+                diferentes sistemas de forma organizada, segura e independente.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Métodos HTTP</h3>
+
+            <p>
+                Os métodos HTTP são utilizados para comunicar com uma API. Cada método representa uma operação diferente
+                sobre um determinado recurso.
+            </p>
+
+            <ul>
+                <li><strong>GET</strong> - Obtém informações.</li>
+                <li><strong>POST</strong> - Criar um recurso.</li>
+                <li><strong>PUT</strong> - Atualiza um recurso.</li>
+                <li><strong>DELETE</strong> - Deleta um recurso.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Django Ninja</h3>
+            <p>
+                O Django Ninja é uma biblioteca desenvolvida para facilitar a criação de APIs utilizando o framework
+                Django. Ela permite criar endpoints de forma rápida, validar automaticamente os dados recebidos e gerar
+                documentação interativa da API. A sua integração com o Django reduz a quantidade de código necessária e
+                torna o desenvolvimento mais simples e eficiente.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>API Key</h3>
+            <p>
+                Uma API Key é uma chave utilizada para autenticar e identificar quem está a utilizar uma API. Sempre que
+                uma aplicação realiza um pedido, esta chave é enviada juntamente com a requisição para que o servidor
+                possa verificar se o acesso é autorizado. Além de aumentar a segurança, a API Key permite controlar a
+                utilização da API e restringir o acesso apenas a utilizadores ou aplicações autorizadas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>RESTful</h3>
+            <p>
+                Uma API RESTful é uma API que segue os princípios da arquitetura REST, utilizando o protocolo HTTP para
+                comunicar entre cliente e servidor. Os recursos são identificados por URLs e as operações são realizadas
+                através de métodos como GET, POST, PUT e DELETE. Este modelo tornou-se um dos padrões mais utilizados no
+                desenvolvimento web devido à sua simplicidade, organização e facilidade de integração.
+            </p>
+        </div>
+
+
+    </section>
+</main>
+{% endblock %}

@@ -10,6 +10,8 @@ urlpatterns = [
 
     path('sobre_aplicacao/', views.sobre_aplicacao_view, name="sobre_aplicacao"),
 
+    path('api_restful/', views.api_restful_view, name="api_restful"),
+
     path('projetos/', views.projetos_view, name="projetos"),
     path('projeto/novo/', views.novo_projeto_view, name="novo_projeto"),
     path('projeto/<int:projeto_id>/editar/', views.editar_projeto_view, name="editar_projeto"),

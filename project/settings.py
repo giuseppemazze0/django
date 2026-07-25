@@ -116,6 +116,8 @@ EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
 
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 
+API_KEY = env("API_KEY")
+
 
 
 

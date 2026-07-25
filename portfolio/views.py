@@ -45,6 +45,10 @@ def sobre_aplicacao_view(request):
     return render(request, 'portfolio/sobre_aplicacao.html')
 
 
+def api_restful_view(request):
+    return render(request, 'portfolio/api_restful.html')
+
+
 
 def projetos_view(request):
     return render(request, 'portfolio/projetos.html', {
