@@ -22,3 +22,16 @@ hamburguer.addEventListener("click", () => {
     ul.classList.toggle("mostrarMenu");
     localStorage.setItem("menuAberto", ul.classList.contains("mostrarMenu"));
 });
+
+
+const titulo = document.querySelector('.botao-registrar');
+function atualizarTexto() {
+    if (window.innerWidth <= 530) {
+        titulo.textContent = "Junte";
+    } else {
+        titulo.textContent = "Junta-te";
+    }
+}
+
+atualizarTexto();
+window.addEventListener("resize", atualizarTexto);

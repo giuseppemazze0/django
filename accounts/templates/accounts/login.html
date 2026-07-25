@@ -1,35 +1,47 @@
 {% extends '../portfolio/base.html' %}
+{% load static %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'accounts/styles/login.css' %}">
-    {% endblock %}
+{% endblock %}
 
 
 {% block content %}
-<main class="login">
-    <h1>Login</h1>
+<main class="main-login">
+    <section>
+        <div class="esquerda">
+            <h1>Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Nome de utilizador" required>
+                <input type="password" name="password" placeholder="Palavra-passe" required>
+                <button class="botao link-entrar" type="submit">
+                    Entrar
+                </button>
+            </form>
+            {% if erro %}
+            <p class="erro">
+                {{ erro }}
+            </p>
+            {% endif %}
+            <div class="links">
+                <a class="botao link-magico" href="{% url 'magic_login' %}">Entrar com Link Mágico</a>
+                <a class="botao link-criar" href="{% url 'registo' %}">Criar Conta</a>
+            </div>
+        </div>
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Nome de utilizador" required>
-
-        <input type="password" name="password" placeholder="Palavra-passe" required>
-
-        <button type="submit">
-            Entrar
-        </button>
-    </form>
-
-    {% if erro %}
-    <p class="erro">
-        {{ erro }}
-    </p>
-    {% endif %}
-
-    <div class="links">
-        <a href="{% url 'magic_login' %}">Entrar com Link Mágico</a>
-
-        <a href="{% url 'registo' %}">Criar Conta</a>
-    </div>
+        <div class="direita">
+            <img class="gato mostrar" src="{% static '/img/gato.webp' %}" alt="Gato sentado esperando">
+            <img class="gato-nome" src="{% static '/img/gato-nome.webp' %}" alt="Gato laranja foto">
+            <img class="gato-senha" src="{% static '/img/gato-senha.webp' %}" alt="Gato com olho fechado">
+            <img class="gato-entrar" src="{% static '/img/gato-entrar.webp' %}" alt="Gato feliz">
+            <img class="gato-magico" src="{% static '/img/gato-magico.webp' %}" alt="Gato vestido de mago">
+            <img class="gato-criar" src="{% static '/img/gato-criar.webp' %}" alt="Gato segurando um buque de flores">
+        </div>
+    </section>
 </main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'accounts/scripts/script.js' %}"></script>
 {% endblock %}
