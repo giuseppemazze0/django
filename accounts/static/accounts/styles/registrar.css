@@ -1,0 +1,49 @@
+@import url('login.css');
+
+.main-login {
+    section {
+        .esquerda {
+            a {
+                display: flex;
+                width: fit-content;
+                gap: 12px;
+                padding: 4px 12px;
+                border-radius: 12px;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.6);
+
+                i {
+                    display: flex;
+                    color: rgba(255, 255, 255, 0.9);
+                }
+            }
+
+            form {
+                input {
+                    width: 100%;
+                }
+                
+                .error {
+                    border-radius: 12px;
+                    list-style-position: inside;
+                    text-align: center;
+                    background-color: red;
+                    color: white;
+                }
+
+                .ajuda {
+                    padding: 8px 12px;
+                    border-radius: 12px;
+                    margin: 4px 12px;
+                    list-style-position: inside;
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color: black;
+                }
+            }
+        }
+
+        .direita {
+            margin: auto;
+        }
+    }
+}

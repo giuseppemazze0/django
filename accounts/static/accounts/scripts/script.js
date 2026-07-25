@@ -26,6 +26,7 @@ function mostrarGato(gatoMostrar) {
     gatoMostrar.classList.add("mostrar");
 }
 
+
 inputNome.addEventListener("mouseenter", () => {
     mostrarGato(gatoNome)
 });
@@ -33,6 +34,7 @@ inputNome.addEventListener("mouseenter", () => {
 inputNome.addEventListener("focus", () => {
     mostrarGato(gatoNome)
 });
+
 
 inputSenha.addEventListener("mouseenter", () => {
     mostrarGato(gatoSenha)
@@ -42,17 +44,21 @@ inputSenha.addEventListener("focus", () => {
     mostrarGato(gatoSenha)
 });
 
+
 linkEntrar.addEventListener("mouseenter", () => {
     mostrarGato(gatoEntrar)
 });
+
 
 linkMagico.addEventListener("mouseenter", () => {
     mostrarGato(gatoMagico)
 });
 
+
 linkCriar.addEventListener("mouseenter", () => {
     mostrarGato(gatoCriar)
 });
+
 
 
 
@@ -66,6 +72,7 @@ inputNome.addEventListener("blur", () => {
     mostrarGato(gato);
 });
 
+
 inputSenha.addEventListener("mouseleave", () => {
     if (document.activeElement !== inputSenha) {
         mostrarGato(gato);
@@ -76,13 +83,16 @@ inputSenha.addEventListener("blur", () => {
     mostrarGato(gato);
 });
 
+
 linkEntrar.addEventListener("mouseleave", () => {
     mostrarGato(gato);
 });
 
+
 linkMagico.addEventListener("mouseleave", () => {
     mostrarGato(gato);
 });
+
 
 linkCriar.addEventListener("mouseleave", () => {
     mostrarGato(gato);

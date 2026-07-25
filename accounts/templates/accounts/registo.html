@@ -1,22 +1,54 @@
-{% extends "../portfolio/base.html" %}
+{% extends '../portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/styles/registrar.css' %}">
+{% endblock %}
+
 
 {% block content %}
+<main class="main-login">
+    <section>
+        <div class="esquerda">
+            <a class="botao" href="{% url 'login' %}"><i class="fi fi-rr-arrow-left"></i>Voltar ao login</a>
 
-<h2>Registo</h2>
+            <h1>Registrar</h1>
+            <form method="POST">
+                {% csrf_token %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+                <div class="campo">
+                    {{ form.username }}
+                    <div class="error">{{ form.username.errors }}</div>
+                    <div class="ajuda">{{ form.username.help_text }}</div>
+                </div>
 
-    <button type="submit">
-        Registar
-    </button>
-</form>
+                <div class="campo">
+                    {{ form.password1 }}
+                    <div class="error">{{ form.password1.errors }}</div>
+                    <div class="ajuda">{{ form.password1.help_text }}</div>
+                </div>
 
-<br>
+                <div class="campo">
+                    {{ form.password2 }}
+                    <div class="error">{{ form.password2.errors }}</div>
+                    <div class="ajuda">{{ form.password2.help_text }}</div>
+                </div>
 
-<a href="{% url 'login' %}">
-    Voltar ao login
-</a>
+                <button class="botao link-registrar" type="submit">Registrar</button>
+            </form>
+        </div>
 
+        <div class="direita">
+            <img class="gato mostrar" src="{% static '/img/gato.webp' %}" alt="Gato sentado esperando">
+            <img class="gato-nome" src="{% static '/img/gato-nome.webp' %}" alt="Gato laranja foto">
+            <img class="gato-senha" src="{% static '/img/gato-senha.webp' %}" alt="Gato com olho fechado">
+            <img class="gato-confirmar" src="{% static '/img/gato-confirmar.webp' %}" alt="Gato espiando">
+            <img class="gato-registrar" src="{% static '/img/gato-registrar.webp' %}" alt="Gato muito feliz">
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'accounts/scripts/registrar.js' %}"></script>
 {% endblock %}

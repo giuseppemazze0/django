@@ -1,0 +1,10 @@
+@import url('login.css');
+
+.main-login {
+    .esquerda {
+        .erro {
+            top: 148px;
+            left: -176px;
+        }
+    }
+}

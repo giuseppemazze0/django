@@ -1,21 +1,39 @@
-{% extends "../portfolio/base.html" %}
+{% extends '../portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/styles/magico.css' %}">
+{% endblock %}
 
 {% block content %}
+<main class="main-login">
+    <section>
+        <div class="esquerda">
+            <h1>Login com Link Mágico</h1>
+            <form method="post">
+                {% csrf_token %}
 
-<h2>Login com Link Mágico</h2>
+                <input type="email" name="email" placeholder="Email" required>
 
-<form method="post">
-    {% csrf_token %}
+                <button class="botao link" type="submit">Enviar link</button>
+            </form>
+            {% if erro %}
+            <p class="erro">
+                {{ erro }}
+            </p>
+            {% endif %}
+        </div>
 
-    <input type="email" name="email" placeholder="Email" required>
+        <div class="direita">
+            <img class="gato mostrar" src="{% static '/img/gato.webp' %}" alt="Gato sentado esperando">
+            <img class="gato-cima" src="{% static '/img/gato-digitando-cima.webp' %}" alt="Gato digitando para cima">
+            <img class="gato-baixo" src="{% static '/img/gato-digitando-baixo.webp' %}" alt="Gato digitando para baixo">
+            <img class="gato-enviar" src="{% static '/img/gato-enviar.webp' %}" alt="Gato dando um joia">
+        </div>
+    </section>
+</main>
+{% endblock %}
 
-    <button type="submit">
-        Enviar link
-    </button>
-</form>
-
-{% if erro %}
-<p>{{ erro }}</p>
-{% endif %}
-
+{% block scripts %}
+<script src="{% static 'accounts/scripts/magico.js' %}"></script>
 {% endblock %}

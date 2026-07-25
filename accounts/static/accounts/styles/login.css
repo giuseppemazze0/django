@@ -56,7 +56,12 @@
             .gato-senha,
             .gato-entrar,
             .gato-magico,
-            .gato-criar {
+            .gato-criar,
+            .gato-confirmar,
+            .gato-registrar,
+            .gato-cima,
+            .gato-baixo,
+            .gato-enviar {
                 display: none;
             }
 
