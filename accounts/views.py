@@ -55,7 +55,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('projetos')
+            return redirect('desenvolvedor')
         else:
             erro = "Utilizador ou password inválidos"
     return render(request, 'accounts/login.html', { 'erro': erro })

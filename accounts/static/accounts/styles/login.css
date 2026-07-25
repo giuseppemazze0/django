@@ -120,6 +120,7 @@
 
         .erro {
             position: absolute;
+            z-index: 1;
             top: 96px;
             left: 0;
             width: 100%;
