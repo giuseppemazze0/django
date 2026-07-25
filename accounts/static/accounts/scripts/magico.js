@@ -46,3 +46,19 @@ inputEmail.addEventListener("keydown", () => {
 link.addEventListener("mouseenter", () => {
     mostrarGato(gatoEnviar)
 });
+
+
+
+inputEmail.addEventListener("mouseleave", () => {
+    if (document.activeElement !== inputEmail) {
+        mostrarGato(gato);
+    }
+});
+
+inputEmail.addEventListener("blur", () => {
+    mostrarGato(gato);
+});
+
+link.addEventListener("mouseleave", () => {
+    mostrarGato(gato);
+});

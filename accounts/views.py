@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegistoForm
@@ -23,7 +24,7 @@ def magic_link_login(request):
             send_mail(
                 "Login mágico",
                 f"Clique no link para entrar:\n\n{link}",
-                None,
+                settings.DEFAULT_FROM_EMAIL,
                 [email],
                 fail_silently=False,
             )

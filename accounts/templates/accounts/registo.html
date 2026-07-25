@@ -23,6 +23,11 @@
                 </div>
 
                 <div class="campo">
+                    {{ form.email }}
+                    <div class="error">{{ form.email.errors }}</div>
+                </div>
+
+                <div class="campo">
                     {{ form.password1 }}
                     <div class="error">{{ form.password1.errors }}</div>
                     <div class="ajuda">{{ form.password1.help_text }}</div>

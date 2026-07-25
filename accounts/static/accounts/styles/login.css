@@ -5,6 +5,7 @@
     width: 100vw;
     height: 100vh;
     background: white;
+    padding: 460px 0 400px;
     margin-top: -109px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     background-image: url('/static/img/fundo.jpg');
@@ -157,6 +158,10 @@
 
 
 @media screen and (max-width: 850px) {
+    .main-login {
+        padding: 480px 0 400px;
+    }
+
     section {
         max-width: 380px !important;
     }

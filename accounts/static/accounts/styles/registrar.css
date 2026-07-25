@@ -19,6 +19,8 @@
             }
 
             form {
+                margin-top: 12px;
+
                 input {
                     width: 100%;
                 }
@@ -38,6 +40,10 @@
                     list-style-position: inside;
                     background-color: rgba(255, 255, 255, 0.6);
                     color: black;
+                }
+
+                .botao {
+                    margin-top: 0;
                 }
             }
         }

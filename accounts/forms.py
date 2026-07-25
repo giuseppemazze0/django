@@ -5,11 +5,14 @@ from django.contrib.auth.models import User
 class RegistoForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
         widgets = {
             "username": forms.TextInput(attrs={
                 "placeholder": "Nome de utilizador"
+            }),
+            "email": forms.EmailInput(attrs={
+                "placeholder": "E-mail"
             }),
         }
 
@@ -18,6 +21,10 @@ class RegistoForm(UserCreationForm):
 
         self.fields["username"].widget.attrs.update({
             "placeholder": "Nome de utilizador"
+        })
+
+        self.fields["email"].widget.attrs.update({
+            "placeholder": "E-mail"
         })
 
         self.fields["password1"].widget.attrs.update({
