@@ -110,21 +110,18 @@
         </p>
 
         <div class="inferior">
-            <div class="esquerda">
-                <h4>Diagrama Entidade-Relação</h4>
-                <img src="{% static 'portfolio/images/der.png' %}" alt="DER">
-            </div>
-            <div class="direita">
-                <h4>Models.py (Exemplo)</h4>
-                <pre>
+            <h4>Models.py (Exemplo)</h4>
+            <pre>
 class Projeto(models.Model):
     nome = models.CharField(...)
     descricao = models.TextField()
     tecnologias = models.ManyToManyField(Tecnologia)
     uc = models.ForeignKey(UnidadeCurricular, ...)
             </pre>
-            </div>
         </div>
+
+        <h4>Diagrama Entidade-Relação</h4>
+        <img src="{% static 'img/image/der.webp' %}" alt="Explicacao modelacao">
     </section>
 
     <section class="tecnologias">
@@ -163,7 +160,7 @@ class Projeto(models.Model):
             A aplicação está organizada em páginas CRUD para as diversas entidades do sistema.
         </p>
 
-        <img src="{% static 'portfolio/images/mapa.png' %}" alt="Mapa do Site">
+        <img src="{% static 'img/image/paginacao.webp' %}" alt="Mapa do Site">
     </section>
 
     <section class="github">
@@ -203,6 +200,8 @@ class Projeto(models.Model):
             resolver muitos destes problemas, foi utilizada IA Generativa como ferramenta de apoio, sobretudo na
             interpretação de mensagens de erro, pesquisa de soluções e compreensão do funcionamento da pipeline CI/CD.
         </p>
+
+        <img src="{% static 'img/image/pipeline.webp' %}" alt="Explicacao sobre a pipeline CI/CD">
     </section>
 
     <section class="arquitetura-producao">
@@ -232,6 +231,8 @@ class Projeto(models.Model):
             para uma maior estabilidade, facilidade de implementação e simplificação do processo de manutenção e
             atualização da aplicação.
         </p>
+
+        <img src="{% static 'img/image/arq-pro.webp' %}" alt="Imagem sobre a arquitetura em produção">
     </section>
 
     <section class="api">
@@ -267,6 +268,8 @@ class Projeto(models.Model):
         <a class="botao" target="_blank"
             href="https://bookish-spoon-q7gwp69gxj6pf9q76-8000.app.github.dev/pokemon-api/docs#/">Documentação Swagger
             API</a>
+
+        <img src="{% static 'img/image/fun-api.webp' %}" alt="Explicação da API">
     </section>
 
     <section class="making-of">
