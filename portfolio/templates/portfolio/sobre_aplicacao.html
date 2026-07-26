@@ -101,185 +101,386 @@
 
     <section class="modelacao">
         <h3>Modelação</h3>
+        <p>
+            O desenvolvimento da aplicação começou pela modelação das entidades e respetivos relacionamentos.
+        </p>
+        <p>
+            O modelo foi evoluindo ao longo do desenvolvimento para acomodar novas funcionalidades,
+            como competências, formações, TFCs e Making Of.
+        </p>
 
-        <div class="conteudo">
-            <p>
-                O desenvolvimento da aplicação começou pela modelação das entidades e respetivos relacionamentos.
-            </p>
-
-            <h4>Diagrama Entidade-Relação</h4>
-
-            <img src="{% static 'portfolio/images/der.png' %}" alt="DER">
-
-            <h4>Models.py</h4>
-
-            <pre>
+        <div class="inferior">
+            <div class="esquerda">
+                <h4>Diagrama Entidade-Relação</h4>
+                <img src="{% static 'portfolio/images/der.png' %}" alt="DER">
+            </div>
+            <div class="direita">
+                <h4>Models.py (Exemplo)</h4>
+                <pre>
 class Projeto(models.Model):
     nome = models.CharField(...)
     descricao = models.TextField()
     tecnologias = models.ManyToManyField(Tecnologia)
     uc = models.ForeignKey(UnidadeCurricular, ...)
-</pre>
-
-            <p>
-                O modelo foi evoluindo ao longo do desenvolvimento para acomodar novas funcionalidades,
-                como competências, formações, TFCs e Making Of.
-            </p>
-
+            </pre>
+            </div>
         </div>
-
     </section>
 
-    <!-- ======================================================== -->
+    <section class="tecnologias">
+        <h3>Tecnologias Utilizadas</h3>
 
-    <section class="sobre">
+        <ul>
+            <li>
+                <img src="{% static 'img/image/backend.webp' %}" alt="Backend">
+                <strong>Backend</strong>
+                <p>Django e Python</p>
+            </li>
 
-        <h3>3. Tecnologias Utilizadas</h3>
+            <li>
+                <img src="{% static 'img/image/frontend.webp' %}" alt="Fronted">
+                <strong>Frontend</strong>
+                <p>HTML, CSS e JavaScript (biblioteca GSAP)</p>
+            </li>
 
-        <div class="conteudo">
+            <li>
+                <img src="{% static 'img/image/servidor.webp' %}" alt="Backend">
+                <strong>Base de Dados</strong>
+                <p>Neon</p>
+            </li>
 
-            <h4>Frontend</h4>
-
-            <ul>
-
-                {% for tecnologia in frontend %}
-
-                <li>
-
-                    <strong>{{ tecnologia.nome }}</strong>
-
-                    <p>{{ tecnologia.descricao }}</p>
-
-                </li>
-
-                {% empty %}
-
-                <li>Sem tecnologias.</li>
-
-                {% endfor %}
-
-            </ul>
-
-            <h4>Backend</h4>
-
-            <ul>
-
-                {% for tecnologia in backend %}
-
-                <li>
-
-                    <strong>{{ tecnologia.nome }}</strong>
-
-                    <p>{{ tecnologia.descricao }}</p>
-
-                </li>
-
-                {% empty %}
-
-                <li>Sem tecnologias.</li>
-
-                {% endfor %}
-
-            </ul>
-
-            <h4>Base de Dados</h4>
-
-            <ul>
-
-                {% for tecnologia in database %}
-
-                <li>
-
-                    <strong>{{ tecnologia.nome }}</strong>
-
-                    <p>{{ tecnologia.descricao }}</p>
-
-                </li>
-
-                {% empty %}
-
-                <li>Sem tecnologias.</li>
-
-                {% endfor %}
-
-            </ul>
-
-            <h4>Outras Tecnologias</h4>
-
-            <ul>
-
-                {% for tecnologia in outros %}
-
-                <li>
-
-                    <strong>{{ tecnologia.nome }}</strong>
-
-                    <p>{{ tecnologia.descricao }}</p>
-
-                </li>
-
-                {% empty %}
-
-                <li>Sem tecnologias.</li>
-
-                {% endfor %}
-
-            </ul>
-
-        </div>
-
+            <li>
+                <img src="{% static 'img/image/outras.webp' %}" alt="Backend">
+                <strong>Outras Tecnologias</strong>
+                <p>Git, GitHub, CodeSpace, Django Extensions, Django Ninja</p>
+            </li>
+        </ul>
     </section>
 
-    <!-- ======================================================== -->
+    <section class="paginas">
+        <h3>Estrutura das Páginas</h3>
+        <p>
+            A aplicação está organizada em páginas CRUD para as diversas entidades do sistema.
+        </p>
 
-    <section class="sobre">
-
-        <h3>4. Estrutura das Páginas</h3>
-
-        <div class="conteudo">
-
-            <p>
-                A aplicação está organizada em páginas CRUD para as diversas entidades do sistema.
-            </p>
-
-            <img src="{% static 'portfolio/images/mapa.png' %}" alt="Mapa do Site">
-
-        </div>
-
+        <img src="{% static 'portfolio/images/mapa.png' %}" alt="Mapa do Site">
     </section>
 
-    <!-- ======================================================== -->
+    <section class="github">
+        <h3>Repositório GitHub</h3>
 
-    <section class="sobre">
+        <p>
+            Durante o desenvolvimento da aplicação foi utilizado Git e GitHub para
+            efetuar o controlo de versões do projeto. Estas ferramentas permitiram
+            guardar o histórico das alterações, experimentar novas funcionalidades
+            sem comprometer versões estáveis e facilitar a recuperação de código
+            sempre que necessário.
+        </p>
 
-        <h3>5. Repositório GitHub</h3>
-
-        <div class="conteudo">
-
-            <p>
-
-                <a href="https://github.com/SEU_REPOSITORIO" target="_blank">
-
-                    Repositório GitHub
-
-                </a>
-
-            </p>
-
-            <p>
-
-                Durante o desenvolvimento da aplicação foi utilizado Git e GitHub para
-                efetuar o controlo de versões do projeto. Estas ferramentas permitiram
-                guardar o histórico das alterações, experimentar novas funcionalidades
-                sem comprometer versões estáveis e facilitar a recuperação de código
-                sempre que necessário.
-
-            </p>
-
-        </div>
-
+        <a class="botao" href="https://github.com/giuseppemazze0/django" target="_blank">Repositório GitHub</a>
     </section>
 
+    <section class="pipeline">
+        <h3>Pipeline CI/CD</h3>
+        <p>
+            O projeto recorre a uma pipeline CI/CD (Continuous Integration e Continuous Deployment) implementada através
+            do GitHub Actions, permitindo automatizar todo o processo de integração e publicação da aplicação.
+        </p>
+        <p>
+            Sempre que é efetuado um commit seguido de um push para o repositório GitHub, o workflow é iniciado
+            automaticamente. Durante esta execução, o código é atualizado, é construída uma nova imagem Docker e é
+            realizado o deploy da aplicação, garantindo que a versão em produção é atualizada sem necessidade de
+            intervenção manual.
+        </p>
+        <p>
+            Esta abordagem reduz a probabilidade de erros humanos, agiliza o processo de publicação e assegura que todas
+            as alterações ao projeto são disponibilizadas de forma rápida e consistente.
+        </p>
+        <p>
+            Ao longo da implementação desta pipeline surgiram diversos desafios, principalmente relacionados com a
+            configuração de variáveis de ambiente, autenticação SMTP, criação e configuração de workflows no GitHub
+            Actions, utilização de Docker e gestão de permissões entre os diferentes serviços. Para compreender e
+            resolver muitos destes problemas, foi utilizada IA Generativa como ferramenta de apoio, sobretudo na
+            interpretação de mensagens de erro, pesquisa de soluções e compreensão do funcionamento da pipeline CI/CD.
+        </p>
+    </section>
+
+    <section class="arquitetura-producao">
+        <h3>Arquitetura da Solução em Produção</h3>
+        <p>
+            A aplicação encontra-se disponibilizada num ambiente de produção, estando acessível através do domínio
+            *.pw.deisi.ulusofona.pt. O projeto foi desenvolvido com o framework Django, seguindo uma arquitetura modular
+            baseada em aplicações independentes (apps), o que facilita a organização do código, a manutenção e a
+            escalabilidade da solução.
+        </p>
+        <p>
+            Entre as principais aplicações que compõem o sistema destacam-se o portfolio, artigos, accounts e escola,
+            sendo cada uma responsável por um conjunto específico de funcionalidades.
+        </p>
+        <p>
+            Para o armazenamento dos dados é utilizada uma base de dados PostgreSQL, alojada na plataforma Neon, que
+            disponibiliza um serviço de base de dados na cloud, garantindo persistência da informação e acesso remoto.
+        </p>
+        <p>
+            Os ficheiros multimédia, como imagens associadas aos artigos e aos projetos, são armazenados no Cloudinary.
+            Esta solução permite separar o armazenamento de ficheiros do servidor da aplicação, melhorando o desempenho,
+            a gestão dos recursos e a disponibilidade do conteúdo.
+        </p>
+        <p>
+            No ambiente de produção, a aplicação é executada recorrendo a Docker, que assegura um ambiente consistente e
+            isolado, e ao Gunicorn, responsável por servir a aplicação Django. A utilização destas tecnologias contribui
+            para uma maior estabilidade, facilidade de implementação e simplificação do processo de manutenção e
+            atualização da aplicação.
+        </p>
+    </section>
+
+    <section class="api">
+        <h3>API RESTful com Django Ninja</h3>
+        <p>
+            A aplicação integra uma API RESTful desenvolvida com Django Ninja, permitindo a comunicação e manipulação de
+            dados através de diferentes endpoints HTTP.
+        </p>
+        <p>
+            Uma API RESTful funciona como uma interface que possibilita a troca de informação entre sistemas, utilizando
+            métodos como GET, POST, PUT e DELETE. Estes métodos foram implementados para consultar, criar, atualizar e
+            remover dados de forma estruturada e padronizada.
+        </p>
+        <p>
+            No âmbito deste projeto foi desenvolvida uma API dedicada à gestão de filmes, incluindo entidades como
+            Realizadores, Géneros, Atores e Filmes. Cada uma destas entidades disponibiliza operações CRUD completas
+            (Create, Read, Update e Delete), permitindo gerir os dados tanto através de pedidos HTTP como da
+            documentação interativa da API.
+        </p>
+        <p>
+            O Django Ninja foi escolhido devido à sua simplicidade de utilização, integração nativa com Django e
+            capacidade de gerar automaticamente documentação. Através da definição de schemas e endpoints, é possível
+            validar dados, organizar a estrutura da API e disponibilizar uma interface de teste intuitiva.
+        </p>
+        <p>
+            A documentação interativa é disponibilizada através do Swagger, permitindo visualizar os endpoints
+            existentes, consultar os parâmetros necessários e executar pedidos diretamente no navegador, facilitando o
+            desenvolvimento, os testes e a manutenção da API.
+        </p>
+        <p>
+            A documentação completa da API pode ser consultada em:
+        </p>
+        <a class="botao" target="_blank"
+            href="https://bookish-spoon-q7gwp69gxj6pf9q76-8000.app.github.dev/pokemon-api/docs#/">Documentação Swagger
+            API</a>
+    </section>
+
+    <section class="making-of">
+        <h3>Making Of</h3>
+
+        <div class="agrupamento">
+            <h3>Problemas e Dificuldades Encontrados</h3>
+
+            <div>
+                <h4>Modelação</h4>
+                <p>
+                    A fase de modelação não apresentou grandes dificuldades, sobretudo porque no semestre anterior
+                    frequentei a unidade curricular de Bases de Dados. Os conhecimentos adquiridos facilitaram a
+                    compreensão das relações entre as diferentes entidades e a construção do modelo de dados da
+                    aplicação.
+                </p>
+                <p>
+                    O aspeto menos positivo desta etapa foi o facto de ser um processo bastante repetitivo e demorado.
+                    Apesar disso, revelou-se fundamental para garantir uma estrutura de dados consistente e bem
+                    organizada, simplificando o desenvolvimento das restantes funcionalidades da aplicação.
+                </p>
+            </div>
+
+            <div>
+                <h4>Base de Dados</h4>
+                <p>
+                    No início do desenvolvimento, não me preocupava muito com a forma como os dados eram armazenados,
+                    pois o Django tratava automaticamente dessa gestão através da sua ORM. No entanto, à medida que o
+                    projeto evoluiu e foram introduzidos conceitos como Pipeline CI/CD e ambiente de produção, tornou-se
+                    necessário adotar uma solução de base de dados mais adequada e profissional.
+                </p>
+                <p>
+                    Durante a migração para a base de dados PostgreSQL disponibilizada pelo Neon, enfrentei algumas
+                    dificuldades. Na primeira tentativa, exportei e importei os dados de forma incorreta, o que obrigou
+                    à recriação completa da base de dados. Apesar deste contratempo, a experiência permitiu compreender
+                    melhor o processo de migração, a utilização de *fixtures* e a configuração de uma base de dados
+                    remota para um ambiente de produção.
+                </p>
+            </div>
+
+            <div>
+                <h4>Carregamento da Base de Dados dos TFC</h4>
+                <p>
+                    O carregamento da base de dados dos TFC não apresentou grandes dificuldades ao nível do tratamento
+                    dos dados. Apesar da quantidade elevada de informação, a sua organização era semelhante à de outras
+                    entidades da aplicação, como Unidades Curriculares e Projetos, o que facilitou a compreensão da
+                    estrutura e a importação dos dados.
+                </p>
+                <p>
+                    A maior dificuldade surgiu na construção e estilização dos cartões (cards) de cada TFC, uma vez que
+                    era necessário apresentar um grande volume de informação de forma organizada e visualmente
+                    apelativa. Além disso, o processo de desenvolvimento e testes desta página era mais demorado, pois a
+                    quantidade de registos fazia com que o carregamento da página fosse significativamente mais lento.
+                </p>
+            </div>
+
+            <div>
+                <h4>Carregamento de Informação</h4>
+                <p>
+                    O carregamento da informação para as diferentes páginas da aplicação não apresentou dificuldades
+                    significativas. Como já existia experiência adquirida com outras funcionalidades do projeto, o
+                    processo tornou-se relativamente simples e intuitivo.
+                </p>
+                <p>
+                    A única etapa que exigiu maior atenção foi a construção dos templates em HTML, especialmente na
+                    utilização das estruturas <code>{ % for % }</code> e <code>{ % endfor % }</code>. Foi necessário
+                    garantir que os ciclos estavam corretamente posicionados e que os atributos de cada objeto eram
+                    apresentados nos locais adequados, de forma a exibir toda a informação corretamente na página.
+                </p>
+            </div>
+
+            <div>
+                <h4>Implementação de Forms</h4>
+                <p>
+                    A implementação dos <em>forms</em> foi uma das cinco etapas mais desafiantes de todo o projeto. A
+                    criação do ficheiro <code>forms.py</code> revelou-se relativamente simples, uma vez que o Django
+                    disponibiliza ferramentas que facilitam bastante este processo. No entanto, a maior dificuldade
+                    surgiu na integração dos formulários com os templates HTML, na sua estilização em CSS e na correta
+                    submissão e armazenamento dos dados na base de dados.
+                </p>
+                <p>
+                    Relativamente à estilização, inicialmente tive dificuldade em compreender como personalizar
+                    individualmente os diferentes elementos do formulário, como <em>inputs</em>, <em>selects</em>,
+                    <em>textareas</em> e respetivos <em>labels</em>. Para ultrapassar esta dificuldade, recorri a uma
+                    LLM, que me ajudou a compreender a estrutura gerada pelo Django e a melhor forma de aplicar estilos
+                    personalizados. Embora o processo tenha sido inicialmente demorado e tenha exigido várias horas de
+                    trabalho em CSS, a reutilização dos estilos nas restantes páginas tornou o desenvolvimento muito
+                    mais rápido e consistente.
+                </p>
+                <p>
+                    Outro desafio importante foi o tratamento dos dados submetidos pelos formulários. Em algumas
+                    aplicações, a gravação dos dados funcionou corretamente à primeira tentativa, enquanto noutras
+                    surgiram diversos problemas relacionados com validação, configuração dos formulários e associação
+                    aos modelos. A resolução destes erros exigiu vários testes e uma análise cuidadosa do funcionamento
+                    interno dos <em>forms</em> do Django, contribuindo para um melhor entendimento desta funcionalidade
+                    do framework.
+                </p>
+            </div>
+
+            <div>
+                <h4>Implementação da Pipeline CI/CD</h4>
+                <p>
+                    A implementação da pipeline CI/CD não apresentou grandes dificuldades técnicas. Grande parte deste
+                    processo foi facilitada pela documentação disponibilizada pelo professor Lúcio, que se revelou
+                    bastante completa, organizada e simples de seguir. Graças a esse apoio, foi possível configurar
+                    corretamente os diferentes serviços envolvidos, como o Neon, o Cloudinary e o GitHub Actions.
+                </p>
+                <p>
+                    Apesar de a configuração ter decorrido sem grandes obstáculos, esta foi uma das etapas mais
+                    demoradas do projeto. Foi necessário dedicar praticamente um dia inteiro à migração para o ambiente
+                    de produção, à configuração das variáveis de ambiente, dos serviços externos e à realização de
+                    vários testes para garantir que todo o processo de integração e deploy automático funcionava
+                    corretamente.
+                </p>
+            </div>
+
+            <div>
+                <h4>Sobre a API</h4>
+                <p>
+                    O desenvolvimento da API foi uma das partes de que mais gostei ao longo do projeto, principalmente
+                    por estar relacionado com um tema pelo qual tenho interesse: o universo Pokémon. Foi bastante
+                    gratificante ver a primeira API desenvolvida por mim a funcionar corretamente, respondendo aos
+                    pedidos e disponibilizando os dados conforme esperado.
+                </p>
+                <p>
+                    A API RESTful foi criada com o objetivo de representar uma Pokédex da primeira geração de Pokémon.
+                    Através dela é possível gerir informações sobre Pokémon, Tipagens, Treinadores e Habitats,
+                    estabelecendo relações entre estas entidades através de uma base de dados relacional. Para cada
+                    recurso foram implementadas operações CRUD completas (Create, Read, Update e Delete), seguindo os
+                    princípios da arquitetura REST e recorrendo ao Django Ninja para disponibilizar uma documentação
+                    interativa através do Swagger.
+                </p>
+                <p>
+                    Durante a implementação da funcionalidade de consumo da API de um colega, surgiu uma dificuldade
+                    relacionada com a autenticação. A API Key anteriormente fornecida já não era válida, sendo
+                    necessário gerar uma nova chave para que os pedidos voltassem a ser autorizados.
+                </p>
+                <p>
+                    Outro problema encontrado esteve relacionado com a disponibilidade da API do colega. Em determinados
+                    períodos, os pedidos demoravam bastante tempo a responder ou retornavam erros <strong>502 (Bad
+                        Gateway)</strong> e <strong>504 (Gateway Timeout)</strong>, enquanto noutros momentos
+                    funcionavam normalmente, devolvendo o código <strong>200 (OK)</strong>. Esta instabilidade
+                    dificultou os testes e atrasou o desenvolvimento das funcionalidades que dependiam dessa API
+                    externa.
+                </p>
+            </div>
+
+            <div>
+                <h4>Outras Dificuldades</h4>
+                <p>
+                    Ao longo de todo o desenvolvimento do projeto surgiram inúmeros erros, tanto no terminal como na
+                    própria aplicação. Em muitos casos, a origem destes problemas não era imediatamente evidente, o que
+                    exigiu várias horas de investigação, testes e pesquisa. Para compreender melhor as mensagens de erro
+                    e encontrar possíveis soluções, recorri frequentemente a uma LLM, que se revelou uma ferramenta útil
+                    para interpretar exceções, esclarecer conceitos e acelerar a resolução de problemas.
+                </p>
+                <p>
+                    Outra dificuldade inicial foi compreender a interação entre os ficheiros <code>urls.py</code> e
+                    <code>views.py</code>. Nos primeiros contactos com o Django, tive alguma dificuldade em perceber o
+                    fluxo de funcionamento dos pedidos HTTP e o encaminhamento das páginas. Com a prática e o
+                    desenvolvimento de novas funcionalidades, esta lógica tornou-se bastante mais intuitiva.
+                </p>
+                <p>
+                    Perto da conclusão do projeto surgiu também um problema relacionado com o GitHub Codespaces. Ao
+                    atingir o limite do plano gratuito, perdi temporariamente o acesso ao ambiente de desenvolvimento,
+                    ficando impossibilitado de continuar a trabalhar e de realizar <em>commits</em> ou <em>pushes</em>.
+                    Para dar continuidade ao projeto, foi necessário adquirir mais tempo de utilização do serviço.
+                </p>
+                <p>
+                    Por fim, encontrei algumas dificuldades relacionadas com os ficheiros <code>.gitignore</code> e
+                    <code>.env</code>. Durante o desenvolvimento foi necessário eliminar um Codespace devido a um erro,
+                    mas esqueci-me de guardar o ficheiro <code>.env</code>, perdendo todas as variáveis de ambiente
+                    configuradas. Felizmente, a recuperação foi relativamente simples, uma vez que bastou obter
+                    novamente as credenciais e chaves de acesso através das plataformas Neon, Cloudinary e Brevo,
+                    restaurando rapidamente a configuração do projeto.
+                </p>
+                <p>
+                    Não posso deixar de referir outra dificuldade recorrente ao longo do projeto: a utilização dos
+                    ficheiros <code>static</code> do Django. Era frequente esquecer-me da forma correta de configurar os
+                    caminhos para recursos estáticos, como imagens, folhas de estilo e ligações, especialmente na
+                    utilização das tags <code>{ % static % }</code>, <code>&lt;img&gt;</code> e <code>&lt;a&gt;</code>.
+                    Com a prática, esta tarefa tornou-se cada vez mais natural.
+                </p>
+            </div>
+        </div>
+
+        <div class="agrupamento">
+            <div>
+                <h3>O que Aprendi</h3>
+                <p>
+                    Ao longo deste projeto adquiri uma compreensão muito mais aprofundada sobre o desenvolvimento de
+                    aplicações web modernas. Passei a compreender como funciona uma pipeline CI/CD e todo o processo de
+                    automatização do deploy, desde a integração contínua até à publicação da aplicação em ambiente de
+                    produção. Aprendi também a exportar e importar dados entre diferentes bases de dados e ambientes,
+                    uma competência essencial para a manutenção e migração de aplicações.
+                </p>
+                <p>
+                    Outro dos conhecimentos mais importantes foi o desenvolvimento de uma API RESTful do zero com Django
+                    Ninja. Além de criar os diferentes endpoints e operações CRUD, aprendi também a consumir APIs de
+                    terceiros utilizando a biblioteca <em>requests</em>, integrando dados externos na minha aplicação e
+                    realizando operações de consulta, criação, atualização e eliminação de informação.
+                </p>
+                <p>
+                    Uma funcionalidade que gostei particularmente de implementar foi o <strong>Magic Link</strong>.
+                    Antes deste projeto desconhecia a simplicidade da sua implementação com Django. Ao desenvolvê-la,
+                    aprofundei os meus conhecimentos sobre autenticação, envio de emails através de SMTP e utilização de
+                    tokens seguros para permitir o acesso dos utilizadores sem necessidade de introduzir a
+                    palavra-passe.
+                </p>
+            </div>
+        </div>
+
+        <img src="{% static 'img/image/himan.webp' %}" alt="Hi man dando tchau">
+    </section>
 </main>
 
 {% endblock %}
