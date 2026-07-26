@@ -1,82 +1,108 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/sobre_aplicacao.css' %}">
+{% endblock %}
+
 {% block content %}
-
 <main class="main-sobre">
-
-    <h1>Sobre esta Aplicação</h1>
-
-    <!-- ======================================================== -->
-
-    <section class="sobre">
-
-        <h3>1. Arquitetura MVT do Django</h3>
+    <section class="cabecalho">
+        <img src="{% static 'img/image/fundo-sobre.webp' %}"
+            alt="Imagem com fundo azul onde um dedo aponta para uma lâmpada">
 
         <div class="conteudo">
+            <p class="destaque">SAIBA COMO FOI DESENVOLVIDA</p>
 
-            <p>
-                Esta aplicação foi desenvolvida recorrendo à arquitetura
-                <strong>Model-View-Template (MVT)</strong>, utilizada pelo Django.
-            </p>
+            <h1>
+                <span>Documentação</span><br>
+                <span>da Aplicação</span>
+            </h1>
 
-            <h4>Componentes</h4>
+            <p class="texto">Explore o funcionamento, a arquitetura e as tecnologias utilizadas no desenvolvimento desta
+                aplicação.</p>
 
-            <ul>
-                <li><strong>Model</strong> – representa os dados da aplicação e comunica com a base de dados.</li>
+            <div class="botoes">
+                <a class="botao" href="">Making of <i class="fi fi-rr-arrow-right"></i></a>
+                <a class="botao" href="">Vídeos</a>
+            </div>
+        </div>
+    </section>
 
-                <li><strong>View</strong> – recebe os pedidos do utilizador, processa a lógica da aplicação e envia informação para o Template.</li>
+    <section class="arquitetura-django">
+        <div class="superior">
+            <div class="esquerda">
+                <h3>Componentes</h3>
+                <ul>
+                    <li><strong>Model</strong>
+                        <p>Representa os dados da aplicação e comunica com a base de dados</p>
+                    </li>
+                    <li><strong>View</strong>
+                        <p>Recebe os pedidos do utilizador, processa a lógica da aplicação e envia
+                            informação para o Template</p>
+                    </li>
+                    <li><strong>Template</strong>
+                        <p>Apresenta a informação ao utilizador através de HTML</p>
+                    </li>
+                </ul>
+            </div>
 
-                <li><strong>Template</strong> – apresenta a informação ao utilizador através de HTML.</li>
-            </ul>
+            <div class="direita">
+                <h3>Arquitetura MVT do Django - Fluxo de Informação</h3>
+                <p>
+                    Esta aplicação foi desenvolvida recorrendo à arquitetura
+                    <strong>Model-View-Template (MVT)</strong>, utilizada pelo Django.
+                </p>
+                <div class="fluxo">
+                    <div class="card">
+                        <i class="fi fi-sr-user"></i>
+                        Utilizador
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-br-url"></i>
+                        URL
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-sr-eye"></i>
+                        View
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-ts-model-cube-arrows"></i>
+                        Model
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-brands-postgre"></i>
+                        Base de Dados
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-sr-eye"></i>
+                        View
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-rr-document"></i>
+                        Template
+                    </div>
+                    <div class="card">
+                        <i class="fi fi-rr-browser"></i>
+                        Navegador
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <h4>Fluxo de Informação</h4>
-
-            <p>
-
-                Utilizador →
-
-                URL →
-
-                View →
-
-                Model →
-
-                Base de Dados →
-
-                View →
-
-                Template →
-
-                Navegador
-
-            </p>
-
-            <h4>Diagrama da Arquitetura</h4>
+        <div class="inferior">
+            <h3>Diagrama da Arquitetura</h3>
 
             <img src="{% static 'portfolio/images/mvt.jpg' %}" alt="Arquitetura MVT">
 
-            <h4>Vídeo Explicativo</h4>
-
-            <iframe
-                width="800"
-                height="450"
-                src="https://www.youtube.com/embed/VIDEO"
-                allowfullscreen>
-            </iframe>
-
+            <a class="botao" href="">Vídeo Explicativo</a>
         </div>
-
     </section>
 
-    <!-- ======================================================== -->
-
-    <section class="sobre">
-
-        <h3>2. Modelação</h3>
+    <section class="modelacao">
+        <h3>Modelação</h3>
 
         <div class="conteudo">
-
             <p>
                 O desenvolvimento da aplicação começou pela modelação das entidades e respetivos relacionamentos.
             </p>
@@ -87,7 +113,7 @@
 
             <h4>Models.py</h4>
 
-<pre>
+            <pre>
 class Projeto(models.Model):
     nome = models.CharField(...)
     descricao = models.TextField()
@@ -118,17 +144,17 @@ class Projeto(models.Model):
 
                 {% for tecnologia in frontend %}
 
-                    <li>
+                <li>
 
-                        <strong>{{ tecnologia.nome }}</strong>
+                    <strong>{{ tecnologia.nome }}</strong>
 
-                        <p>{{ tecnologia.descricao }}</p>
+                    <p>{{ tecnologia.descricao }}</p>
 
-                    </li>
+                </li>
 
                 {% empty %}
 
-                    <li>Sem tecnologias.</li>
+                <li>Sem tecnologias.</li>
 
                 {% endfor %}
 
@@ -140,17 +166,17 @@ class Projeto(models.Model):
 
                 {% for tecnologia in backend %}
 
-                    <li>
+                <li>
 
-                        <strong>{{ tecnologia.nome }}</strong>
+                    <strong>{{ tecnologia.nome }}</strong>
 
-                        <p>{{ tecnologia.descricao }}</p>
+                    <p>{{ tecnologia.descricao }}</p>
 
-                    </li>
+                </li>
 
                 {% empty %}
 
-                    <li>Sem tecnologias.</li>
+                <li>Sem tecnologias.</li>
 
                 {% endfor %}
 
@@ -162,17 +188,17 @@ class Projeto(models.Model):
 
                 {% for tecnologia in database %}
 
-                    <li>
+                <li>
 
-                        <strong>{{ tecnologia.nome }}</strong>
+                    <strong>{{ tecnologia.nome }}</strong>
 
-                        <p>{{ tecnologia.descricao }}</p>
+                    <p>{{ tecnologia.descricao }}</p>
 
-                    </li>
+                </li>
 
                 {% empty %}
 
-                    <li>Sem tecnologias.</li>
+                <li>Sem tecnologias.</li>
 
                 {% endfor %}
 
@@ -184,17 +210,17 @@ class Projeto(models.Model):
 
                 {% for tecnologia in outros %}
 
-                    <li>
+                <li>
 
-                        <strong>{{ tecnologia.nome }}</strong>
+                    <strong>{{ tecnologia.nome }}</strong>
 
-                        <p>{{ tecnologia.descricao }}</p>
+                    <p>{{ tecnologia.descricao }}</p>
 
-                    </li>
+                </li>
 
                 {% empty %}
 
-                    <li>Sem tecnologias.</li>
+                <li>Sem tecnologias.</li>
 
                 {% endfor %}
 

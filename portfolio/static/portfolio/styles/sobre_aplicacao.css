@@ -1,81 +1,198 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
-
 .main-sobre {
-    margin: 60px 20px 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
 
-    h1 {
-        margin-bottom: 40px;
-        font-size: 50px;
+    .botao {
+        display: flex;
+        gap: 12px;
+        width: fit-content;
+        padding: 14px 28px;
+        border: 1px solid white;
+        border-radius: 4px;
+        font-weight: bold;
+        text-decoration: none;
+        word-spacing: 4px;
+        transition: .3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
-    .sobre {
-        margin-bottom: 80px;
+    .cabecalho {
+        position: relative;
+        width: 100%;
+        min-width: 800px;
+        height: 70vh;
+        min-height: fit-content;
 
-        h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+        img {
+            width: 100%;
+            object-fit: contain;
         }
 
         .conteudo {
-            border: 1px solid black;
-            border-radius: 12px;
-            padding: 20px;
+            position: absolute;
+            z-index: 1;
+            top: clamp(20px, 7vw, 60px);
+            left: clamp(12px, 5vw, 48px);
+        }
 
-            p {
-                margin-bottom: 14px;
-                line-height: 1.6;
+        .destaque {
+            width: fit-content;
+            padding: 2px 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        h1 {
+            font-size: clamp(40px, 5vw, 60px);
+            color: black;
+        }
+
+        .texto {
+            max-width: 40%;
+            width: 100%;
+            margin: 32px 0;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .botoes {
+            display: flex;
+            gap: 20px;
+
+            a {
+                i {
+                    display: flex;
+                }
+
+                &:first-child {
+                    background-color: rgba(255, 255, 255, 0.9);
+                    color: black;
+                }
+
+                &:last-child {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    color: black;
+                }
             }
+        }
+    }
 
-            h4 {
-                margin-top: 30px;
-                margin-bottom: 15px;
-                font-size: 20px;
-            }
+    .arquitetura-django {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+        margin-top: 40px;
 
-            ul {
-                margin-left: 25px;
-                margin-bottom: 20px;
+        h3 {
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
 
-                li {
-                    margin-bottom: 10px;
+        .superior {
+            display: flex;
+            justify-content: space-between;
+
+            .esquerda {
+                width: 30%;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    list-style-type: circle;
+                    list-style-position: inside;
+
+                    p {
+                        margin-top: 4px;
+                        font-size: 14px;
+                    }
                 }
             }
 
-            img {
-                display: block;
-                max-width: 100%;
-                margin: 25px auto;
-                border: 1px solid rgba(0, 0, 0, 0.2);
-                border-radius: 10px;
-            }
+            .direita {
+                width: 65%;
 
-            iframe {
-                display: block;
-                width: 100%;
-                max-width: 900px;
-                height: 500px;
-                margin: 30px auto;
-                border: none;
-                border-radius: 10px;
-            }
+                .fluxo {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 16px;
 
-            pre {
-                background-color: rgba(0, 0, 0, 0.05);
-                border: 1px solid rgba(0, 0, 0, 0.2);
-                border-radius: 8px;
-                padding: 16px;
-                overflow-x: auto;
-                margin: 20px 0;
-                font-family: Consolas, monospace;
-                line-height: 1.5;
+                    .card {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 80px;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 22px;
+                            left: -17px;
+                            width: 34px;
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.3);
+                        }
+
+                        &:first-child::after {
+                            display: none;
+                        }
+
+                        i {
+                            display: flex;
+                            font-size: 20px;
+                            padding: 12px;
+                            border: 2px solid #439EAD;
+                            border-radius: 50%;
+                        }
+                    }
+                }
             }
+        }
+
+        .inferior {
+            width: 100%;
 
             a {
+                border-color: black;
+                margin-top: 20px;
                 color: black;
-                text-decoration: underline;
+            }
+        }
 
-                &:hover {
-                    opacity: .7;
+
+    }
+
+    .modelacao {
+        
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .main-sobre {
+        .arquitetura-django {
+            .superior {
+                flex-direction: column-reverse;
+                justify-content: center;
+                gap: 40px;
+
+                .esquerda {
+                    width: 100%;
+                }
+
+                .direita {
+                    width: 100%;
                 }
             }
         }
