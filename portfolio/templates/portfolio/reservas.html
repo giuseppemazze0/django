@@ -1,0 +1,42 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/restaurante.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1>Lista de Reservas</h1>
+
+    <table border="1" cellpadding="8">
+
+        <tr>
+            <th>Cliente</th>
+            <th>Restaurante</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Nº Pessoas</th>
+        </tr>
+
+        {% for reserva in reservas %}
+
+        <tr>
+            <td>{{ reserva.cliente }}</td>
+            <td>{{ reserva.restaurante }}</td>
+            <td>{{ reserva.data }}</td>
+            <td>{{ reserva.hora }}</td>
+            <td>{{ reserva.numero_pessoas }}</td>
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="5">Não existem reservas registadas.</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+</main>
+{% endblock %}

@@ -36,4 +36,20 @@ urlpatterns = [
     path('formacao/nova/', views.nova_formacao_view, name="nova_formacao"),
     path('formacao/<int:formacao_id>/editar/', views.editar_formacao_view, name="editar_formacao"),
     path('formacao/<int:formacao_id>/apagar/', views.apagar_formacao_view, name="apagar_formacao"),
+
+
+    # ======
+    # Epoca especial
+    # ======
+
+    path("epoca_especial/", views.epoca_especial_view, name="epoca_especial"),
+
+    path("restaurantes/", views.restaurantes_view, name="restaurantes"),
+    path("reservas/", views.reservas_view, name="reservas"),
+
+    path("receitas/", views.receitas_view, name="receitas"),
+    path("favoritos/", views.favoritos_view, name="favoritos"),
+
+    path("treinos/", views.treinos_view, name="treinos"),
+    path("piscinas/", views.piscinas_view, name="piscinas"),
 ]

@@ -172,14 +172,10 @@
             }
         }
 
-        .inferior {
-            width: 100%;
-
-            a {
-                border-color: black;
-                margin-top: 20px;
-                color: black;
-            }
+        a {
+            border-color: black;
+            margin-top: 20px;
+            color: black;
         }
     }
 

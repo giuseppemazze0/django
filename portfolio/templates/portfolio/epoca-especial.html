@@ -1,0 +1,41 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/epoca-especial.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-epoca-especial">
+    <h1>3 Exercícios para Época Especial</h1>
+
+    <div class="conteudo">
+        <div class="card">
+            <a class="botao api" target="_blank" href="/epoca-especial-api/docs#/">API</a>
+            <div>
+                <h3>Restaurante</h3>
+                <a class="botao" href="{% url 'restaurantes' %}">Veja nossa gastronomia</a>
+            </div>
+            <img src="{% static 'img/image/restaurante.webp' %}" alt="Imagem de um restaurante">
+        </div>
+
+        <div class="card">
+            <a class="botao api" target="_blank" href="/epoca-especial-api/docs#/">API</a>
+            <div>
+                <h3>Receitas</h3>
+                <a class="botao" href="{% url 'receitas' %}">Veja nossas receitas</a>
+            </div>
+            <img src="{% static 'img/image/receita.webp' %}" alt="Imagem de uma tábua">
+        </div>
+
+        <div class="card">
+            <a class="botao api" target="_blank" href="/epoca-especial-api/docs#/">API</a>
+            <div>
+                <h3>Natação</h3>
+                <a class="botao" href="{% url 'treinos' %}">Veja nossos clubes</a>
+            </div>
+            <img src="{% static 'img/image/natacao.webp' %}" alt="Mulher nadando">
+        </div>
+    </div>
+</main>
+{% endblock %}

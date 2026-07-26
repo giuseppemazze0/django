@@ -1,0 +1,50 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/restaurante.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1>Treinos</h1>
+
+    <a href="{% url 'piscinas' %}">Veja as Piscinas</a>
+
+    {% for treino in treinos %}
+
+    <hr>
+
+    <h2>Treino de {{ treino.data }}</h2>
+
+    <p><strong>Hora:</strong> {{ treino.hora }}</p>
+    <p><strong>Treinador:</strong> {{ treino.treinador }}</p>
+    <p><strong>Piscina:</strong> {{ treino.piscina }}</p>
+
+    <h3>Nadadores</h3>
+
+    <ul>
+        {% for nadador in treino.nadadores.all %}
+        <li>{{ nadador.nome }}</li>
+        {% empty %}
+        <li>Sem nadadores inscritos.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Estilos</h3>
+
+    <ul>
+        {% for estilo in treino.estilos.all %}
+        <li>{{ estilo.nome }}</li>
+        {% empty %}
+        <li>Sem estilos definidos.</li>
+        {% endfor %}
+    </ul>
+
+    {% empty %}
+
+    <p>Não existem treinos registados.</p>
+
+    {% endfor %}
+</main>
+{% endblock %}

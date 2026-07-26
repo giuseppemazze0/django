@@ -1,0 +1,40 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/restaurante.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1>Receitas</h1>
+
+    <a href="{% url 'favoritos' %}">Receitas Favoritas</a>
+
+    {% for receita in receitas %}
+
+    <hr>
+
+    <h2>{{ receita.nome }}</h2>
+
+    <p><strong>Criada por:</strong> {{ receita.utilizador }}</p>
+
+    <p>{{ receita.descricao }}</p>
+
+    <h3>Ingredientes</h3>
+
+    <ul>
+        {% for ingrediente in receita.ingredientes.all %}
+        <li>{{ ingrediente.nome }}</li>
+        {% empty %}
+        <li>Sem ingredientes.</li>
+        {% endfor %}
+    </ul>
+
+    {% empty %}
+
+    <p>Não existem receitas registadas.</p>
+
+    {% endfor %}
+</main>
+{% endblock %}

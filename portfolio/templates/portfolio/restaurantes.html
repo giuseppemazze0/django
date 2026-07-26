@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/restaurante.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1>Lista de Restaurantes</h1>
+
+    <a href="{% url 'reservas' %}">Reservas</a>
+
+    {% for restaurante in restaurantes %}
+
+    <hr>
+
+    <h3>{{ restaurante.nome }}</h3>
+
+    <p><strong>Localização:</strong> {{ restaurante.localizacao }}</p>
+    <p><strong>Capacidade:</strong> {{ restaurante.capacidade }} pessoas</p>
+
+    <h4>Menu</h4>
+
+    <ul>
+        {% for prato in restaurante.prato_set.all %}
+        <li>{{ prato.nome }}</li>
+        {% empty %}
+        <li>Este restaurante não possui pratos registados.</li>
+        {% endfor %}
+    </ul>
+
+    {% empty %}
+
+    <p>Não existem restaurantes registados.</p>
+
+    {% endfor %}
+</main>
+{% endblock %}

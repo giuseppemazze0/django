@@ -12,8 +12,6 @@ class Faculdade(models.Model):
     def __str__(self):
         return self.nome
 
-
-
 class Licenciatura(models.Model):
     nome = models.CharField(max_length=100)
     ects = models.PositiveIntegerField()
@@ -29,8 +27,6 @@ class Licenciatura(models.Model):
     def __str__(self):
         return self.nome
 
-
-
 class Pessoa(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True, blank=True, null=True)
@@ -42,20 +38,15 @@ class Pessoa(models.Model):
     def __str__(self):
         return self.nome
 
-
 class Aluno(Pessoa):
     bio = models.CharField(max_length=100, null=True)
     foto_perfil = models.ImageField(upload_to='aluno/foto_perfil/', null=True)
     numero_aluno = models.CharField(max_length=10, unique=True)
     licenciatura = models.ForeignKey(Licenciatura, on_delete=models.CASCADE, related_name='licenciatura_aluno')
 
-
-
 class Professor(Pessoa):
     numero_professor = models.CharField(max_length=10, unique=True)
     licenciaturas = models.ManyToManyField(Licenciatura)
-
-
 
 class Tecnologia(models.Model):
     nome = models.CharField(max_length=50)
@@ -64,8 +55,6 @@ class Tecnologia(models.Model):
 
     def __str__(self):
         return self.nome
-
-
 
 class Projeto(models.Model):
     nome = models.CharField(max_length=50)
@@ -80,7 +69,6 @@ class Projeto(models.Model):
     def __str__(self):
         return self.nome
 
-
 class Competencia(models.Model):
     nome = models.CharField(max_length=100)
     nivel = models.CharField(max_length=50)
@@ -88,7 +76,6 @@ class Competencia(models.Model):
 
     def __str__(self):
         return self.nome
-
 
 class Formacao(models.Model):
     nome = models.CharField(max_length=100)
@@ -102,8 +89,6 @@ class Formacao(models.Model):
     def __str__(self):
         return self.nome
 
-
-
 class UnidadeCurricular(models.Model):
     nome = models.CharField(max_length=100)
     ects = models.PositiveIntegerField()
@@ -114,8 +99,6 @@ class UnidadeCurricular(models.Model):
 
     def __str__(self):
         return self.nome
-
-
 
 class TFC(models.Model):
     titulo = models.CharField(max_length=200)
@@ -133,7 +116,6 @@ class TFC(models.Model):
     def __str__(self):
         return self.titulo
 
-
 class MakingOf(models.Model):
     descricao = models.TextField()
     data = models.DateField()
@@ -148,3 +130,112 @@ class MakingOf(models.Model):
 
     def __str__(self):
         return self.descricao[:50]
+
+
+
+
+# ======
+# Epoca especial
+# ======
+
+class Restaurante(models.Model):
+    nome = models.CharField(max_length=100)
+    localizacao = models.CharField(max_length=100)
+    capacidade = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.nome
+
+class Cliente(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+class Prato(models.Model):
+    nome = models.CharField(max_length=100)
+    restaurante = models.ForeignKey(Restaurante, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome
+
+class Reserva(models.Model):
+    data = models.DateField()
+    hora = models.TimeField()
+    numero_pessoas = models.PositiveIntegerField()
+
+    restaurante = models.ForeignKey(Restaurante, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.cliente} - {self.restaurante}"
+
+
+
+class Utilizador(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    favoritas = models.ManyToManyField("Receita", blank=True, related_name="utilizadores")
+
+    def __str__(self):
+        return self.nome
+
+class Ingrediente(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+class Receita(models.Model):
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField()
+
+    utilizador = models.ForeignKey("Utilizador", on_delete=models.CASCADE, related_name="receitas")
+    ingredientes = models.ManyToManyField("Ingrediente")
+
+    def __str__(self):
+        return self.nome
+
+
+class Piscina(models.Model):
+    nome = models.CharField(max_length=100)
+    localizacao = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+class Treinador(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+class Nadador(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+class Estilo(models.Model):
+    nome = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nome
+
+
+class Treino(models.Model):
+    data = models.DateField()
+    hora = models.TimeField()
+
+    piscina = models.ForeignKey(Piscina, on_delete=models.CASCADE)
+    treinador = models.ForeignKey(Treinador, on_delete=models.CASCADE)
+
+    nadadores = models.ManyToManyField(Nadador)
+    estilos = models.ManyToManyField(Estilo)
+
+    def __str__(self):
+        return f"{self.data} - {self.treinador}"

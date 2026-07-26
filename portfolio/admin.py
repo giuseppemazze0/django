@@ -108,6 +108,135 @@ class MakingOfAdmin(admin.ModelAdmin):
     ordering = ("-data",)
 
 
+
+
+
+
+# -------------------------
+# Restaurante
+class RestauranteAdmin(admin.ModelAdmin):
+    list_display = ("nome", "localizacao", "capacidade")
+    search_fields = ("nome", "localizacao")
+    ordering = ("nome",)
+
+
+# -------------------------
+# Cliente
+class ClienteAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Prato
+class PratoAdmin(admin.ModelAdmin):
+    list_display = ("nome", "restaurante")
+    search_fields = ("nome",)
+    list_filter = ("restaurante",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Reserva
+class ReservaAdmin(admin.ModelAdmin):
+    list_display = ("cliente", "restaurante", "data", "hora", "numero_pessoas")
+    search_fields = ("cliente__nome", "restaurante__nome")
+    list_filter = ("restaurante", "data")
+    ordering = ("-data", "hora")
+
+
+# -------------------------
+# Utilizador
+class UtilizadorAdmin(admin.ModelAdmin):
+    list_display = ("nome", "email")
+    search_fields = ("nome", "email")
+    filter_horizontal = ("favoritas",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Ingrediente
+class IngredienteAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Receita
+class ReceitaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "utilizador")
+    search_fields = ("nome", "descricao")
+    list_filter = ("utilizador",)
+    filter_horizontal = ("ingredientes",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Piscina
+class PiscinaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "localizacao")
+    search_fields = ("nome", "localizacao")
+    ordering = ("nome",)
+
+
+# -------------------------
+# Treinador
+class TreinadorAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Nadador
+class NadadorAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Estilo
+class EstiloAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
+
+# -------------------------
+# Treino
+class TreinoAdmin(admin.ModelAdmin):
+    list_display = ("data", "hora", "treinador", "piscina")
+    search_fields = ("treinador__nome", "piscina__nome")
+    list_filter = ("treinador", "piscina", "data")
+    filter_horizontal = ("nadadores", "estilos")
+    ordering = ("-data", "hora")
+
+
+admin.site.register(Restaurante, RestauranteAdmin)
+admin.site.register(Cliente, ClienteAdmin)
+admin.site.register(Prato, PratoAdmin)
+admin.site.register(Reserva, ReservaAdmin)
+
+admin.site.register(Utilizador, UtilizadorAdmin)
+admin.site.register(Ingrediente, IngredienteAdmin)
+admin.site.register(Receita, ReceitaAdmin)
+
+admin.site.register(Piscina, PiscinaAdmin)
+admin.site.register(Treinador, TreinadorAdmin)
+admin.site.register(Nadador, NadadorAdmin)
+admin.site.register(Estilo, EstiloAdmin)
+admin.site.register(Treino, TreinoAdmin)
+
+
+
+
+
+
+
+
 # -------------------------
 # REGISTOS
 admin.site.register(Faculdade, FaculdadeAdmin)

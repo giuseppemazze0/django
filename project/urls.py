@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from django.http import HttpResponse
 from pessoasAPI.api import api as pessoasAPI
 from pokemonAPI.api import api as pokemonAPI
+from portfolio.api import apiLegal as portfolio_api
 
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     #path("pessoas-api/", pessoasAPI.urls),
     path("pokemon-api/", pokemonAPI.urls),
+    path("epoca-especial-api/", portfolio_api.urls),
     path("accounts/", include("accounts.urls")),
     path("artigos/", include("artigos.urls")),
 ] 

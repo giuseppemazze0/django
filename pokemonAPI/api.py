@@ -23,6 +23,7 @@ api = NinjaAPI(
     estas entidades através de uma base de dados relacional. A API disponibiliza operações CRUD e segue os princípios da 
     arquitetura REST, facilitando a integração com aplicações cliente.""",
     version="1.0.0",
+    urls_namespace="pokemon_api"
 )
 
 

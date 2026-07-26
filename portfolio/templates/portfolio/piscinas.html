@@ -1,0 +1,49 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'portfolio/styles/restaurante.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1>Piscinas</h1>
+
+    {% for piscina in piscinas %}
+
+    <hr>
+
+    <h2>{{ piscina.nome }}</h2>
+
+    <p><strong>Localização:</strong> {{ piscina.localizacao }}</p>
+
+    <h3>Treinos</h3>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Treinador</th>
+        </tr>
+
+        {% for treino in piscina.treino_set.all %}
+        <tr>
+            <td>{{ treino.data }}</td>
+            <td>{{ treino.hora }}</td>
+            <td>{{ treino.treinador }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">Sem treinos agendados.</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% empty %}
+
+    <p>Não existem piscinas registadas.</p>
+
+    {% endfor %}
+</main>
+{% endblock %}

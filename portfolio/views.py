@@ -333,3 +333,70 @@ def apagar_realizador_view(request, realizador_id):
     )
 
     return redirect("api_colega")
+
+
+
+
+
+# ======
+# Epoca especial
+# ======
+
+def epoca_especial_view(request):
+    return render(request, "portfolio/epoca-especial.html")
+
+def restaurantes_view(request):
+    restaurantes = Restaurante.objects.all()
+
+    context = {
+        "restaurantes": restaurantes
+    }
+
+    return render(request, "portfolio/restaurantes.html", context)
+
+def reservas_view(request):
+    reservas = Reserva.objects.all()
+
+    context = {
+        "reservas": reservas
+    }
+
+    return render(request, "portfolio/reservas.html", context)
+
+def receitas_view(request):
+    receitas = Receita.objects.all()
+
+    context = {
+        "receitas": receitas
+    }
+
+    return render(request, "portfolio/receitas.html", context)
+
+
+def favoritos_view(request):
+    utilizadores = Utilizador.objects.all()
+
+    context = {
+        "utilizadores": utilizadores
+    }
+
+    return render(request, "portfolio/favoritos.html", context)
+
+
+def treinos_view(request):
+    treinos = Treino.objects.all()
+
+    context = {
+        "treinos": treinos
+    }
+
+    return render(request, "portfolio/treinos.html", context)
+
+def piscinas_view(request):
+    piscinas = Piscina.objects.all()
+
+    context = {
+        "piscinas": piscinas
+    }
+
+    return render(request, "portfolio/piscinas.html", context)
