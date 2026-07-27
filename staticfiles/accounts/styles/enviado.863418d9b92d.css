@@ -1,0 +1,13 @@
+@import url("login.9749cabf6f24.css");
+
+.main-login {
+    section {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        .esquerda {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+}

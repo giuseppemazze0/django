@@ -29,6 +29,34 @@
         </div>
     </section>
 
+    <div class="cards">
+        <div class="card">
+            <i class="fi fi-brands-youtube-circle"></i>
+            <div>
+                <h3>Vídeos Explicativos</h3>
+                <p>Vídeos que explicam alguns conceitos importantes sobre o projeto</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fi fi-rr-bulb"></i>
+            <div>
+                <h3>Making Of</h3>
+                <p>Partilho as dificuldades que enfrentei e os principais aprendizados obtidos durante o desenvolvimento
+                    deste projeto</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fi fi-rr-document-signed"></i>
+            <div>
+                <h3>Documentação</h3>
+                <p>Disponibilizo uma documentação detalhada para compreender todo o trabalho realizado por trás da
+                    aplicação</p>
+            </div>
+        </div>
+    </div>
+
     <section class="arquitetura-django">
         <div class="superior">
             <div class="esquerda">
@@ -264,6 +292,47 @@ class Projeto(models.Model):
             API</a>
 
         <img src="{% static 'img/image/fun-api.webp' %}" alt="Explicação da API">
+    </section>
+
+    <section class="videos">
+        <h3>Vídeos</h3>
+
+        <div>
+            <h4>Desenvolvimento do Projeto Django</h4>
+            <p>Esclarecendo o desenvolvimento inicial da aplicação Django e da arquitetura do projeto.</p>
+            <iframe src="https://www.youtube.com/embed/icw0df4Aw7w?si=omPHJ_spMgrF1L-D" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div>
+            <h4>API REST com Django Ninja</h4>
+            <p>Explicação da API REST utilizando Django Ninja, juntamente com sua documentação, API Key e consumo da API
+                do colega usando a biblioteca requests.</p>
+            <iframe src="https://www.youtube.com/embed/f-Lyh8y1vts?si=M0wWqhWSeM-l-kUz" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div>
+            <h4>Developer em Ação</h4>
+            <p>Ensinado como funciona o fluxo de desenvolvimento no GitHub Codespaces.</p>
+            <iframe src="https://www.youtube.com/embed/gR_dpn6aBgQ?si=acnG0881JC9YgC0q" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div>
+            <h4>Videotutorial Explicativo Sobre Pipeline CI/CD</h4>
+            <p>Demonstrando a arquitetura do sistema backend: Neon, Cloudinary, GitHub Actions e deploy.</p>
+            <iframe src="https://www.youtube.com/embed/LrBFREW0gqI?si=Yod-SCzxVpvgAL_F" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </section>
 
     <section class="making-of">

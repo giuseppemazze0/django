@@ -14,17 +14,17 @@
     ul {
         list-style: none;
     }
-    
+
     a {
         text-decoration: none;
     }
-    
+
     button {
         cursor: pointer;
         border: none;
         background-color: transparent;
     }
-    
+
     section {
         max-width: 1600px;
         margin: 0 80px;
@@ -128,6 +128,18 @@
                 border: 1px solid rgba(0, 0, 0, 0.8);
                 border-radius: 16px;
                 background-color: transparent;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: rgba(0, 0, 0, 0.9);
+
+                    i {
+                        display: flex;
+                        font-size: 18px;
+                    }
+                }
             }
         }
     }
